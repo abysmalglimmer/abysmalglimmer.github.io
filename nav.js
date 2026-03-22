@@ -5,8 +5,9 @@
 (function () {
   const links = [
     { label: "Home",     href: "index.html" },
-    { label: "Survivor", href: "survivor.html" },
-    // Add more pages here as you build them
+    { label: "Survivor Log", href: "survivor.html" },
+    { label: "Survivor Characters", href: "cast.html" },
+    // Additions go here
   ];
 
   const currentFile = window.location.pathname.split("/").pop() || "index.html";
