@@ -6,7 +6,7 @@ window.CastData = {
 
   contestants: {
     // ── S1 Borneo ──────────────────────────────────────────────────────
-    "richard-hatch":      { name: "Richard Hatch",                   bio: "" },
+    "richard-hatch":      { name: "Richard Hatch",                   bio: "The fabulous gay star of season 1 is revealed in season 8 to be a weirdo. Deeply disappointing. I hope not to be seeing him again." },
     "kelly-wiglesworth":  { name: "Kelly Wiglesworth",               bio: "" },
     "rudy-boesch":        { name: "Rudy Boesch",                     bio: "" },
     "susan-hawk":         { name: "Susan Hawk",                      bio: "" },
@@ -138,8 +138,8 @@ window.CastData = {
       number: 1, name: "Borneo", year: 2000, color: "#c8845a", allstar: false,
       favourites: ["richard-hatch", "susan-hawk", "greg-buis"],
       cast: [
-        { id: "richard-hatch",     placement: 1,  jury: false },
-        { id: "kelly-wiglesworth", placement: 2,  jury: true  },
+        { id: "richard-hatch",     placement: 1,  jury: false, starting_tribe: "tagi" },
+        { id: "kelly-wiglesworth", placement: 2,  jury: false, starting_tribe: "tagi" },
         { id: "rudy-boesch",       placement: 3,  jury: true  },
         { id: "susan-hawk",        placement: 4,  jury: true  },
         { id: "sean-kenniff",      placement: 5,  jury: true  },
