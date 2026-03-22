@@ -2,597 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oliver Beeby</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    /* ── Site layout ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-    }
-    .sidebar {
-      height: 100vh;
-      width: 200px;
-      background-color: #222;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      position: sticky;
-      top: 0;
-    }
-    .sidebar h2 { margin-top: 0; }
-    .sidebar a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 0;
-      display: block;
-    }
-    .sidebar a:hover { background: #444; }
-    .content { flex: 1; padding: 20px; }
-    .tab { display: none; }
-    .tab.active { display: block; }
-
-    /* ── Survivor tracker ── */
-    :root {
-      --bg: #f7f5f2;
-      --surface: #ffffff;
-      --text: #1a1a1a;
-      --muted: #888;
-      --border: #e8e4de;
-      --unseen: #c8c3bc;
-      --radius: 4px;
-    }
-
-    #survivor {
       font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      padding: 48px 24px 80px;
+      display: flex;
       min-height: 100vh;
-      color: var(--text);
+      background: #f7f5f2;
+      color: #1a1a1a;
     }
 
-    .sv-header {
-      max-width: 740px;
-      margin: 0 auto 48px;
-      border-bottom: 1.5px solid var(--text);
-      padding-bottom: 24px;
+    #nav-root { display: flex; }
+
+    .content {
+      flex: 1;
+      padding: 60px 48px;
+      max-width: 720px;
     }
 
-    .sv-header h1 {
+    h1 {
       font-family: 'Libre Baskerville', serif;
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2rem, 5vw, 2.8rem);
       font-weight: 700;
       letter-spacing: -0.5px;
       line-height: 1.1;
+      margin-bottom: 20px;
     }
 
-    .sv-header p {
-      margin-top: 8px;
-      font-size: 0.9rem;
-      color: var(--muted);
+    p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #444;
       font-weight: 300;
+      margin-bottom: 12px;
     }
 
-    .progress-bar-wrap {
-      margin-top: 16px;
+    .page-links {
+      margin-top: 40px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       gap: 12px;
     }
 
-    .progress-bar-track {
-      flex: 1;
-      height: 4px;
-      background: var(--border);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      background: var(--text);
-      border-radius: 2px;
-      transition: width 0.6s ease;
-    }
-
-    .progress-label {
-      font-size: 0.78rem;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .sv-controls {
-      max-width: 740px;
-      margin: 0 auto 20px;
+    .page-link-card {
       display: flex;
       align-items: center;
-      gap: 8px;
-    }
-
-    .sv-controls span {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-right: 4px;
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .sort-btn {
-      background: none;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 5px 14px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.8rem;
-      cursor: pointer;
-      color: var(--muted);
-      transition: all 0.15s ease;
-    }
-
-    .sort-btn:hover { border-color: var(--text); color: var(--text); }
-    .sort-btn.active { background: var(--text); color: #fff; border-color: var(--text); }
-
-    .seasons-list {
-      max-width: 740px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .section-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      margin: 20px 0 8px;
-      padding-left: 2px;
-    }
-
-    .season {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: box-shadow 0.2s ease;
-    }
-
-    .season:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
-
-    .season-header {
-      display: flex;
-      align-items: center;
-      padding: 16px 20px;
-      cursor: pointer;
-      user-select: none;
       gap: 16px;
+      border: 1px solid #e8e4de;
+      border-radius: 6px;
+      padding: 16px 20px;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
-    .accent-bar {
-      width: 4px;
-      height: 36px;
-      border-radius: 2px;
-      flex-shrink: 0;
+    .page-link-card:hover {
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      border-color: #ccc;
     }
 
-    .season-meta { flex: 1; min-width: 0; }
-
-    .season-title {
+    .page-link-label {
       font-family: 'Libre Baskerville', serif;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
-      line-height: 1.2;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
 
-    .season-sub {
-      font-size: 0.78rem;
-      color: var(--muted);
+    .page-link-desc {
+      font-size: 0.8rem;
+      color: #888;
+      font-weight: 300;
       margin-top: 2px;
-      font-weight: 300;
     }
 
-    .season-score {
-      font-family: 'Libre Baskerville', serif;
+    .page-link-arrow {
+      margin-left: auto;
+      color: #bbb;
       font-size: 1.1rem;
-      font-weight: 700;
-      white-space: nowrap;
     }
-
-    .season-score span {
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: var(--muted);
-      font-family: 'DM Sans', sans-serif;
-    }
-
-    .chevron {
-      width: 18px;
-      height: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--muted);
-      transition: transform 0.25s ease;
-      flex-shrink: 0;
-    }
-
-    .chevron svg { display: block; }
-    .season.open .chevron { transform: rotate(180deg); }
-
-    .season-body {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.3s ease;
-    }
-
-    .season.open .season-body { grid-template-rows: 1fr; }
-
-    .season-body-inner { overflow: hidden; }
-
-    .season-details {
-      padding: 16px 20px 20px 40px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px 32px;
-      border-top: 1px solid var(--border);
-    }
-
-    .detail-block {}
-    .detail-block.full { grid-column: 1 / -1; }
-
-    .detail-label {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .detail-value {
-      font-size: 0.88rem;
-      line-height: 1.6;
-      font-weight: 300;
-    }
-
-    .spoiler-text {
-      background: var(--text);
-      color: var(--text);
-      border-radius: 2px;
-      padding: 0 4px;
-      cursor: pointer;
-      font-size: 0.88rem;
-      transition: color 0.2s, background 0.2s;
-      user-select: none;
-    }
-
-    .spoiler-text.revealed {
-      background: transparent;
-      color: var(--text);
-    }
-
-    .spoiler-hint {
-      font-size: 0.68rem;
-      color: var(--muted);
-      margin-left: 6px;
-    }
-
-    .season.unseen {
-      opacity: 0.45;
-      pointer-events: none;
-    }
-
-    .season.unseen .season-title { color: var(--muted); }
-    .season.unseen .accent-bar { background: var(--border) !important; }
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    <h2>Oliver Beeby</h2>
-    <a href="#" onclick="openTab('home')">Home</a>
-    <a href="#" onclick="openTab('survivor')">Survivor</a>
 
-  </div>
+  <div id="nav-root"></div>
 
   <div class="content">
+    <h1>Hello.</h1>
+    <p>How's it going.</p>
+    
 
-    <div id="home" class="tab active">
-      <h1>Welcome</h1>
-      <p>I'm Oliver, a Physics student at Oxford University.</p>
-    </div>
-
-    <div id="project1" class="tab">
-      <h1>Project 1</h1>
-      <p>Description of project 1 goes here.</p>
-    </div>
-
-    <div id="project2" class="tab">
-      <h1>Project 2</h1>
-      <p>Coming soon.</p>
-    </div>
-
-    <div id="about" class="tab">
-      <h1>About Me</h1>
-      <p>TBC</p>
-    </div>
-
-    <!-- ── Survivor Tab ── -->
-    <div id="survivor" class="tab">
-      <div class="sv-header">
-        <h1>Survivor</h1>
-        <p>Watch log &amp; ratings</p>
-        <div class="progress-bar-wrap">
-          <div class="progress-bar-track">
-            <div class="progress-bar-fill" id="progress-fill"></div>
-          </div>
-          <div class="progress-label" id="progress-label"></div>
+    <div class="page-links">
+      <a href="survivor.html" class="page-link-card">
+        <div>
+          <div class="page-link-label">Survivor</div>
+          <div class="page-link-desc">Watch log &amp; ratings for all 49 seasons</div>
         </div>
-      </div>
-
-      <div class="sv-controls">
-        <span>Sort by</span>
-        <button class="sort-btn active" data-sort="number">Season #</button>
-        <button class="sort-btn" data-sort="score">Score</button>
-      </div>
-
-      <div class="seasons-list" id="seasons-list"></div>
+        <div class="page-link-arrow">→</div>
+      </a>
+      <!-- MORE TO COME! -->
     </div>
+  </div>
 
-  </div><!-- end .content -->
-
-  <script>
-    // ── Tab switching ──
-    function openTab(tabId) {
-      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-    }
-
-    // ─────────────────────────────────────────
-    //  SURVIVOR DATA
-    // ─────────────────────────────────────────
-    const seasons = [
-      {
-        number: 1,
-        name: "Borneo",
-        year: 2000,
-        episodes: 13,
-        score: 2,
-        winner: "Richard Hatch",
-        favourite: "Richard, Susan, Greg",
-        thoughts: "Hardly any semblance of strategy, but we all have to start somewhere. Aside from novelty, the only real highlights are beef between Susan and Kelly, and Richard, who seems to be the only one to be treating this as some kind of strategic game.",
-        color: "#c8845a"
-      },
-      {
-        number: 2,
-        name: "The Australian Outback",
-        year: 2001,
-        episodes: 14,
-        score: 4,
-        winner: "Tina Wesson",
-        favourite: "Jerri, Colby, Jeff",
-        thoughts: "Jerri's sheer annoyingness was the only thing preventing this from being a boring Ogakor domination post-merge. Which is iconic. That said, alliances otherwise felt quite predictable, leading to a relatively stagnant late-game.",
-        color: "#7a9e7e"
-      },
-      {
-        number: 3,
-        name: "Africa",
-        year: 2001,
-        episodes: 14,
-        score: 5,
-        winner: "Ethan Zohn",
-        favourite: "Brandon, Linda, Silas",
-        thoughts: "The first tribe swap of the entire series makes for a really dynamic mid-game (it helps that the original Samburu are all lunatics) but ultimately the most boring characters gain a comfortable majority fairly early.",
-        color: "#c4a35a"
-      },
-      {
-        number: 4,
-        name: "Marquesas",
-        year: 2002,
-        episodes: 14,
-        score: 6,
-        winner: "Vecepia Towery",
-        favourite: "Rob M, Sean, Kathy",
-        thoughts: "Felt like the most fluid and dynamic game so far! The main characters were all very likeable or at least interesting throughout the entire season, whether that's Boston Rob and John nearer the start or Vecepia and Sean towards the end. I was very happy (and surprised) by the winner!",
-        color: "#8a7fa0"
-      },
-      {
-        number: 5,
-        name: "Thailand",
-        year: 2002,
-        episodes: 14,
-        score: 3,
-        winner: "Brian Heidik",
-        favourite: "Shii Ann, Ken, Ghandia",
-        thoughts: "Almost devoid of actual strategy and a main cast of extremely unlikeable characters. Brian the Slimeball, Ted the Pervert, Helen the Pick-Me, Clay the Redneck... GET ME OUTTA HERE. The mid-season twist was an interesting concept but led to the utter destruction of every likeable character.",
-        color: "#7a9eb8"
-      },
-      {
-        number: 6,
-        name: "The Amazon",
-        year: 2003,
-        episodes: 14,
-        score: 8,
-        winner: "Jenna Morasca",
-        favourite: "Rob, Deena, Christy",
-        thoughts: "Bizarre naughties misogyny aside, this felt pretty awesome. A slightly slow and infuriating pre-tribe-swap game gives way to a twisty and dynamic latter half of the season, all directed by our robbed MVP, easily my favourite character on survivor so far. The rest of the main cast is great too, even the plastics, Jenna and Heidi, who I ended up really enjoying.",
-        color: "#6b9e6b"
-      },
-      {
-        number: 7,
-        name: "Pearl Islands",
-        year: 2003,
-        episodes: 14,
-        score: 7,
-        winner: "Sandra Diaz-Twine",
-        favourite: "Jon, Burton, Sandra",
-        thoughts: "A really solid season - it feels like the show is really hitting its stride. The early episodes are admittedly slightly rough, but the returnee twist actually ends up dumping a bunch of dead weight and bringing the game to life. My strategic slimey gay lover favs carried the show all the way until their reward challenge hamartia... and we still end up with an iconic winner. Skinny Ryan was robbed.",
-        color: "#c07860"
-      },
-      {
-        number: 8,
-        name: "All-Stars",
-        year: 2004,
-        episodes: 18,
-        score: 3,
-        winner: "Amber Brkich",
-        favourite: "Shii Ann, Kathy, Jerri",
-        thoughts: "Disappointing. That's probably not the right word... this is kind of disastrous on every level. The season swings from uninteresting, to uncomfortable, to legitimately upsetting at times. From a gameplay perspective, this is of course Rob's season. But he felt like Batman without a Joker - surrounded by cowards, idiots, and yes-men with no one willing or even able to put up any fight. And he comes across needlessly cold and brutal. I usually love a villain but this just didn't feel good - not just because of Rob but also the (potentially excessive) reactions of those he wrongs. And I could care less about Amber too. The fact she was even cast is baffling. As much as I want to ignore it I also need to acknowledge that the way the show treats a genuine sexual assault, in the edit and live show, is really shameful. Sue was not given the respect let alone support she deserved.",
-        color: "#888"
-      },
-      // ── Unseen seasons ──────────────────────
-      { number: 9,  name: "Vanuatu",                  year: 2004, episodes: 14, unseen: true, color: "#8aaa80" },
-      { number: 10, name: "Palau",                    year: 2005, episodes: 14, unseen: true, color: "#5a9ab0" },
-      { number: 11, name: "Guatemala",                year: 2005, episodes: 15, unseen: true, color: "#9e8060" },
-      { number: 12, name: "Panama",                   year: 2006, episodes: 14, unseen: true, color: "#7a9070" },
-      { number: 13, name: "Cook Islands",             year: 2006, episodes: 15, unseen: true, color: "#5a9ab8" },
-      { number: 14, name: "Fiji",                     year: 2007, episodes: 15, unseen: true, color: "#90a870" },
-      { number: 15, name: "China",                    year: 2007, episodes: 15, unseen: true, color: "#c06870" },
-      { number: 16, name: "Micronesia",               year: 2008, episodes: 15, unseen: true, color: "#6888c0" },
-      { number: 17, name: "Gabon",                    year: 2008, episodes: 15, unseen: true, color: "#a08848" },
-      { number: 18, name: "Tocantins",                year: 2009, episodes: 15, unseen: true, color: "#c87850" },
-      { number: 19, name: "Samoa",                    year: 2009, episodes: 15, unseen: true, color: "#60a890" },
-      { number: 20, name: "Heroes vs. Villains",      year: 2010, episodes: 15, unseen: true, color: "#888" },
-      { number: 21, name: "Nicaragua",                year: 2010, episodes: 15, unseen: true, color: "#78b868" },
-      { number: 22, name: "Redemption Island",        year: 2011, episodes: 15, unseen: true, color: "#b86860" },
-      { number: 23, name: "South Pacific",            year: 2011, episodes: 15, unseen: true, color: "#5898c0" },
-      { number: 24, name: "One World",                year: 2012, episodes: 15, unseen: true, color: "#7098b0" },
-      { number: 25, name: "Philippines",              year: 2012, episodes: 15, unseen: true, color: "#c07848" },
-      { number: 26, name: "Caramoan",                 year: 2013, episodes: 15, unseen: true, color: "#68a888" },
-      { number: 27, name: "Blood vs. Water",          year: 2013, episodes: 14, unseen: true, color: "#8878b8" },
-      { number: 28, name: "Cagayan",                  year: 2014, episodes: 14, unseen: true, color: "#c07060" },
-      { number: 29, name: "San Juan del Sur",         year: 2014, episodes: 14, unseen: true, color: "#78a870" },
-      { number: 30, name: "Worlds Apart",             year: 2015, episodes: 15, unseen: true, color: "#6898b8" },
-      { number: 31, name: "Cambodia",                 year: 2015, episodes: 15, unseen: true, color: "#888" },
-      { number: 32, name: "Kaôh Rōng",                year: 2016, episodes: 14, unseen: true, color: "#58a898" },
-      { number: 33, name: "Millennials vs Gen X",     year: 2016, episodes: 14, unseen: true, color: "#9880b0" },
-      { number: 34, name: "Game Changers",            year: 2017, episodes: 15, unseen: true, color: "#888" },
-      { number: 35, name: "Heroes vs. Healers vs. Hustlers", year: 2017, episodes: 14, unseen: true, color: "#8898c0" },
-      { number: 36, name: "Ghost Island",             year: 2018, episodes: 14, unseen: true, color: "#7890a8" },
-      { number: 37, name: "David vs. Goliath",        year: 2018, episodes: 14, unseen: true, color: "#c08858" },
-      { number: 38, name: "Edge of Extinction",       year: 2019, episodes: 14, unseen: true, color: "#90a868" },
-      { number: 39, name: "Island of the Idols",      year: 2019, episodes: 14, unseen: true, color: "#9868a0" },
-      { number: 40, name: "Winners at War",           year: 2020, episodes: 14, unseen: true, color: "#888" },
-      { number: 41, name: "Season 41",                year: 2021, episodes: 13, unseen: true, color: "#c07060" },
-      { number: 42, name: "Season 42",                year: 2022, episodes: 13, unseen: true, color: "#5898b0" },
-      { number: 43, name: "Season 43",                year: 2022, episodes: 13, unseen: true, color: "#88a870" },
-      { number: 44, name: "Season 44",                year: 2023, episodes: 13, unseen: true, color: "#c08050" },
-      { number: 45, name: "Season 45",                year: 2023, episodes: 13, unseen: true, color: "#7878b8" },
-      { number: 46, name: "Season 46",                year: 2024, episodes: 13, unseen: true, color: "#60a880" },
-      { number: 47, name: "Season 47",                year: 2024, episodes: 13, unseen: true, color: "#a87060" },
-      { number: 48, name: "Season 48",                year: 2025, episodes: 13, unseen: true, color: "#7898b0" },
-      { number: 49, name: "Season 49",                year: 2025, episodes: 13, unseen: true, color: "#7898b0" }
-    ];
-
-    // ─────────────────────────────────────────
-    //  SURVIVOR RENDER
-    // ─────────────────────────────────────────
-    const watched = seasons.filter(s => !s.unseen);
-    const unseen  = seasons.filter(s =>  s.unseen);
-
-    const pct = Math.round((watched.length / seasons.length) * 100);
-    document.getElementById('progress-fill').style.width = pct + '%';
-    document.getElementById('progress-label').textContent = `${watched.length} of ${seasons.length} seasons`;
-
-    let currentSort = 'number';
-
-    function buildSeasonEl(s) {
-      const el = document.createElement('div');
-      el.className = 'season' + (s.unseen ? ' unseen' : '');
-      el.dataset.number = s.number;
-      el.dataset.score  = s.score || 0;
-
-      const scoreDisplay = s.unseen
-        ? '—'
-        : `${s.score}<span> /10</span>`;
-
-      el.innerHTML = `
-        <div class="season-header">
-          <div class="accent-bar" style="background:${s.color}"></div>
-          <div class="season-meta">
-            <div class="season-title">S${String(s.number).padStart(2,'0')} · ${s.name}</div>
-            <div class="season-sub">${s.year} · ${s.episodes} episodes</div>
-          </div>
-          <div class="season-score">${scoreDisplay}</div>
-          ${!s.unseen ? `<div class="chevron"><svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>` : ''}
-        </div>
-        ${!s.unseen ? `
-        <div class="season-body">
-          <div class="season-body-inner">
-            <div class="season-details">
-              <div class="detail-block">
-                <div class="detail-label">Winner</div>
-                <div class="detail-value">
-                  <span class="spoiler-text" title="Click to reveal">${s.winner}</span>
-                  <span class="spoiler-hint">click to reveal</span>
-                </div>
-              </div>
-              <div class="detail-block">
-                <div class="detail-label">Top 3 Characters</div>
-                <div class="detail-value">${s.favourite}</div>
-              </div>
-              <div class="detail-block full">
-                <div class="detail-label">Thoughts</div>
-                <div class="detail-value">${s.thoughts}</div>
-              </div>
-            </div>
-          </div>
-        </div>` : ''}
-      `;
-
-      if (!s.unseen) {
-        const header  = el.querySelector('.season-header');
-        const spoiler = el.querySelector('.spoiler-text');
-        const hint    = el.querySelector('.spoiler-hint');
-
-        header.addEventListener('click', () => el.classList.toggle('open'));
-
-        spoiler.addEventListener('click', e => {
-          e.stopPropagation();
-          spoiler.classList.toggle('revealed');
-          hint.textContent = spoiler.classList.contains('revealed') ? '' : 'click to reveal';
-        });
-      }
-
-      return el;
-    }
-
-    function renderList() {
-      const list = document.getElementById('seasons-list');
-      list.innerHTML = '';
-
-      const sortedWatched = [...watched].sort((a, b) =>
-        currentSort === 'score' ? b.score - a.score : a.number - b.number
-      );
-
-      const watchedLabel = document.createElement('div');
-      watchedLabel.className = 'section-label';
-      watchedLabel.textContent = 'Watched';
-      list.appendChild(watchedLabel);
-      sortedWatched.forEach(s => list.appendChild(buildSeasonEl(s)));
-
-      const unseenLabel = document.createElement('div');
-      unseenLabel.className = 'section-label';
-      unseenLabel.textContent = 'Up next';
-      list.appendChild(unseenLabel);
-      unseen.forEach(s => list.appendChild(buildSeasonEl(s)));
-    }
-
-    document.querySelectorAll('.sort-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentSort = btn.dataset.sort;
-        renderList();
-      });
-    });
-
-    renderList();
-  </script>
+  <script src="nav.js"></script>
 </body>
 </html>
