@@ -80,7 +80,7 @@
     </style>
     <nav class="ob-sidebar">
       <p class="ob-sidebar-name">Oliver Beeby</p>
-      <p class="ob-sidebar-sub">Physics · Oxford</p>
+      <p class="ob-sidebar-sub">Howdy</p>
       <div class="ob-nav-links">
         ${links.map(l => `
           <a href="${l.href}"
