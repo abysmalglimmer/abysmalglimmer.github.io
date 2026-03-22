@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cast Directory · Oliver Beeby</title>
+  <title>Survivor Characters · Oliver Beeby</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel+Decorative:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+  font-family: 'Block Berthold';
+  src: url('fonts/BlockBE-Heavy.woff2') format('woff2'),
+       url('fonts/BlockBE-Heavy.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -55,7 +63,7 @@
       color: var(--accent); font-weight: 600; margin-bottom: 12px;
     }
     .sv-hero h1 {
-      font-family: 'Cinzel Decorative', serif;
+      font-family: 'Block Berthold', serif;
       font-size: clamp(1.8rem, 5vw, 3rem);
       font-weight: 700; line-height: 0.95; color: #fff;
     }
@@ -85,16 +93,16 @@
     .accent-bar { width: 5px; height: 42px; border-radius: 1px; flex-shrink: 0; }
     .season-meta { flex: 1; min-width: 0; }
     .season-num {
-      font-family: 'Bebas Neue', sans-serif; font-size: 0.7rem;
+      font-family: 'Block Berthold', sans-serif; font-size: 0.7rem;
       letter-spacing: 0.16em; color: var(--muted); margin-bottom: 3px;
     }
     .season-title {
-      font-family: 'Bebas Neue', sans-serif; font-size: 1.28rem;
+      font-family: 'Block Berthold', sans-serif; font-size: 1.28rem;
       letter-spacing: 0.04em; line-height: 1; color: var(--text);
     }
     .season-sub { font-size: 0.72rem; color: var(--muted); margin-top: 3px; font-weight: 300; }
     .allstar-badge {
-      font-family: 'Bebas Neue', sans-serif; font-size: 0.6rem;
+      font-family: 'Block Berthold', sans-serif; font-size: 0.6rem;
       letter-spacing: 0.12em; background: #f0eaf8; color: #7c5fa8;
       padding: 2px 7px; border-radius: 2px; margin-left: 8px; vertical-align: middle; display: inline-block;
     }
@@ -129,7 +137,7 @@
       width: 14px; flex-shrink: 0; text-align: center;
     }
     .cast-placement {
-      font-family: 'Bebas Neue', sans-serif; font-size: 0.78rem;
+      font-family: 'Block Berthold', sans-serif; font-size: 0.78rem;
       letter-spacing: 0.06em; color: var(--muted); width: 34px; flex-shrink: 0;
     }
     .cast-name {
@@ -145,7 +153,7 @@
       font-size: 0.68rem; color: var(--muted); font-style: italic; font-weight: 300;
     }
     .cast-status {
-      font-family: 'Bebas Neue', sans-serif; font-size: 0.72rem;
+      font-family: 'Block Berthold', sans-serif; font-size: 0.72rem;
       letter-spacing: 0.1em; padding: 3px 8px; border-radius: 2px; flex-shrink: 0;
     }
     .cast-status.winner  { background: #fdf0c8; color: #7a5808; }
@@ -156,7 +164,7 @@
     #view-contestant { display: none; padding-bottom: 80px; }
 
     .c-hero-name {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Block Berthold', sans-serif;
       font-size: clamp(2rem, 7vw, 3.8rem);
       letter-spacing: 0.03em; line-height: 0.95; color: #fff;
       margin-top: 10px;
@@ -168,7 +176,7 @@
     .back-btn {
       background: none; border: 1px solid rgba(255,255,255,0.2);
       border-radius: 2px; padding: 6px 14px;
-      font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem;
+      font-family: 'Block Berthold', sans-serif; font-size: 0.85rem;
       letter-spacing: 0.1em; cursor: pointer; color: rgba(255,255,255,0.55);
       transition: all 0.15s; display: inline-block;
     }
@@ -183,7 +191,7 @@
     }
 
     .c-section-label {
-      font-family: 'Bebas Neue', sans-serif; font-size: 1rem;
+      font-family: 'Block Berthold', sans-serif; font-size: 1rem;
       letter-spacing: 0.14em; color: var(--muted); margin-bottom: 14px;
     }
 
@@ -201,17 +209,17 @@
     .c-season-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
 
     .c-sc-num {
-      font-family: 'Bebas Neue', sans-serif; font-size: 0.68rem;
+      font-family: 'Block Berthold', sans-serif; font-size: 0.68rem;
       letter-spacing: 0.16em; color: var(--muted); margin-bottom: 2px;
     }
     .c-sc-name {
-      font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem;
+      font-family: 'Block Berthold', sans-serif; font-size: 1.05rem;
       letter-spacing: 0.04em; line-height: 1.1; color: var(--text); margin-bottom: 10px;
     }
     .c-sc-placement { font-size: 0.85rem; font-weight: 500; color: var(--text); }
 
     .c-sc-status {
-      font-family: 'Bebas Neue', sans-serif; font-size: 0.72rem;
+      font-family: 'Block Berthold', sans-serif; font-size: 0.72rem;
       letter-spacing: 0.1em; padding: 3px 8px; border-radius: 2px;
       display: inline-block; margin-top: 6px;
     }
@@ -247,7 +255,7 @@
       <div class="sv-hero">
         <div class="sv-hero-inner">
           <div class="sv-eyebrow">Seasons 1 – 8</div>
-          <h1>Cast<br>Directory</h1>
+          <h1>Character<br>Directory</h1>
           <p class="sv-hero-sub">Every contestant · boot order · cross-season history</p>
         </div>
       </div>
