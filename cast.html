@@ -263,9 +263,10 @@
       </div>
  
       <div class="cast-legend" style="margin-top:20px">
-        <div class="legend-item"><span class="legend-pip" style="color:var(--accent)">★</span> Your top 3</div>
-        <div class="legend-item"><span class="cast-status winner" style="font-size:0.62rem;padding:2px 6px">Winner</span></div>
-        <div class="legend-item"><span class="cast-status jury" style="font-size:0.62rem;padding:2px 6px">Jury</span></div>
+        <div class="legend-item"><span class="legend-pip" style="color:var(--accent)">★</span> My top 3</div>
+        <div class="legend-item"><span class="cast-status winner" style="font-size:0.62rem;padding:2px 6px">WINNER</span></div>
+        <div class="legend-item"><span class="cast-status runnerup" style="font-size:0.62rem;padding:2px 6px">RUNNER-UP</span></div>
+        <div class="legend-item"><span class="cast-status jury" style="font-size:0.62rem;padding:2px 6px">JURY</span></div>
         <div class="legend-item"><span style="font-size:0.75rem;color:var(--muted)">●</span> Multi-season player</div>
       </div>
  
@@ -308,10 +309,10 @@
     }
  
     function statusInfo(placement, jury) {
-      if (placement === 1)              return { label: 'Winner',    cls: 'winner'   };
-      if (placement === 2 && !jury)     return { label: 'Runner-up', cls: 'runnerup' };
-      if (placement === 3 && !jury)     return { label: 'Runner-up', cls: 'runnerup' };
-      if (jury)                         return { label: 'Jury',      cls: 'jury'     };
+      if (placement === 1)              return { label: 'WINNER',    cls: 'winner'   };
+      if (placement === 2 && !jury)     return { label: 'RUNNER-UP', cls: 'runnerup' };
+      if (placement === 3 && !jury)     return { label: 'RUNNER-UP', cls: 'runnerup' };
+      if (jury)                         return { label: 'JURY',      cls: 'jury'     };
       return                                   { label: '—',         cls: 'prejury'  };
     }
  
