@@ -256,7 +256,7 @@
     <div id="view-seasons">
       <div class="sv-hero">
         <div class="sv-hero-inner">
-          <div class="sv-eyebrow">Seasons 1 – 8</div>
+          <div class="sv-eyebrow">Up to Season 8</div>
           <h1>Cast<br>Directory</h1>
           <p class="sv-hero-sub">Every contestant · boot order · cross-season history</p>
         </div>
@@ -418,7 +418,7 @@
       const seasonWord = appearances.length === 1 ? 'season' : 'seasons';
  
       document.getElementById('c-name').textContent  = c.name;
-      document.getElementById('c-meta').textContent  = `${appearances.length} ${seasonWord} · S1–S8`;
+      document.getElementById('c-meta').textContent  = `${appearances.length} ${seasonWord} so far`;
       document.getElementById('c-bio').textContent   = c.bio || '';
  
       const grid = document.getElementById('c-seasons-grid');
