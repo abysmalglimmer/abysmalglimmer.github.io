@@ -113,22 +113,22 @@ window.CastData = {
     "ryan-aiken":           { name: "Ryan Aiken",                    bio: "" },
 
     // ── S7 Pearl Islands ──────────────────────────────────────────────
-    "sandra-diaz-twine":  { name: "Sandra Diaz-Twine",               bio: "" },
-    "lillian-morris":     { name: "Lillian Morris",                  bio: "" },
-    "jon-dalton":         { name: "Jon Dalton",                      bio: "AKA Johnny Fairplay! I love him." },
+    "sandra-diaz-twine":  { name: "Sandra Diaz-Twine",               bio: "Although she does stumble into victory, Sandra is extremely likeable. I was won over when she discussed her plan to hide all of the survival equipment when she felt her time was near! The Pearl Islands episode 1 gimmick is thoroughly ruined by the fact she is an hispanohablante (which leads to great suffering for the Morgan tribe) but it's nice to see some latino representation!" },
+    "lillian-morris":     { name: "Lillian Morris",                  bio: "I did enjoy her and her friendship with Skinny Ryan, though the whole conscientious scout leader bit did get quite old." },
+    "jon-dalton":         { name: "Jon Dalton",                      bio: "AKA Johnny Fairplay! I love him. A pure unfettered villain - but never comes across as mean-spirited." },
     "darrah-johnson":     { name: "Darrah Johnson",                  bio: "" },
-    "burton-roberts":     { name: "Burton Roberts",                  bio: "" },
+    "burton-roberts":     { name: "Burton Roberts",                  bio: "This man is so good-looking... wow. I enjoyed his bromance with Johnny Fairplay and his special relationship with Lillian. Ultimately, it was also satisfying seeing him receive his comeuppance for underestimating the girls and taking Lillian for granted." },
     "christa-hastie":     { name: "Christa Hastie",                  bio: "" },
-    "rupert-boneham":     { name: "Rupert Boneham",                  bio: "" },
+    "rupert-boneham":     { name: "Rupert Boneham",                  bio: "A real character! Seemingly, he loves and excels at fishing with a spear. The way he lost his temper at Johnny Fairplay was shocking and uncomfortable and somewhat soured me on him and his whole nice guy shtick. He isn't much of a strategist either, which is fine in Pearl Islands but really contributes in dragging down All-Stars." },
     "tijuana-bradley":    { name: "Tijuana Bradley",                 bio: "" },
     "andrew-savage":      { name: "Andrew Savage",                   bio: "The first person (that I noticed) to get referred to by their surname by Jeff Probst during challenges." },
     "osten-taylor":       { name: "Osten Taylor",                    bio: "The first (explicit) quitter." },
     "trish-dunn":         { name: "Trish Dunn",                      bio: "" },
-    "shawn-cohen":        { name: "Shawn Cohen",                     bio: "" },
-    "michelle-tesauro":   { name: "Michelle Tesauro",                bio: "" },
+    "shawn-cohen":        { name: "Shawn Cohen",                     bio: "Part of the mean girl Drake clique." },
+    "michelle-tesauro":   { name: "Michelle Tesauro",                bio: "Part of the mean girl Drake clique." },
     "ryan-opray":         { name: "Ryan Opray",                      bio: "" },
-    "nicole-delma":       { name: "Nicole Delma",                    bio: "" },
-    "ryan-shoulders":     { name: "Ryan Shoulders",                  bio: "I immediately thought he might win; I'm not sure why. I really liked his energy." },
+    "nicole-delma":       { name: "Nicole Delma",                    bio: "Fabulous dress." },
+    "ryan-shoulders":     { name: "Ryan Shoulders",                  bio: "AKA Skinny Ryan. I immediately thought he might win; I'm not sure why. I really liked his energy." },
 
     // ── S8 All-Stars ─────────────────────────────────────────────────
     // (all contestants already defined above — no new entries needed)
