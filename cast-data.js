@@ -147,7 +147,7 @@ window.CastData = {
         { id: "colleen-haskell",   placement: 6,  jury: true, starting_tribe: "pagong"  },
         { id: "gervase-peterson",  placement: 7,  jury: true, starting_tribe: "pagong"  },
         { id: "jenna-lewis",       placement: 8,  jury: true, starting_tribe: "pagong" },
-        { id: "greg-buis",         placement: 9,  jury: false, starting_tribe: "pagong" },
+        { id: "greg-buis",         placement: 9,  jury: true, starting_tribe: "pagong" },
         { id: "gretchen-cordy",    placement: 10, jury: false, starting_tribe: "pagong" },
         { id: "joel-klug",         placement: 11, jury: false, starting_tribe: "pagong" },
         { id: "dirk-been",         placement: 12, jury: false, starting_tribe: "tagi" },
