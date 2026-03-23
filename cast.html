@@ -425,7 +425,7 @@
       grid.innerHTML = appearances.map(({ season, entry, isFav }) => {
         const { label, cls } = statusInfo(entry.placement, entry.jury);
         const allstarHtml = season.allstar
-          ? `<span class="allstar-badge" style="margin-left:0;margin-top:4px;display:inline-block">All-Stars</span>` : '';
+          ? `<span class="allstar-badge" style="margin-left:0;margin-top:4px;display:inline-block">RETURNEES</span>` : '';
         const noteHtml = entry.note
           ? `<div class="c-sc-note">${entry.note}</div>` : '';
         const favHtml = isFav
