@@ -112,6 +112,8 @@ window.CastData = {
     "daniel-lue":           { name: "Daniel Lue",                    bio: "" },
     "ryan-aiken":           { name: "Ryan Aiken",                    bio: "" },
 
+    
+
     // ── S7 Pearl Islands ──────────────────────────────────────────────
     "sandra-diaz-twine":  { name: "Sandra Diaz-Twine",               bio: "Although she does stumble into victory, Sandra is extremely likeable. I was won over when she discussed her plan to hide all of the survival equipment when she felt her time was near! The Pearl Islands episode 1 gimmick is thoroughly ruined by the fact she is an hispanohablante (which leads to great suffering for the Morgan tribe) but it's nice to see some latino representation!" },
     "lillian-morris":     { name: "Lillian Morris",                  bio: "I did enjoy her and her friendship with Skinny Ryan, though the whole conscientious scout leader bit did get quite old." },
@@ -130,8 +132,27 @@ window.CastData = {
     "nicole-delma":       { name: "Nicole Delma",                    bio: "Fabulous dress." },
     "ryan-shoulders":     { name: "Ryan Shoulders",                  bio: "AKA Skinny Ryan. I immediately thought he might win; I'm not sure why. I really liked his energy." },
 
-    // ── S8 All-Stars ─────────────────────────────────────────────────
-    // (all contestants already defined above — no new entries needed)
+    // ── S9 Vanuatu ─────────────────────────────────────────────────
+
+    "brook-geraghty":     { name: "Brook Geraghty",                  bio: "AKA Skinny Ryan. I immediately thought he might win; I'm not sure why. I really liked his energy." },
+    "dolly-neely":     { name: "Dolly Neely",                  bio: "She tried to play with both the olds and the youngs and ended up getting voted out for it." },
+    "john-palyok":     { name: "John Palyok",                  bio: "AKA JP." },
+    "mia-galeotalanza":     { name: "Mia Galeotalanza",                  bio: "She was part of an iconic shouting match with Twila." },
+    "brady-finta":     { name: "Brady Finta",                  bio: "He climbed the pole in the first episode to get the rock down." },
+    "travis-simpson":     { name: "Travis Simpson",                  bio: "AKA Bubba." },
+    "lisa-keiffer":    { name: "Lisa Keiffer",                 bio: "No shade, but why was this woman part of the young-people alliance."},
+    "john-kenney":     { name: "John Kenney",                  bio: "" },
+    "rory-freeman":     { name: "Rory Freeman",                  bio: "" },
+    "lea-masters":     { name: "Lea Masters",                  bio: "AKA Sarge." },
+    "chad-crittenden":     { name: "Chad Crittenden",                  bio: "He uses a prosthetic leg." },
+    "leann-slaby":     { name: "Leann Slaby",                  bio: "" },
+    "ami-cusack":     { name: "Ami Cusack",                  bio: "She struck me as very smart, but perhaps not smart enough to lay low a little more than she did." },
+    "julie-berry":     { name: "Julie Berry",                  bio: "" },
+    "eliza-orlins":     { name: "Eliza Orlins",                  bio: "She is easily my favourite character from Vanuatu. From her episode 2 gambit where she manages to co-ordinate a blindside on Dolly to her expression as she walks out of tribal council is just one iconic line and facial expression after another." },
+    "scout-cloud-lee", {name: "Scout Cloud Lee",               bio: "Adorable lesbian granny. She was sweet."},
+    "twila-tanner":     { name: "Twila Tanner",                  bio: "She comes across as a deeply unlikeable diva... but I kind of love her for that. Her open hatred for the younger women, especially Eliza, fuels most of Vanuatu." },
+    "chris-daughtery":     { name: "Chris Daughtery",                  bio: "He played very hard, and succeeded in disrupting an all-women alliance when there were six left. There were perhaps a few unnecessary lies and emotional manipulations happening - but his strategy worked flawlessly (bringing the deeply unlikeable Twila into the final two). His performance at final tribal council was remarkably convincing." },
+    
   },
 
   seasons: [
@@ -310,6 +331,30 @@ window.CastData = {
         { id: "jenna-morasca",       placement: 16, jury: false, note: "quit"  },
         { id: "rudy-boesch",          placement: 17, jury: false },
         { id: "tina-wesson",          placement: 18, jury: false },
+      ]
+    },
+  {
+      number: 9, name: "Vanuatu", year: 2004, color: "#8aaa80", allstar: false,
+      favourites: ["eliza-orlins", "ami-cusack", "twila-tanner"],
+      cast: [
+        { id: "chris-daughtery",         placement: 1,  jury: false },
+        { id: "twila-tanner",          placement: 2,  jury: false  },
+        { id: "scout-cloud-lee",          placement: 3,  jury: true  },
+        { id: "eliza-orlins",       placement: 4,  jury: true  },
+        { id: "julie-berry",       placement: 5,  jury: true  },
+        { id: "ami-cusack",         placement: 6,  jury: true  },
+        { id: "leann-slaby",       placement: 7,  jury: true  },
+        { id: "chad-crittenden", placement: 8,  jury: true  },
+        { id: "lea-masters",   placement: 9,  jury: true  },
+        { id: "rory-freeman",        placement: 10, jury: false },
+        { id: "john-kenney",      placement: 11, jury: false },
+        { id: "lisa-keiffer",           placement: 12, jury: false },
+        { id: "travis-simpson",        placement: 13, jury: false },
+        { id: "brady-finta",           placement: 14, jury: false},
+        { id: "mia-galeotalanza",        placement: 15, jury: false},
+        { id: "john-palyok",       placement: 16, jury: false },
+        { id: "dolly-neely",          placement: 17, jury: false },
+        { id: "brook-geraghty",          placement: 18, jury: false },
       ]
     },
   ]
