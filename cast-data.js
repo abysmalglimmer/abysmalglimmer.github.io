@@ -134,7 +134,7 @@ window.CastData = {
 
     // ── S9 Vanuatu ─────────────────────────────────────────────────
 
-    "brook-geraghty":     { name: "Brook Geraghty",                  bio: "AKA Skinny Ryan. I immediately thought he might win; I'm not sure why. I really liked his energy." },
+    "brook-geraghty":     { name: "Brook Geraghty",                  bio: "" },
     "dolly-neely":     { name: "Dolly Neely",                  bio: "She tried to play with both the olds and the youngs and ended up getting voted out for it." },
     "john-palyok":     { name: "John Palyok",                  bio: "AKA JP." },
     "mia-galeotalanza":     { name: "Mia Galeotalanza",                  bio: "She was part of an iconic shouting match with Twila." },
@@ -149,7 +149,7 @@ window.CastData = {
     "ami-cusack":     { name: "Ami Cusack",                  bio: "She struck me as very smart, but perhaps not smart enough to lay low a little more than she did." },
     "julie-berry":     { name: "Julie Berry",                  bio: "" },
     "eliza-orlins":     { name: "Eliza Orlins",                  bio: "She is easily my favourite character from Vanuatu. From her episode 2 gambit where she manages to co-ordinate a blindside on Dolly to her expression as she walks out of tribal council is just one iconic line and facial expression after another." },
-    "scout-cloud-lee", {name: "Scout Cloud Lee",               bio: "Adorable lesbian granny. She was sweet."},
+    "scout-cloud-lee": {name: "Scout Cloud Lee",               bio: "Adorable lesbian granny. She was sweet."},
     "twila-tanner":     { name: "Twila Tanner",                  bio: "She comes across as a deeply unlikeable diva... but I kind of love her for that. Her open hatred for the younger women, especially Eliza, fuels most of Vanuatu." },
     "chris-daughtery":     { name: "Chris Daughtery",                  bio: "He played very hard, and succeeded in disrupting an all-women alliance when there were six left. There were perhaps a few unnecessary lies and emotional manipulations happening - but his strategy worked flawlessly (bringing the deeply unlikeable Twila into the final two). His performance at final tribal council was remarkably convincing." },
     
