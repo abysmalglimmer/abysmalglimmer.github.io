@@ -152,8 +152,30 @@ window.CastData = {
     "scout-cloud-lee": {name: "Scout Cloud Lee",               bio: "Adorable lesbian granny. She was sweet."},
     "twila-tanner":     { name: "Twila Tanner",                  bio: "She comes across as a deeply unlikeable diva... but I kind of love her for that. Her open hatred for the younger women, especially Eliza, fuels most of Vanuatu." },
     "chris-daughtery":     { name: "Chris Daughtery",                  bio: "He played very hard, and succeeded in disrupting an all-women alliance when there were six left. There were perhaps a few unnecessary lies and emotional manipulations happening - but his strategy worked flawlessly (bringing the deeply unlikeable Twila into the final two). His performance at final tribal council was remarkably convincing." },
-    
-  },
+
+
+    // ── S10 Palau ──────────────────────────────────────────────────────
+    "tom-westman":      { name: "Tom Westman",      bio: "Probably just the edit, but he's pretty much a real-life super-hero. Ferociously strong in challenges, kind to everyone, a game player and leader but not a liar... all quite unique qualitites amongst winners." },
+    "katie-gallagher":  { name: "Katie Gallagher",  bio: "Despite the best efforts of the edit, I do think she was a little bit of a mean girl." },
+    "ian-rosenberger":  { name: "Ian Rosenberger",  bio: "He's so tall and thin... I thought he would blow away! His decision after twelve hours (!!) to step down from the immunity challenge is kind of baffling, but he was smart and caused much of the drama, despite being genuinely well-intentioned and kind-heartened." },
+    "jenn-lyon":        { name: "Jenn Lyon",         bio: "She was nowhere to be found in the edit for much of the season. Which is a shame, because from what we saw of her she seemed smart and funny." },
+    "caryn-groedel":    { name: "Caryn Groedel",    bio: "An icon! Her posture is so terrible! Her crash-outs were some of the highlights of the season. I feel a bit bad for her though - there was definitely a cliquey undercurrent to this season, and Tom sort of lead her on the most. I resent that she ratted out the women's alliance earlier on in the game, though I don't think that was actually going anywhere to be fair." },
+    "gregg-carey":      { name: "Gregg Carey",       bio: "" },
+    "stephenie-lagrossa": { name: "Stephenie LaGrossa", bio: "Poor Stephenie! The first (and perhaps only...?) tribe of one! It's a real shame she wasn't able to stir much up at Koror." },
+    "coby-archa":       { name: "Coby Archa",        bio: "Another chaotic gay guy! I love this developing Survivor trope. I would have loved to see more from him, but he fell victim to not being one of the clique 5. Disappointing." },
+    "janu-tornell":     { name: "Janu Tornell",      bio: "Okay so she genuinely did seem like an odd woman. But I loved her chaotic, frantic energy - and how she finds release by being separated from her bullies." },
+    "bobby-jon-drinkard": { name: "Bobby Jon Drinkard", bio: "" },
+    "james-miller":     { name: "James Miller",      bio: "" },
+    "ibrehem-rahman":   { name: "Ibrehem Rahman",    bio: "He was muslim. I wonder if they told him which direction Mecca was in." },
+    "willard-smith":    { name: "Willard Smith",     bio: "" },
+    "angie-jakusz":     { name: "Angie Jakusz",      bio: "Alt girl who turned out to be strong. She had some kind of story set up with Coby in episode one and then that didn't go anywhere... weird." },
+    "jeff-wilson":      { name: "Jeff Wilson",       bio: "He twisted his ankle and requests to be voted off. Jeff (Probst) gave him grief for it at the reunion, but it seemed necessary. All the challenges involve running around and swimming and climbing... surely you know this Jeff." },
+    "kim-mullen":       { name: "Kim Mullen",        bio: "She had a fling with Jeff" },
+    "ashlee-ashby":     { name: "Ashlee Ashby",      bio: "Voted out for being lazy." },
+    "jolanda-jones":    { name: "Jolanda Jones",     bio: "" },
+    "wanda-shirk":      { name: "Wanda Shirk",       bio: "She was eliminated before the game even started. A cruel twist!" },
+    "jonathan-libby":   { name: "Jonathan Libby",   bio: "He was eliminated before the game even started, punished for (alongside Stephenie) being one of the first to jump off the boat. A cruel twist!" },
+      },
 
   seasons: [
     {
@@ -357,5 +379,31 @@ window.CastData = {
         { id: "brook-geraghty",          placement: 18, jury: false },
       ]
     },
+    {
+      number: 10, name: "Palau", year: 2005, color: "#5a9ab0", allstar: false,
+      favourites: ["tom-westman", "caryn-groedel", "coby-acha"],
+      cast: [
+        { id: "tom-westman",        placement: 1,  jury: false, starting_tribe: "Koror" },
+        { id: "katie-gallagher",    placement: 2,  jury: false, starting_tribe: "Koror" },
+        { id: "ian-rosenberger",    placement: 3,  jury: true,  starting_tribe: "Koror" },
+        { id: "jenn-lyon",          placement: 4,  jury: true,  starting_tribe: "Koror" },
+        { id: "caryn-groedel",      placement: 5,  jury: true,  starting_tribe: "Koror" },
+        { id: "gregg-carey",        placement: 6,  jury: true,  starting_tribe: "Koror" },
+        { id: "stephenie-lagrossa", placement: 7,  jury: true,  starting_tribe: "Ulong" },
+        { id: "janu-tornell",       placement: 8,  jury: true,  starting_tribe: "Koror", note: "quit" },
+        { id: "coby-archa",         placement: 9,  jury: true,  starting_tribe: "Koror" },
+        { id: "bobby-jon-drinkard", placement: 10, jury: false, starting_tribe: "Ulong" },
+        { id: "ibrehem-rahman",      placement: 11, jury: false, starting_tribe: "Koror" },
+        { id: "james-miller",     placement: 12, jury: false, starting_tribe: "Ulong" },
+        { id: "angie-jakusz",       placement: 13, jury: false, starting_tribe: "Ulong" },
+        { id: "willard-smith",       placement: 14, jury: false, starting_tribe: "Ulong" },
+        { id: "kim-mullen",         placement: 15, jury: false, starting_tribe: "Ulong" },
+        { id: "jeff-wilson",        placement: 16, jury: false, starting_tribe: "Ulong", note: "quit from injury" },
+        { id: "ashlee-ashby",       placement: 17, jury: false, starting_tribe: "Ulong" },
+        { id: "jolanda-jones",      placement: 18, jury: false, starting_tribe: "Ulong" },
+        { id: "wanda-shirk",        placement: 19, jury: false, note: "not picked in tribe selection" },
+        { id: "jonathan-libby",     placement: 20, jury: false, note: "not picked in tribe selection" },
+  ]
+},
   ]
 };
