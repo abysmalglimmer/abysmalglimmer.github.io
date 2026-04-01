@@ -93,6 +93,7 @@ window.CastData = {
     "jed-hildebrand":     { name: "Jed Hildebrand",                  bio: "" },
     "john-raymond":       { name: "John Raymond",                    bio: "" },
     "tanya-vance":        { name: "Tanya Vance",                     bio: "" },
+    "erin-collins":        { name: "Erin Collins",                     bio: "" },
 
     // ── S6 The Amazon ─────────────────────────────────────────────────
     "jenna-morasca":        { name: "Jenna Morasca",                 bio: "" },
@@ -286,7 +287,6 @@ window.CastData = {
         { id: "jed-hildebrand",   placement: 14, jury: false },
         { id: "tanya-vance",     placement: 15, jury: false },
         { id: "john-raymond",      placement: 16, jury: false },
-        { id: "erin-collins",      placement: 16, jury: false },
       ]
     },
     {
