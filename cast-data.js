@@ -428,7 +428,7 @@ window.CastData = {
   ]
 },
     {
-      number: 11, name: "Guatemala", year: 2005, color: "#9e8060", allstar: false,
+      number: 11, name: "Guatemala", year: 2005, color: "#9e8060", allstar: true,
       favourites: ["jamie-newton", "brian-corridan", "rafe-judkins"],
       cast: [
         { id: "danni-boatwright",  placement: 1,  jury: false, starting_tribe: "Yaxha" },
