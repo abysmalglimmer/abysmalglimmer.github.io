@@ -297,7 +297,7 @@ window.CastData = {
         { id: "helen-glover",     placement: 4,  jury: true  },
         { id: "ted-rogers",       placement: 5,  jury: true  },
         { id: "jake-billingsley",     placement: 6,  jury: true  },
-        { id: "penny", placement: 7,  jury: true  },
+        { id: "penny-ramsey", placement: 7,  jury: true  },
         { id: "ken-stafford",     placement: 8,  jury: true },
         { id: "erin-collins",     placement: 9,  jury: true },
         { id: "shii-ann-huang",   placement: 10,  jury: false },
