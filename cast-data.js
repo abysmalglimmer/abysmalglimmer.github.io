@@ -176,6 +176,26 @@ window.CastData = {
     "jolanda-jones":    { name: "Jolanda Jones",     bio: "" },
     "wanda-shirk":      { name: "Wanda Shirk",       bio: "She was eliminated before the game even started. A cruel twist!" },
     "jonathan-libby":   { name: "Jonathan Libby",   bio: "He was eliminated before the game even started, punished for (alongside Stephenie) being one of the first to jump off the boat. A cruel twist!" },
+
+    // ── S11 Guatemala ──────────────────────────────────────────────────
+    "danni-boatwright":  { name: "Danni Boatwright",  bio: "" },
+    "rafe-judkins":      { name: "Rafe Judkins",       bio: "" },
+    "lydia-morales":     { name: "Lydia Morales",      bio: "" },
+    "cindy-hall":        { name: "Cindy Hall",          bio: "" },
+    "gary-hogeboom":     { name: "Gary Hogeboom",      bio: "" },
+    "judd-sergeant":     { name: "Judd Sergeant",      bio: "" },
+    "jamie-newton":      { name: "Jamie Newton",       bio: "" },
+    "brandon-bellinger": { name: "Brandon Bellinger",  bio: "" },
+    "amy-ohara":         { name: "Amy O'Hara",         bio: "" },
+    "brian-corridan":    { name: "Brian Corridan",     bio: "" },
+    "margaret-bobonich": { name: "Margaret Bobonich",  bio: "" },
+    "blake-towsley":     { name: "Blake Towsley",      bio: "" },
+    "morgan-mcdevitt":   { name: "Morgan McDevitt",    bio: "" },
+    "brooke-struck":     { name: "Brooke Struck",      bio: "" },
+    "brianna-varela":    { name: "Brianna Varela",     bio: "" },
+    "jim-lynch":         { name: "Jim Lynch",           bio: "" },
+// stephenie-lagrossa and bobby-jon-drinkard already declared in S10
+    
       },
 
   seasons: [
@@ -405,6 +425,30 @@ window.CastData = {
         { id: "jolanda-jones",      placement: 18, jury: false, starting_tribe: "Ulong" },
         { id: "wanda-shirk",        placement: 19, jury: false, note: "not picked in tribe selection" },
         { id: "jonathan-libby",     placement: 20, jury: false, note: "not picked in tribe selection" },
+  ]
+},
+    {
+      number: 11, name: "Guatemala", year: 2005, color: "#9e8060", allstar: false,
+      favourites: ["jamie-newton", "brian-corridan", "rafe-judkins"],
+      cast: [
+        { id: "danni-boatwright",  placement: 1,  jury: false, starting_tribe: "Yaxha" },
+        { id: "stephenie-lagrossa",placement: 2,  jury: false, starting_tribe: "Nakum" },
+        { id: "rafe-judkins",      placement: 3,  jury: true,  starting_tribe: "Nakum"},
+        { id: "lydia-morales",     placement: 4,  jury: true,  starting_tribe: "Yaxha" },
+        { id: "cindy-hall",        placement: 5,  jury: true,  starting_tribe: "Nakum" },
+        { id: "judd-sergeant",     placement: 6,  jury: true,  starting_tribe: "Yaxha" },
+        { id: "gary-hogeboom",     placement: 7,  jury: true,  starting_tribe: "Nakum" },
+        { id: "jamie-newton",      placement: 8,  jury: true,  starting_tribe: "Nakum" },
+        { id: "bobby-jon-drinkard",placement: 9,  jury: false, starting_tribe: "Yaxha" },
+        { id: "brandon-bellinger", placement: 10, jury: false, starting_tribe: "Nakum" },
+        { id: "amy-ohara",         placement: 11, jury: false, starting_tribe: "Yaxha" },
+        { id: "brian-corridan",    placement: 12, jury: false, starting_tribe: "Yaxha" },
+        { id: "margaret-bobonich", placement: 13, jury: false, starting_tribe: "Nakum" },
+        { id: "blake-towsley",     placement: 14, jury: false, starting_tribe: "Yaxha" },
+        { id: "brooke-struck",   placement: 15, jury: false, starting_tribe: "Yaxha" },
+        { id: "brianna-varela",     placement: 16, jury: false, starting_tribe: "Nakum" },
+        { id: "morgan-mcdevitt",    placement: 17, jury: false, starting_tribe: "Yaxha" },
+        { id: "jim-lynch",         placement: 18, jury: false, starting_tribe: "Nakum" },
   ]
 },
   ]
