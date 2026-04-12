@@ -505,7 +505,7 @@ window.CastData = {
         { id: "austin-carty",       placement: 9,  jury: true,  starting_tribe: "La Mina" },
         { id: "nick-stanbury",      placement: 10, jury: false, starting_tribe: "La Mina" },
         { id: "dan-barry",          placement: 11, jury: false, starting_tribe: "La Mina" },
-        { id: "bobby-mason",placement: 12, jury: false, starting_tribe: "Bayoneta" },
+        { id: "bobby-mason",        placement: 12, jury: false, starting_tribe: "Bayoneta" },
         { id: "ruth-marie-milliman",        placement: 13, jury: false, starting_tribe: "Viveros" },
         { id: "misty-giles",      placement: 14, jury: false, starting_tribe: "Casaya" },
         { id: "melinda-hyder",        placement: 15, jury: false, starting_tribe: "Casaya" },
