@@ -196,11 +196,11 @@ window.CastData = {
     "jim-lynch":         { name: "Jim Lynch",           bio: "" },
 
     // ── S12 Panama ─────────────────────────────────────────────────────
-    "aras-baskauskas":    { name: "Aras Baskauskas",    bio: "" },
+    "aras-baskauskas":    { name: "Aras Baskauskas",    bio: "He was somewhat of a sleeper winner in the edit - but by the end I was thoroughly impressed with him. Especially his loyalty to Cirie and his absolute abhorrence of Terry!" },
     "danielle-dilorenzo": { name: "Danielle DiLorenzo", bio: "" },
-    "terry-deitz":        { name: "Terry Deitz",         bio: "" },
-    "shane-powers":       { name: "Shane Powers",        bio: "" },
-    "cirie-fields":       { name: "Cirie Fields",         bio: "" },
+    "terry-deitz":        { name: "Terry Deitz",         bio: "He was a bit of a challenge superhero on his season, but despite being a resilient underdog did not really come off well. I wasn't rooting for him at any point. His selfishness with the idol condemned us to a more boring version of what could have been a ten/ten season." },
+    "shane-powers":       { name: "Shane Powers",        bio: "He counts as the villain of the season I suppose. And so, of course, I adore him and his neurotic, nicotine-withdrawl-fuelled ways." },
+    "cirie-fields":       { name: "Cirie Fields",         bio: "She is easily my favourite Survivor contestant of all time." },
     "courtney-marit":     { name: "Courtney Marit",      bio: "" },
     "bruce-kanegai":      { name: "Bruce Kanegai",       bio: "" },
     "sally-schumann":     { name: "Sally Schumann",      bio: "" },
