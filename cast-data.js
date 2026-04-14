@@ -1,7 +1,3 @@
-// cast-data.js
-// Add this before cast.html's script: <script src="cast-data.js"></script>
-// Data covers S01–S08 only. Placement 1 = winner, highest = first boot.
-
 window.CastData = {
 
   contestants: {
@@ -489,6 +485,7 @@ window.CastData = {
         { id: "morgan-mcdevitt",    placement: 17, jury: false, starting_tribe: "Yaxha" },
         { id: "jim-lynch",         placement: 18, jury: false, starting_tribe: "Nakum" },
   ]
+},
 
           {
       number: 12, name: "Panama", year: 2006, color: "#7a9070", allstar: false,
@@ -531,13 +528,12 @@ window.CastData = {
         { id: "flicka-smith",       placement: 13, jury: false, starting_tribe: "Rarotonga" },
         { id: "cristina-coria",        placement: 14, jury: false, starting_tribe: "Puka Puka" },
         { id: "cao-boi-bui",     placement: 15, jury: false, starting_tribe: "Manihiki" },
-        { id: "stephannie-favour",   placement: 16, jury: false, starting_tribe: "Aitutaki" },
+        { id: "stephannie-favor",   placement: 16, jury: false, starting_tribe: "Aitutaki" },
         { id: "jp-calderon",   placement: 17, jury: false, starting_tribe: "Manihiki" },
         { id: "cecilia-mansilla",        placement: 18, jury: false, starting_tribe: "Aitutaki" },
         { id: "billy-garcia",       placement: 19, jury: false, starting_tribe: "Aitutaki" },
         { id: "sekou-bunch",        placement: 20, jury: false, starting_tribe: "Manihiki" },
   ]
-},
 },
   ]
 };
