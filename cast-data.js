@@ -230,6 +230,28 @@ window.CastData = {
     "jp-calderon":        { name: "J.P. Calderon",         bio: "" },
     "billy-garcia":       { name: "Billy Garcia",          bio: "" },
     "sekou-bunch":        { name: "Sekou Bunch",           bio: "" },
+
+
+        // ── S14 Fiji ───────────────────────────────────────────────────────
+    "earl-cole":          { name: "Earl Cole",            bio: "" },
+    "cassandra-franklin": { name: "Cassandra Franklin",   bio: "" },
+    "dreamz-herd":        { name: "Dreamz Herd",          bio: "" },
+    "yau-man-chan":       { name: "Yau-Man Chan",         bio: "" },
+    "boo-bernis":         { name: "Boo Bernis",           bio: "" },
+    "stacy-kimball":      { name: "Stacy Kimball",        bio: "" },
+    "alex-angarita":      { name: "Alex Angarita",        bio: "" },
+    "mookie-lee":         { name: "Mookie Lee",           bio: "" },
+    "edgardo-rivera":     { name: "Edgardo Rivera",       bio: "" },
+    "michelle-yi":        { name: "Michelle Yi",          bio: "" },
+    "lisi-linares":       { name: "Lisi Linares",         bio: "" },
+    "rocky-reid":         { name: "Rocky Reid",           bio: "" },
+    "anthony-robinson":   { name: "Anthony Robinson",     bio: "" },
+    "rita-verreos":       { name: "Rita Verreos",         bio: "" },
+    "liliana-gomez":      { name: "Liliana Gomez",        bio: "" },
+    "gary-stritesky":     { name: "Gary Stritesky",       bio: "" },
+    "sylvia-kwan":        { name: "Sylvia Kwan",          bio: "" },
+    "erica-durousseau":   { name: "Erica Durousseau",     bio: "" },
+    "jessica-deben":      { name: "Jessica deBen",        bio: "" },
     
       },
 
@@ -438,7 +460,7 @@ window.CastData = {
     },
     {
       number: 10, name: "Palau", year: 2005, color: "#5a9ab0", allstar: false,
-      favourites: ["tom-westman", "caryn-groedel", "coby-acha"],
+      favourites: ["tom-westman", "caryn-groedel", "coby-archa"],
       cast: [
         { id: "tom-westman",        placement: 1,  jury: false, starting_tribe: "Koror" },
         { id: "katie-gallagher",    placement: 2,  jury: false, starting_tribe: "Koror" },
@@ -489,7 +511,7 @@ window.CastData = {
 
           {
       number: 12, name: "Panama", year: 2006, color: "#7a9070", allstar: false,
-      favourites: [],
+      favourites: ["cirie-fields", "shane-powers", "aras-baskauskas"],
       cast: [
         { id: "aras-baskauskas",    placement: 1,  jury: false, starting_tribe: "Viveros" },
         { id: "danielle-dilorenzo", placement: 2,  jury: false, starting_tribe: "Casaya" },
@@ -535,5 +557,30 @@ window.CastData = {
         { id: "sekou-bunch",        placement: 20, jury: false, starting_tribe: "Manihiki" },
   ]
 },
+        {
+      number: 14, name: "Fiji", year: 2007, color: "#b89a6a", allstar: false,
+      favourites: ["earl-cole", "dreamz-herd", "yau-man-chan"],
+      cast: [
+        { id: "earl-cole",          placement: 1,  jury: false, starting_tribe: "Ravu" },
+        { id: "cassandra-franklin", placement: 2,  jury: false, starting_tribe: "Moto" },
+        { id: "dreamz-herd",        placement: 3,  jury: false, starting_tribe: "Moto" },
+        { id: "yau-man-chan",       placement: 4,  jury: true,  starting_tribe: "Ravu" },
+        { id: "boo-bernis",         placement: 5,  jury: true,  starting_tribe: "Moto" },
+        { id: "stacy-kimball",      placement: 6,  jury: true,  starting_tribe: "Moto" },
+        { id: "alex-angarita",      placement: 7,  jury: true,  starting_tribe: "Moto" },
+        { id: "mookie-lee",         placement: 8,  jury: true,  starting_tribe: "Ravu" },
+        { id: "edgardo-rivera",     placement: 9,  jury: true,  starting_tribe: "Moto" },
+        { id: "michelle-yi",        placement: 10, jury: false, starting_tribe: "Moto" },
+        { id: "lisi-linares",       placement: 11, jury: false, starting_tribe: "Ravu" },
+        { id: "rocky-reid",         placement: 12, jury: false, starting_tribe: "Ravu" },
+        { id: "anthony-robinson",   placement: 13, jury: false, starting_tribe: "Ravu" },
+        { id: "rita-verreos",       placement: 14, jury: false, starting_tribe: "Moto" },
+        { id: "liliana-gomez",      placement: 15, jury: false, starting_tribe: "Moto" },
+        { id: "gary-stritesky",     placement: 16, jury: false, starting_tribe: "Ravu", note: "quit" },
+        { id: "sylvia-kwan",        placement: 17, jury: false, starting_tribe: "Moto" },
+        { id: "erica-durousseau",   placement: 18, jury: false, starting_tribe: "Ravu" },
+        { id: "jessica-deben",      placement: 19, jury: false, starting_tribe: "Moto" },
+      ]
+    },
   ]
 };
