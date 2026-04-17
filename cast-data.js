@@ -252,6 +252,25 @@ window.CastData = {
     "sylvia-kwan":        { name: "Sylvia Kwan",          bio: "" },
     "erica-durousseau":   { name: "Erica Durousseau",     bio: "" },
     "jessica-deben":      { name: "Jessica deBen",        bio: "" },
+
+
+        // ── S15 China ──────────────────────────────────────────────────────
+    "todd-herzog":        { name: "Todd Herzog",        bio: "" },
+    "courtney-yates":     { name: "Courtney Yates",     bio: "" },
+    "amanda-kimmel":      { name: "Amanda Kimmel",      bio: "" },
+    "denise-martin":      { name: "Denise Martin",      bio: "" },
+    "peih-gee-law":       { name: "Peih-Gee Law",       bio: "" },
+    "erik-huffman":       { name: "Erik Huffman",       bio: "" },
+    "jaime-dugan":        { name: "Jaime Dugan",        bio: "" },
+    "jean-robert-bellande": { name: "Jean-Robert Bellande", bio: "" },
+    "james-clement":      { name: "James Clement",      bio: "" },
+    "aaron-reisberger":   { name: "Aaron Reisberger",   bio: "" },
+    "leslie-nease":       { name: "Leslie Nease",       bio: "" },
+    "dave-cruser":        { name: "Dave Cruser",        bio: "" },
+    "ashley-massaro":     { name: "Ashley Massaro",     bio: "" },
+    "sherea-lloyd":       { name: "Sherea Lloyd",       bio: "" },
+    "michael-frosti-zernow": { name: "Michael 'Frosti' Zernow", bio: "" },
+    "erik-cardona":       { name: "Erik Cardona",       bio: "" },
     
       },
 
