@@ -269,8 +269,8 @@ window.CastData = {
     "dave-cruser":        { name: "Dave Cruser",        bio: "" },
     "ashley-massaro":     { name: "Ashley Massaro",     bio: "" },
     "sherea-lloyd":       { name: "Sherea Lloyd",       bio: "" },
-    "michael-frosti-zernow": { name: "Michael 'Frosti' Zernow", bio: "" },
-    "erik-cardona":       { name: "Erik Cardona",       bio: "" },
+    "frosti-zernow": { name: "Frosti Zernow", bio: "" },
+    "chicken-morris":       { name: "Chicken Morris",       bio: "" },
     
       },
 
@@ -599,6 +599,29 @@ window.CastData = {
         { id: "sylvia-kwan",        placement: 17, jury: false, starting_tribe: "Moto" },
         { id: "erica-durousseau",   placement: 18, jury: false, starting_tribe: "Ravu" },
         { id: "jessica-deben",      placement: 19, jury: false, starting_tribe: "Moto" },
+      ]
+    },
+
+        {
+      number: 15, name: "China", year: 2007, color: "#a64e3c", allstar: false,
+      favourites: ["peih-gee-law", "todd-herzog", "amanda-kimmel"],
+      cast: [
+        { id: "todd-herzog",        placement: 1,  jury: false, starting_tribe: "Fei Long" },
+        { id: "courtney-yates",     placement: 2,  jury: false, starting_tribe: "Fei Long" },
+        { id: "amanda-kimmel",      placement: 3,  jury: false, starting_tribe: "Fei Long" },
+        { id: "denise-martin",      placement: 4,  jury: true,  starting_tribe: "Zhan Hu" },
+        { id: "peih-gee-law",       placement: 5,  jury: true,  starting_tribe: "Zhan Hu" },
+        { id: "erik-huffman",       placement: 6,  jury: true,  starting_tribe: "Fei Long" },
+        { id: "james-clement",        placement: 7,  jury: true,  starting_tribe: "Zhan Hu" },
+        { id: "frosti-zernow", placement: 8, jury: true, starting_tribe: "Fei Long" },
+        { id: "jean-robert-bellande",      placement: 9,  jury: true,  starting_tribe: "Zhan Hu" },
+        { id: "jaime-dugan",   placement: 10, jury: true, starting_tribe: "Fei Long" },
+        { id: "sherea-lloyd",       placement: 11, jury: false, starting_tribe: "Fei Long" },
+        { id: "aaron-reisberger",        placement: 12, jury: false, starting_tribe: "Zhan Hu" },
+        { id: "dave-cruser",     placement: 13, jury: false, starting_tribe: "Zhan Hu" },
+        { id: "leslie-nease",       placement: 14, jury: false, starting_tribe: "Zhan Hu" },
+        { id: "ashley-massaro", placement: 15, jury: false, starting_tribe: "Zhan Hu" },
+        { id: "chicken-morris",       placement: 16, jury: false, starting_tribe: "Zhan Hu" },
       ]
     },
   ]
