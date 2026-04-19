@@ -114,7 +114,7 @@ window.CastData = {
     // ── S7 Pearl Islands ──────────────────────────────────────────────
     "sandra-diaz-twine":  { name: "Sandra Diaz-Twine",               bio: "Although she does stumble into victory, Sandra is extremely likeable. I was won over when she discussed her plan to hide all of the survival equipment when she felt her time was near! The Pearl Islands episode 1 gimmick is thoroughly ruined by the fact she is an hispanohablante (which leads to great suffering for the Morgan tribe) but it's nice to see some latino representation!" },
     "lillian-morris":     { name: "Lillian Morris",                  bio: "I did enjoy her and her friendship with Skinny Ryan, though the whole conscientious scout leader bit did get quite old." },
-    "jon-dalton":         { name: "Jonny Fairplay",                      bio: "AKA Johnny Fairplay! I love him. A pure unfettered villain - but never comes across as mean-spirited." },
+    "jon-dalton":         { name: "Jonny Fairplay",                      bio: "I love him. A pure unfettered villain - but never comes across as mean-spirited.\nIt's a real shame he quit Micronesia so early - I hope he finds his spark again and comes back for season 20... the villains team won't be complete without him." },
     "darrah-johnson":     { name: "Darrah Johnson",                  bio: "" },
     "burton-roberts":     { name: "Burton Roberts",                  bio: "This man is so good-looking... wow. I enjoyed his bromance with Johnny Fairplay and his special relationship with Lillian. Ultimately, it was also satisfying seeing him receive his comeuppance for underestimating the girls and taking Lillian for granted." },
     "christa-hastie":     { name: "Christa Hastie",                  bio: "" },
