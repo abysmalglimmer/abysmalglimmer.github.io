@@ -114,7 +114,7 @@ window.CastData = {
     // ── S7 Pearl Islands ──────────────────────────────────────────────
     "sandra-diaz-twine":  { name: "Sandra Diaz-Twine",               bio: "Although she does stumble into victory, Sandra is extremely likeable. I was won over when she discussed her plan to hide all of the survival equipment when she felt her time was near! The Pearl Islands episode 1 gimmick is thoroughly ruined by the fact she is an hispanohablante (which leads to great suffering for the Morgan tribe) but it's nice to see some latino representation!" },
     "lillian-morris":     { name: "Lillian Morris",                  bio: "I did enjoy her and her friendship with Skinny Ryan, though the whole conscientious scout leader bit did get quite old." },
-    "jon-dalton":         { name: "Jon Dalton",                      bio: "AKA Johnny Fairplay! I love him. A pure unfettered villain - but never comes across as mean-spirited." },
+    "jon-dalton":         { name: "Jonny Fairplay",                      bio: "AKA Johnny Fairplay! I love him. A pure unfettered villain - but never comes across as mean-spirited." },
     "darrah-johnson":     { name: "Darrah Johnson",                  bio: "" },
     "burton-roberts":     { name: "Burton Roberts",                  bio: "This man is so good-looking... wow. I enjoyed his bromance with Johnny Fairplay and his special relationship with Lillian. Ultimately, it was also satisfying seeing him receive his comeuppance for underestimating the girls and taking Lillian for granted." },
     "christa-hastie":     { name: "Christa Hastie",                  bio: "" },
@@ -271,6 +271,20 @@ window.CastData = {
     "sherea-lloyd":       { name: "Sherea Lloyd",       bio: "" },
     "frosti-zernow": { name: "Frosti Zernow", bio: "" },
     "chicken-morris":       { name: "Chicken Morris",       bio: "" },
+
+
+    // ── S16 Micronesia (Fans) ──────────────────────────────────────────────────────
+
+    "erik-reichenbach":    { name: "Erik Reichenbach",     bio: "" },
+    "natalie-bolton":      { name: "Natalie Bolton",       bio: "" },
+    "alexis-jones":        { name: "Alexis Jones",         bio: "" },
+    "jason-siska":         { name: "Jason Siska",          bio: "" },
+    "tracy-hughes-wolf":   { name: "Tracy Hughes-Wolf",    bio: "" },
+    "chet-welch":          { name: "Chet Welch",           bio: "" },
+    "kathy-sleckman":      { name: "Kathy Sleckman",       bio: "" },
+    "mikey-bortone":       { name: "Mikey Bortone",        bio: "" },
+    "mary-sartain":        { name: "Mary Sartain",         bio: "" },
+    "joel-anderson":       { name: "Joel Anderson",        bio: "" },
     
       },
 
@@ -622,6 +636,35 @@ window.CastData = {
         { id: "leslie-nease",       placement: 14, jury: false, starting_tribe: "Zhan Hu" },
         { id: "ashley-massaro", placement: 15, jury: false, starting_tribe: "Zhan Hu" },
         { id: "chicken-morris",       placement: 16, jury: false, starting_tribe: "Zhan Hu" },
+      ]
+    },
+        {
+      number: 16, name: "Micronesia", year: 2008, color: "#7b6aa8", allstar: true,
+      favourites: [],
+      cast: [
+        // Favorites
+        { id: "parvati-shallow", placement: 1,  jury: false, starting_tribe: "Malakal" },
+        { id: "amanda-kimmel",   placement: 2,  jury: false, starting_tribe: "Malakal" },
+        { id: "cirie-fields",    placement: 3,  jury: false, starting_tribe: "Malakal" },
+        { id: "ozzy-lusth",      placement: 4,  jury: true,  starting_tribe: "Malakal" },
+        { id: "james-clement",   placement: 5,  jury: true,  starting_tribe: "Malakal", note: "medevac" },
+        { id: "jonathan-penner", placement: 6,  jury: true,  starting_tribe: "Malakal", note: "medevac" },
+        { id: "yau-man-chan",    placement: 7,  jury: false, starting_tribe: "Malakal" },
+        { id: "eliza-orlins",    placement: 10, jury: false, starting_tribe: "Malakal" },
+        { id: "jon-dalton",          placement: 20, jury: false, starting_tribe: "Malakal", note: "quit" },
+        { id: "ami-cusack",      placement: 14, jury: false, starting_tribe: "Malakal" },
+
+        // Fans
+        { id: "erik-reichenbach",  placement: 5,  jury: true,  starting_tribe: "Airai" },
+        { id: "natalie-bolton",    placement: 4,  jury: true,  starting_tribe: "Airai" },
+        { id: "alexis-jones",      placement: 6,  jury: true,  starting_tribe: "Airai" },
+        { id: "jason-siska",       placement: 8,  jury: true,  starting_tribe: "Airai" },
+        { id: "tracy-hughes-wolf", placement: 11, jury: false, starting_tribe: "Airai" },
+        { id: "chet-welch",        placement: 15, jury: false, starting_tribe: "Airai", note: "quit" },
+        { id: "kathy-sleckman",    placement: 16, jury: false, starting_tribe: "Airai", note: "quit" },
+        { id: "mikey-bortone",     placement: 17, jury: false, starting_tribe: "Airai" },
+        { id: "mary-sartain",      placement: 18, jury: false, starting_tribe: "Airai" },
+        { id: "joel-anderson",     placement: 19, jury: false, starting_tribe: "Airai" },
       ]
     },
   ]
