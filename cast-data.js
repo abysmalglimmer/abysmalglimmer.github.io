@@ -180,7 +180,7 @@ window.CastData = {
     "cindy-hall":        { name: "Cindy Hall",          bio: "" },
     "gary-hogeboom":     { name: "Gary Hogeboom",      bio: "He lied about his job, or former job, as an NFL quarterback." },
     "judd-sergeant":     { name: "Judd Sergeant",      bio: "I guess he could be described as a villain on Guatemala. His ADD crash-out towards Margaret has to be a season highlight!" },
-    "jamie-newton":      { name: "Jamie Newton",       bio: "He kind of went insane... but I love that. His BDP sort of spiral into paranoia and insecurity was great to watch." },
+    "jamie-newton":      { name: "Jamie Newton",       bio: "He kind of went insane... but I love that. His BPD-esque spiral into paranoia and insecurity was great to watch." },
     "brandon-bellinger": { name: "Brandon Bellinger",  bio: "" },
     "amy-ohara":         { name: "Amy O'Hara",         bio: "" },
     "brian-corridan":    { name: "Brian Corridan",     bio: "He looks so much like Ollie Bearman! This is one of the most surprising and disappointing pre-merge losses so far. I really thought he was going quite far, and I liked him a lot!" },
