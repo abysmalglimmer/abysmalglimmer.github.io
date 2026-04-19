@@ -640,7 +640,7 @@ window.CastData = {
     },
         {
       number: 16, name: "Micronesia", year: 2008, color: "#7b6aa8", allstar: true,
-      favourites: [],
+      favourites: ["cirie-fields","eliza-orlins","parvati-shallow"],
       cast: [
         // Favorites
         { id: "parvati-shallow", placement: 1,  jury: false, starting_tribe: "Malakal" },
