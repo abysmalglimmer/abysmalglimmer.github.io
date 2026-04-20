@@ -456,11 +456,7 @@
 
     let currentSort = 'number';
 
-    function buildPips(score) {
-      let html = '<div class="score-pip-row">';
-      for (let i = 1; i <= 10; i++) html += `<div class="score-pip${i <= score ? ' filled' : ''}"></div>`;
-      return html + '</div>';
-    }
+
 
     function buildSeasonEl(s) {
       const el = document.createElement('div');
@@ -471,7 +467,6 @@
         : `<div class="season-score-wrap">
              <div class="season-score" style="color:${s.color}">${s.score}</div>
              <div class="season-score-denom">out of 10</div>
-             ${buildPips(s.score)}
            </div>`;
 
       const badge = s.allstar ? `<span class="allstar-badge">RETURNEES</span>` : '';
