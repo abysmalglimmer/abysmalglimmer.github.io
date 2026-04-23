@@ -690,7 +690,7 @@ window.CastData = {
 
         {
       number: 17, name: "Gabon", year: 2008, color: "#6f8a6b", allstar: false,
-      favourites: [],
+      favourites: ["sugar-kiper", "crystal-cox","corinne-kaplan"],
       cast: [
         { id: "bob-crowley",        placement: 1,  jury: false, starting_tribe: "Kota" },
         { id: "susie-smith",        placement: 2,  jury: false, starting_tribe: "Fang" },
