@@ -1,7 +1,7 @@
 window.CastData = {
 
   contestants: {
-    // ── S1 Borneo ──────────────────────────────────────────────────────
+    // ── S1 Borneo ──────────────────────────────────────────────────────-
     "richard-hatch":      { name: "Richard Hatch",                   bio: "The fabulous gay star of season 1 is revealed in season 8 to be a weirdo. Deeply disappointing. I hope not to be seeing him again." },
     "kelly-wiglesworth":  { name: "Kelly Wiglesworth",               bio: "" },
     "rudy-boesch":        { name: "Rudy Boesch",                     bio: "" },
