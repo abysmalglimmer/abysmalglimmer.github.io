@@ -287,15 +287,15 @@ window.CastData = {
     "joel-anderson":       { name: "Joel Anderson",        bio: "Weird roided out vibes from this one." },
     
         // ── S17 Gabon ──────────────────────────────────────────────────────
-    "bob-crowley":        { name: "Bob Crowley",        bio: "" },
+    "bob-crowley":        { name: "Bob Crowley",        bio: "Bob is the first winner since Guatemala who comes across pretty anonymous in the edit and doesn't seem to work too hard for it. Yes, he was (somehow) a challenge best, but that shouldn't be the winning criteria." },
     "susie-smith":        { name: "Susie Smith",        bio: "" },
-    "sugar-kiper":        { name: "Jessica 'Sugar' Kiper", bio: "" },
+    "sugar-kiper":        { name: "Jessica 'Sugar' Kiper", bio: "Sugar is the absolute star of the season - and clearly the producers agree. As a neutral and undecided, and so game-defining, voter, virtually every single episode is told through her eyes. And what wonderful eyes to be seeing the world through! She is so kind, empathetic, and genuine. It baffles me why she received no votes at the final tribal council." },
     "matty-whitmore":     { name: "Matty Whitmore",     bio: "" },
-    "ken-hoang":          { name: "Ken Hoang",          bio: "" },
-    "crystal-cox":        { name: "Crystal Cox",        bio: "" },
-    "randy-bailey":       { name: "Randy Bailey",       bio: "" },
+    "ken-hoang":          { name: "Ken Hoang",          bio: "Perhaps the first character whom I actually believe when they claim to have gone through lots of 'growth' throughout the season. At least in the edit, he really does start to come out of his shell as the season progresses." },
+    "crystal-cox":        { name: "Crystal Cox",        bio: "Icon. I would love to be verbally abused by her." },
+    "randy-bailey":       { name: "Randy Bailey",       bio: "Absolute cartoon villain. I mean, you can't help but root against him, but thank you for your service, Randy! The humiliation ritual he is put through is clearly the moment of the season (because of Sugar mostly, of course)." },
     "charlie-herschel":   { name: "Charlie Herschel",   bio: "" },
-    "corinne-kaplan":     { name: "Corinne Kaplan",     bio: "" },
+    "corinne-kaplan":     { name: "Corinne Kaplan",     bio: "The second cartoon villain of this season! I enjoyed her unbridled devotion to mean girlism." },
     "marcus-lehmann":     { name: "Marcus Lehmann",     bio: "" },
     "jacquie-berg":       { name: "Jacquie Berg",       bio: "" },
     "dan-kay":            { name: "Dan Kay",            bio: "" },
@@ -304,7 +304,7 @@ window.CastData = {
     "paloma-soto-castillo": { name: "Paloma Soto-Castillo", bio: "" },
     "michelle-chase":     { name: "Michelle Chase",     bio: "" },
     "gillian-larson":     { name: "Gillian Larson",     bio: "" },
-    "ace-gordon":         { name: "Ace Gordon",         bio: "" },   
+    "ace-gordon":         { name: "Ace Gordon",         bio: "First (and last?) British guy on Survivor." },   
   
   },
 
