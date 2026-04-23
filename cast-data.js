@@ -286,7 +286,27 @@ window.CastData = {
     "mary-sartain":        { name: "Mary Sartain",         bio: "" },
     "joel-anderson":       { name: "Joel Anderson",        bio: "Weird roided out vibes from this one." },
     
-      },
+        // ── S17 Gabon ──────────────────────────────────────────────────────
+    "bob-crowley":        { name: "Bob Crowley",        bio: "" },
+    "susie-smith":        { name: "Susie Smith",        bio: "" },
+    "sugar-kiper":        { name: "Jessica 'Sugar' Kiper", bio: "" },
+    "matty-whitmore":     { name: "Matty Whitmore",     bio: "" },
+    "ken-hoang":          { name: "Ken Hoang",          bio: "" },
+    "crystal-cox":        { name: "Crystal Cox",        bio: "" },
+    "randy-bailey":       { name: "Randy Bailey",       bio: "" },
+    "charlie-herschel":   { name: "Charlie Herschel",   bio: "" },
+    "corinne-kaplan":     { name: "Corinne Kaplan",     bio: "" },
+    "marcus-lehmann":     { name: "Marcus Lehmann",     bio: "" },
+    "jacquie-berg":       { name: "Jacquie Berg",       bio: "" },
+    "dan-kay":            { name: "Dan Kay",            bio: "" },
+    "gc-brown":           { name: "GC Brown",           bio: "" },
+    "kelly-czarnecki":    { name: "Kelly Czarnecki",    bio: "" },
+    "paloma-soto-castillo": { name: "Paloma Soto-Castillo", bio: "" },
+    "michelle-chase":     { name: "Michelle Chase",     bio: "" },
+    "gillian-larson":     { name: "Gillian Larson",     bio: "" },
+    "ace-gordon":         { name: "Ace Gordon",         bio: "" },   
+  
+  },
 
   seasons: [
     {
@@ -665,6 +685,31 @@ window.CastData = {
         { id: "mikey-bortone",     placement: 17, jury: false, starting_tribe: "Airai" },
         { id: "mary-sartain",      placement: 19, jury: false, starting_tribe: "Airai" },
         { id: "joel-anderson",     placement: 16, jury: false, starting_tribe: "Airai" },
+      ]
+    },
+
+        {
+      number: 17, name: "Gabon", year: 2008, color: "#6f8a6b", allstar: false,
+      favourites: [],
+      cast: [
+        { id: "bob-crowley",        placement: 1,  jury: false, starting_tribe: "Kota" },
+        { id: "susie-smith",        placement: 2,  jury: false, starting_tribe: "Fang" },
+        { id: "sugar-kiper",        placement: 3,  jury: false, starting_tribe: "Fang" },
+        { id: "matty-whitmore",     placement: 4,  jury: true,  starting_tribe: "Fang" },
+        { id: "ken-hoang",          placement: 5,  jury: true,  starting_tribe: "Fang" },
+        { id: "crystal-cox",        placement: 6,  jury: true,  starting_tribe: "Fang" },
+        { id: "corinne-kaplan",       placement: 7,  jury: true,  starting_tribe: "Kota" },
+        { id: "randy-bailey",   placement: 8,  jury: true,  starting_tribe: "Kota" },
+        { id: "charlie-herschel",     placement: 9,  jury: true,  starting_tribe: "Kota" },
+        { id: "marcus-lehmann",     placement: 10, jury: true, starting_tribe: "Kota" },
+        { id: "dan-kay",       placement: 11, jury: false, starting_tribe: "Kota" },
+        { id: "ace-gordon",            placement: 12, jury: false, starting_tribe: "Fang" },
+        { id: "kelly-czarnecki",           placement: 13, jury: false, starting_tribe: "Fang"},
+        { id: "gc-brown",    placement: 14, jury: false, starting_tribe: "Fang", note:"quit" },
+        { id: "jacquie-berg", placement: 15, jury: false, starting_tribe: "Kota" },
+        { id: "paloma-soto-castillo",     placement: 16, jury: false, starting_tribe: "Fang" },
+        { id: "gillian-larson",     placement: 17, jury: false, starting_tribe: "Fang" },
+        { id: "michelle-chase",         placement: 18, jury: false, starting_tribe: "Kota" },
       ]
     },
   ]
