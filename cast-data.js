@@ -318,7 +318,7 @@ window.CastData = {
     "brendan-synnott":   { name: "Brendan Synnott",    bio: "Smart, good-looking, and a really compelling foil to Coach. I wish their battle could've lasted a bit longer." },
     "jerry-sims":     { name: "Jerry Sims",      bio: "" },
     "candace-smith":     { name: "Candace Smith",      bio: "" },
-    "joe-dowdle":        { name: "Joe Dowdle",         bio: "" },
+    "joe-dowdle":        { name: "Joe Dowdle",         bio: "They really need to start giving them anti-septic and disinfecting wounds proactively. Come on guys..." },
     "spencer-duhm":      { name: "Spencer Duhm",       bio: "The first openly closeted character, and youngest so far. I was sad to see him go so early." },
     "sydney-wheeler":    { name: "Sydney Wheeler",     bio: "" },
     "carolina-eastwood": { name: "Carolina Eastwood",  bio: "" },
