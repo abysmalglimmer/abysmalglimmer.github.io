@@ -305,6 +305,24 @@ window.CastData = {
     "michelle-chase":     { name: "Michelle Chase",     bio: "" },
     "gillian-larson":     { name: "Gillian Larson",     bio: "" },
     "ace-gordon":         { name: "Ace Gordon",         bio: "First (and last?) British guy on Survivor." },   
+
+        // ── S18 Tocantins ──────────────────────────────────────────────────
+    "jt-thomas":         { name: "J.T. Thomas",        bio: "" },
+    "stephen-fishbach":  { name: "Stephen Fishbach",   bio: "" },
+    "taj-johnson-george":{ name: "Taj Johnson-George", bio: "" },
+    "erinn-lobdell":      { name: "Erinn Lobdell",      bio: "Emma Stone lookalike." },
+    "tyson-apostol":     { name: "Tyson Apostol",      bio: "" },
+    "debbie-beebe":      { name: "Debbie Beebe",       bio: "" },
+    "coach-wade":        { name: "Benjamin 'Coach' Wade", bio: "" },
+    "sierra-reed":       { name: "Sierra Reed",        bio: "Grimes lookalike." },
+    "brendan-synnott":   { name: "Brendan Synnott",    bio: "" },
+    "jerry-sims":     { name: "Jerry Sims",      bio: "" },
+    "candace-smith":     { name: "Candace Smith",      bio: "" },
+    "joe-dowdle":        { name: "Joe Dowdle",         bio: "" },
+    "spencer-duhm":      { name: "Spencer Duhm",       bio: "" },
+    "sydney-wheeler":    { name: "Sydney Wheeler",     bio: "" },
+    "carolina-eastwood": { name: "Carolina Eastwood",  bio: "" },
+    "sandy-burgin":      { name: "Sandy Burgin",       bio: "" },
   
   },
 
@@ -712,5 +730,29 @@ window.CastData = {
         { id: "michelle-chase",         placement: 18, jury: false, starting_tribe: "Kota" },
       ]
     },
+    {
+      number: 18, name: "Tocantins", year: 2009, color: "#9bb36a", allstar: false,
+      favourites: ["taj-johnson-george", "brendan-synnott","coach-wade"],
+      cast: [
+        { id: "jt-thomas",         placement: 1,  jury: false, starting_tribe: "Jalapao" },
+        { id: "stephen-fishbach",  placement: 2,  jury: false, starting_tribe: "Jalapao" },
+        { id: "erinn-lobdell",placement: 3,  jury: true,  starting_tribe: "Jalapao" },
+        { id: "taj-johnson-george",      placement: 4,  jury: true,  starting_tribe: "Jalapao" },
+        { id: "coach-wade",     placement: 5,  jury: true,  starting_tribe: "Timbira" },
+        { id: "debbie-beebe",      placement: 6,  jury: true,  starting_tribe: "Timbira" },
+        { id: "sierra-reed",        placement: 7,  jury: true,  starting_tribe: "Timbira" },
+        { id: "tyson-apostol",       placement: 8,  jury: true,  starting_tribe: "Timbira" },
+        { id: "brendan-synnott",   placement: 9,  jury: true, starting_tribe: "Timbira" },
+        { id: "joe-dowdle",     placement: 10, jury: false, starting_tribe: "Jalapao", note: "medevac" },
+        { id: "sydney-wheeler",     placement: 11, jury: false, starting_tribe: "Timbira" },
+        { id: "spencer-duhm",        placement: 12, jury: false, starting_tribe: "Jalapao" },
+        { id: "sandy-burgin",      placement: 13, jury: false, starting_tribe: "Timbira" },
+        { id: "jerry-sims",    placement: 14, jury: false, starting_tribe: "Timbira" },
+        { id: "candace-smith", placement: 15, jury: false, starting_tribe: "Jalapao" },
+        { id: "carolina-eastwood",      placement: 16, jury: false, starting_tribe: "Jalapao" },
+      ]
+    },
+
+    
   ]
 };
