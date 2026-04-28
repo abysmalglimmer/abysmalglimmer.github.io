@@ -627,7 +627,7 @@ window.CastData = {
 },
     {
       number: 13, name: "Cook Islands", year: 2006, color: "#5a9ab8", allstar: false,
-      favourites: [],
+      favourites: ["jonathan-penner", "yul-kwon", "ozzy-lusth"],
       cast: [
         { id: "yul-kwon",           placement: 1,  jury: false, starting_tribe: "Puka Puka" },
         { id: "ozzy-lusth",         placement: 2,  jury: false, starting_tribe: "Aitutaki" },
