@@ -793,7 +793,7 @@ window.CastData = {
         { id: "kelly-sharbaugh",   placement: 11, jury: true, starting_tribe: "Galu" },
         { id: "erik-cardona",      placement: 12, jury: true, starting_tribe: "Foa Foa" },
         { id: "liz-kim",      placement: 13, jury: false, starting_tribe: "Foa Foa" },
-        { id: "russel-swan",      placement: 14, jury: false, starting_tribe: "Galu", note: "medevac" },
+        { id: "russell-swan",      placement: 14, jury: false, starting_tribe: "Galu", note: "medevac" },
         { id: "ashley-trainer",      placement: 15, jury: false, starting_tribe: "Galu" },
         { id: "yasmin-giles",           placement: 16, jury: false, starting_tribe: "Foa Foa" },
         { id: "ben-browning",    placement: 17, jury: false, starting_tribe: "Foa Foa" },
