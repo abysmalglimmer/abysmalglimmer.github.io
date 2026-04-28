@@ -323,6 +323,29 @@ window.CastData = {
     "sydney-wheeler":    { name: "Sydney Wheeler",     bio: "" },
     "carolina-eastwood": { name: "Carolina Eastwood",  bio: "" },
     "sandy-burgin":      { name: "Sandy Burgin",       bio: "" },
+
+
+        // ── S19 Samoa ──────────────────────────────────────────────────────
+    "natalie-white":     { name: "Natalie White",     bio: "" },
+    "russell-hantz":     { name: "Russell Hantz",     bio: "" },
+    "mick-trimming":     { name: "Mick Trimming",     bio: "" },
+    "brett-clouser":     { name: "Brett Clouser",     bio: "" },
+    "shambo-waters":     { name: "Shambo Waters",     bio: "" },
+    "john-fincher":      { name: "John Fincher",      bio: "" },
+    "dave-ball":         { name: "Dave Ball",         bio: "" },
+    "monica-padilla":    { name: "Monica Padilla",    bio: "" },
+    "laura-morett":      { name: "Laura Morett",      bio: "" },
+    "erik-cardona-2":    { name: "Erik Cardona",      bio: "" },
+    "kelly-sharbaugh":   { name: "Kelly Sharbaugh",   bio: "" },
+    "yasmin-giles":      { name: "Yasmin Giles",      bio: "" },
+    "ben-browning":      { name: "Ben Browning",      bio: "" },
+    "mike-borassi":      { name: "Mike Borassi",      bio: "" },
+    "russell-swan":      { name: "Russell Swan",      bio: "" },
+    "liz-kim":           { name: "Liz Kim",           bio: "" },
+    "marisa-calihan":    { name: "Marisa Calihan",    bio: "" },
+    "ashley-trainer":    { name: "Ashley Trainer",    bio: "" },
+    "betsy-bolan":      { name: "Betsy Bolan",      bio: "" },
+    "jaison-robinson":   { name: "Jaison Robinson",   bio: "" },
   
   },
 
@@ -750,6 +773,33 @@ window.CastData = {
         { id: "jerry-sims",    placement: 14, jury: false, starting_tribe: "Timbira" },
         { id: "candace-smith", placement: 15, jury: false, starting_tribe: "Jalapao" },
         { id: "carolina-eastwood",      placement: 16, jury: false, starting_tribe: "Jalapao" },
+      ]
+    },
+
+        {
+      number: 19, name: "Samoa", year: 2009, color: "#5f8f8a", allstar: false,
+      favourites: ["russell-hantz", "yasmin-giles", "shambo-waters"],
+      cast: [
+        { id: "natalie-white",     placement: 1,  jury: false, starting_tribe: "Foa Foa" },
+        { id: "russell-hantz",     placement: 2,  jury: false, starting_tribe: "Foa Foa" },
+        { id: "mick-trimming",     placement: 3,  jury: false, starting_tribe: "Foa Foa" },
+        { id: "brett-clouser",     placement: 4,  jury: true,  starting_tribe: "Galu" },
+        { id: "jaison-robinson",     placement: 5,  jury: true,  starting_tribe: "Galu" },
+        { id: "shambo-waters",      placement: 6,  jury: true,  starting_tribe: "Galu" },
+        { id: "monica-padilla",         placement: 7,  jury: true,  starting_tribe: "Galu" },
+        { id: "dave-ball",    placement: 8,  jury: true,  starting_tribe: "Galu" },
+        { id: "john-fincher",      placement: 9,  jury: true,  starting_tribe: "Galu" },
+        { id: "laura-morett",    placement: 10, jury: true, starting_tribe: "Galu" },
+        { id: "kelly-sharbaugh",   placement: 11, jury: true, starting_tribe: "Galu" },
+        { id: "erik-cardona",      placement: 12, jury: true, starting_tribe: "Foa Foa" },
+        { id: "liz-kim",      placement: 13, jury: false, starting_tribe: "Foa Foa" },
+        { id: "russel-swan",      placement: 14, jury: false, starting_tribe: "Galu", note: "medevac" },
+        { id: "ashley-trainer",      placement: 15, jury: false, starting_tribe: "Galu" },
+        { id: "yasmin-giles",           placement: 16, jury: false, starting_tribe: "Foa Foa" },
+        { id: "ben-browning",    placement: 17, jury: false, starting_tribe: "Foa Foa" },
+        { id: "betsy-bolan",    placement: 18, jury: false, starting_tribe: "Foa Foa" },
+        { id: "mike-borassi",      placement: 19, jury: false, starting_tribe: "Foa Foa", note: "medevac" },
+        { id: "marisa-calihan",   placement: 20, jury: false, starting_tribe: "Foa Foa" },
       ]
     },
 
