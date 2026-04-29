@@ -803,6 +803,32 @@ window.CastData = {
       ]
     },
 
+        {
+      number: 20, name: "Heroes vs Villains", year: 2010, color: "#a85a5a", allstar: true,
+      favourites: [],
+      cast: [
+        { id: "sandra-diaz-twine", placement: 1,  jury: false, starting_tribe: "Villains" },
+        { id: "parvati-shallow",   placement: 2,  jury: false, starting_tribe: "Villains" },
+        { id: "russell-hantz",     placement: 3,  jury: false, starting_tribe: "Villains" },
+        { id: "jerri-manthey",      placement: 4,  jury: true,  starting_tribe: "Villains" },
+        { id: "colby-donaldson",   placement: 5,  jury: true,  starting_tribe: "Heroes" },
+        { id: "rupert-boneham",    placement: 6,  jury: true,  starting_tribe: "Heroes" },
+        { id: "candice-woodcock",  placement: 8,  jury: true,  starting_tribe: "Heroes" },
+        { id: "danielle-dilorenzo",placement: 7,  jury: true,  starting_tribe: "Villains" },
+        { id: "coach-wade",        placement: 12, jury: false, starting_tribe: "Villains" },
+        { id: "courtney-yates",    placement: 11, jury: false, starting_tribe: "Villains" },
+        { id: "rob-mariano",       placement: 13, jury: false, starting_tribe: "Villains" },
+        { id: "tyson-apostol",     placement: 15, jury: false, starting_tribe: "Villains" },
+        { id: "randy-bailey",      placement: 18, jury: false, starting_tribe: "Villains" },
+        { id: "amanda-kimmel",     placement: 9,  jury: true,  starting_tribe: "Heroes" },
+        { id: "jt-thomas",         placement: 10, jury: false, starting_tribe: "Heroes" },
+        { id: "james-clement",     placement: 14, jury: false, starting_tribe: "Heroes" },
+        { id: "cirie-fields",      placement: 17, jury: false, starting_tribe: "Heroes" },
+        { id: "stephenie-lagrossa",placement: 19, jury: false, starting_tribe: "Heroes" },
+        { id: "tom-westman",       placement: 16, jury: false, starting_tribe: "Heroes" },
+        { id: "sugar-kiper",       placement: 20, jury: false, starting_tribe: "Heroes" },
+      ]
+    },
     
   ]
 };
