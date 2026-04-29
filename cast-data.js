@@ -256,7 +256,7 @@ window.CastData = {
 
         // ── S15 China ──────────────────────────────────────────────────────
     "todd-herzog":        { name: "Todd Herzog",        bio: "He did start to edge into Regina George territory at points... but overall he was an entertaining and competent main character. I usually really dislike when there is a clear single puppetmaster of the season, but it worked pretty well here." },
-    "courtney-yates":     { name: "Courtney Yates",     bio: "" },
+    "courtney-yates":     { name: "Courtney Yates",     bio: "I like how she calls Probst 'Jeffrey'. Gagged him a little." },
     "amanda-kimmel":      { name: "Amanda Kimmel",      bio: "I'm truly not sure why the producers as so obsessed with this girl. (She is the first player to pass 100 days played.) While her day alone at camp with Peih-Gee convinced me she is a genuine and kind person, in none of her three seasons does she seem intelligent, cunning, or strategic. She just got lucky to align herself with Todd and then Cirie! She looks a bit like that Billie Eilish fish toy." },
     "denise-martin":      { name: "Denise Martin",      bio: "Fuck you Denise for being so mean to Peih-Gee after she took you on your stupid little Kung-Fu reward. And fuck you for not turning on your alliance of four of whom you were clearly the fourth. Ungrateful and stupid!" },
     "peih-gee-law":       { name: "Peih-Gee Law",       bio: "I always feel such sympathy for the weird little social outcasts who no-one really likes. Maybe I realate to them." },
