@@ -61,7 +61,7 @@ window.CastData = {
     "paschal-english":      { name: "Paschal English",               bio: "" },
     "kathy-vavrick-obrien": { name: "Kathy Vavrick-O'Brien",        bio: "One of the earliest and smartest strategic players, despite potentially being overshadowed on each of her own seasons by Boston Rob." },
     "sean-rector":          { name: "Sean Rector",                   bio: "" },
-    "rob-mariano":          { name: "Rob Mariano",                   bio: "AKA Boston Rob." },
+    "rob-mariano":          { name: "Rob Mariano",                   bio: "AKA Boston Rob. I found him a domineering and frustratingly competent puppet-master on season 8. But in Heroes vs Villains, his meeker demeaner, separation from Amber, and badly-needed nemesis make him much more fun to watch. Indeed, his origins on Marquesas demonstrate his superiority as a scheming underdog rather than a callous mob boss." },
     "tammy-leitner":        { name: "Tammy Leitner",                 bio: "" },
     "the-general":          { name: "Robert DeCanio", bio: "AKA The General." },
     "zoe-zanidakis":        { name: "Zoe Zanidakis",                 bio: "" },
@@ -118,7 +118,7 @@ window.CastData = {
     "darrah-johnson":     { name: "Darrah Johnson",                  bio: "" },
     "burton-roberts":     { name: "Burton Roberts",                  bio: "This man is so good-looking... wow. I enjoyed his bromance with Johnny Fairplay and his special relationship with Lillian. Ultimately, it was also satisfying seeing him receive his comeuppance for underestimating the girls and taking Lillian for granted." },
     "christa-hastie":     { name: "Christa Hastie",                  bio: "" },
-    "rupert-boneham":     { name: "Rupert Boneham",                  bio: "A real character! Seemingly, he loves and excels at fishing with a spear. The way he lost his temper at Johnny Fairplay was shocking and uncomfortable and somewhat soured me on him and his whole nice guy shtick. He isn't much of a strategist either, which is fine in Pearl Islands but really contributes in dragging down All-Stars." },
+    "rupert-boneham":     { name: "Rupert Boneham",                  bio: "A real character! Seemingly, he loves and excels at fishing with a spear. The way he lost his temper at Johnny Fairplay was shocking and uncomfortable and somewhat soured me on him and his whole nice guy shtick. He isn't much of a strategist either, which is fine in Pearl Islands but really contributes in dragging down All-Stars.\n\nHeroes vs Villains is definitely his best showing. Whilst still not much of a strategic force, his 'noble' ways work well in opposition to Russell, culminating in a brilliant shouting match. That's enough of him though, please." },
     "tijuana-bradley":    { name: "Tijuana Bradley",                 bio: "" },
     "andrew-savage":      { name: "Andrew Savage",                   bio: "The first person (that I noticed) to get referred to by their surname by Jeff Probst during challenges." },
     "osten-taylor":       { name: "Osten Taylor",                    bio: "The first (explicit) quitter." },
@@ -214,7 +214,7 @@ window.CastData = {
     "ozzy-lusth":         { name: "Ozzy Lusth",           bio: "I suppose Ozzy sort of defines the 'challenge beast' archetype of player (even though Terry lowkey did it first, though in a much less charming way).\nIt's nice to see him get dispatched fairly rapidly in Micronesia... watching challenge domination in the vein of Cook Islands would have made the challenges even more mind-numbing." },
     "becky-lee":          { name: "Becky Lee",             bio: "Literally an NPC for Yul to provide exposition for the audience too outside of a confessional." },
     "sundra-oakley":      { name: "Sundra Oakley",        bio: "I just finished the season and the only thing I remember about her is the final immunity challenge where she looks cunty with her sunhat standing on a pole. So I like her I think." },
-    "parvati-shallow":    { name: "Parvati Shallow",      bio: "Although her shtick is being a 'flirt,' Parvati is really smart and her win is very deserved. Aside from Cirie, she was absolutely the puppet-master of Micronesia." },
+    "parvati-shallow":    { name: "Parvati Shallow",      bio: "Although her shtick is being a 'flirt,' Parvati is really smart and her win is very deserved. Aside from Cirie, she was absolutely the puppet-master of Micronesia.\n\nParvati is one one of the main characters again in Heroes vs Villains, where she becomes something which is something quite unique in the edit: a 'second-in-command' in Russel's alliance who still feels like a separate narrator and force in the game. Ultimately, I don't think the players bought her separation from Russel enough to give her second win." },
     "candice-woodcock":   { name: "Candice Woodcock",     bio: "Weirdly, she is probably single-handedly responsible for this season being as enjoyable as it is - because of her insane decision to mutiny and switch from Aitu to Raro." },
     "adam-gentry":        { name: "Adam Gentry",          bio: "Weirdly, he is probably single-handedly responsible for this season being as enjoyable as it is - because Candice only mutinied as she was into him." },
     "jonathan-penner":    { name: "Jonathan Penner",      bio: "They hated his ass on Cook Islands! Yul was the only one to even pretend to be civil with him in his final days. Anyway. All of that made him by far my favourite on that season.\nIt's devastating to him taken out of Micronesia so early. Especially because Jonathan and Eliza would have made a great pair - I don't know how far they could've gone, but I would've loved every second of thei posturing and scheming!" },
@@ -257,7 +257,7 @@ window.CastData = {
         // ── S15 China ──────────────────────────────────────────────────────
     "todd-herzog":        { name: "Todd Herzog",        bio: "He did start to edge into Regina George territory at points... but overall he was an entertaining and competent main character. I usually really dislike when there is a clear single puppetmaster of the season, but it worked pretty well here." },
     "courtney-yates":     { name: "Courtney Yates",     bio: "" },
-    "amanda-kimmel":      { name: "Amanda Kimmel",      bio: "" },
+    "amanda-kimmel":      { name: "Amanda Kimmel",      bio: "I'm truly not sure why the producers as so obsessed with this girl. (She is the first player to pass 100 days played.) While her day alone at camp with Peih-Gee convinced me she is a genuine and kind person, in none of her three seasons does she seem intelligent, cunning, or strategic. She just got lucky to align herself with Todd and then Cirie! She looks a bit like that Billie Eilish fish toy." },
     "denise-martin":      { name: "Denise Martin",      bio: "Fuck you Denise for being so mean to Peih-Gee after she took you on your stupid little Kung-Fu reward. And fuck you for not turning on your alliance of four of whom you were clearly the fourth. Ungrateful and stupid!" },
     "peih-gee-law":       { name: "Peih-Gee Law",       bio: "I always feel such sympathy for the weird little social outcasts who no-one really likes. Maybe I realate to them." },
     "erik-huffman":       { name: "Erik Huffman",       bio: "" },
@@ -307,7 +307,7 @@ window.CastData = {
     "ace-gordon":         { name: "Ace Gordon",         bio: "First (and last?) British guy on Survivor." },   
 
         // ── S18 Tocantins ──────────────────────────────────────────────────
-    "jt-thomas":         { name: "J.T. Thomas",        bio: "To be honest, I do like him as a winner. I think he does embody that majestic southern charm. It was crazy that it only took Brendan one single afternoon white water rafting with him to decide that he was absolutely worthy of the win - and I trust Brendan's judgement to be honeset." },
+    "jt-thomas":         { name: "J.T. Thomas",        bio: "To be honest, I do like him as a winner. I think he does embody that majestic southern charm. It was crazy that it only took Brendan one single afternoon white water rafting with him to decide that he was absolutely worthy of the win - and I trust Brendan's judgement to be honeset.\n\nJT I forgive you for causing Cirie to be voted out so early in season 20. Your humiliation later in the season is enough for me to be content." },
     "stephen-fishbach":  { name: "Stephen Fishbach",   bio: "Arguably the main character of the season. He was a good narrator, but never really showed a very compelling personality." },
     "taj-johnson-george":{ name: "Taj Johnson-George", bio: "Taj comes across as such a warm and generous spirit - I couldn't help but root for her, especially with her random 'secret exile alliance'. It's a shame that didn't really get played out once the merge happened." },
     "erinn-lobdell":      { name: "Erinn Lobdell",      bio: "Emma Stone lookalike." },
@@ -327,7 +327,7 @@ window.CastData = {
 
         // ── S19 Samoa ──────────────────────────────────────────────────────
     "natalie-white":     { name: "Natalie White",     bio: "Another entry in the random winner pantheon. As much as she seemed like a really lovely person, this should've been Russell's." },
-    "russell-hantz":     { name: "Russell Hantz",     bio: "" },
+    "russell-hantz":     { name: "Russell Hantz",     bio: "Heroes vs Villains proves that Russell works much better as an out-and-out villain in the edit than as the protagonist of the season. Watching the all-stars gradually clock his sliminess and work against him (especially Sandra) is so gratifying to watch." },
     "mick-trimming":     { name: "Mick Trimming",     bio: "" },
     "brett-clouser":     { name: "Brett Clouser",     bio: "" },
     "shambo-waters":     { name: "Shambo Waters",     bio: "Shambo comes across as a bit of a crazy person but in an adorable sort of way. I always love when someone just has absolute hatred for someone else for no discernable reason. (Laura.)" },
