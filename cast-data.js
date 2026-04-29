@@ -805,7 +805,7 @@ window.CastData = {
 
         {
       number: 20, name: "Heroes vs Villains", year: 2010, color: "#a85a5a", allstar: true,
-      favourites: [],
+      favourites: ["sandra-diaz-twine", "parvati-shallow", "coach-wade"],
       cast: [
         { id: "sandra-diaz-twine", placement: 1,  jury: false, starting_tribe: "Villains" },
         { id: "parvati-shallow",   placement: 2,  jury: false, starting_tribe: "Villains" },
