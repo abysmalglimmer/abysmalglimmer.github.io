@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survivor · Oliver Beeby</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel+Decorative:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Block Berthold';
+      src: url('fonts/BlockBE-Heavy.woff2') format('woff2'),
+           url('fonts/BlockBE-Heavy.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f0ea;
+      --surface: #ffffff;
+      --text: #181510;
+      --muted: #8a8070;
+      --border: #e2dbd0;
+      --accent: #d4540a;
+      --radius: 3px;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    #nav-root { display: flex; }
+
+    #survivor {
+      flex: 1;
+      padding: 0 0 100px;
+      overflow-y: auto;
+    }
+
+    .sv-hero {
+      background: var(--text);
+      color: #fff;
+      padding: 52px 48px 44px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sv-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,0.015) 0px,
+        rgba(255,255,255,0.015) 1px,
+        transparent 1px,
+        transparent 12px
+      );
+      pointer-events: none;
+    }
+
+    .sv-hero-inner {
+      max-width: 740px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .sv-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .sv-hero h1 {
+      font-family: 'Block Berthold', serif;
+      font-size: clamp(2.6rem, 8vw, 5rem);
+      font-weight: 700;
+      line-height: 0.92;
+      letter-spacing: -1px;
+      color: #fff;
+    }
+
+    .sv-hero-sub {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.38);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    .progress-bar-wrap {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .progress-bar-track {
+      flex: 1;
+      height: 2px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .progress-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      white-space: nowrap;
+      font-weight: 300;
+    }
+
+    /* ── Analytics block ──────────────────────────────────── */
+    .stats-panel {
+      max-width: 740px;
+      margin: 32px auto 0;
+      padding: 0 48px;
+    }
+
+    .stats-eyebrow {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .stat-tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .stat-tile {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      min-height: 92px;
+    }
+
+    .stat-tile-value {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+
+    .stat-tile-value .suffix {
+      font-size: 0.6rem;
+      color: var(--muted);
+      font-weight: 300;
+      margin-left: 4px;
+      letter-spacing: 0.06em;
+      vertical-align: middle;
+    }
+
+    .stat-tile-label {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-top: auto;
+      padding-top: 10px;
+    }
+
+    .stat-tile-detail {
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-weight: 300;
+      font-style: italic;
+      margin-top: 3px;
+    }
+
+    .score-chart-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 8px 6px;
+      position: relative;
+      margin-top: 8px;
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0 10px 8px;
+    }
+
+    .chart-title {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    .chart-legend {
+      display: flex;
+      gap: 14px;
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .chart-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .legend-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--muted);
+      opacity: 0.6;
+    }
+
+    .legend-ring {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: 1.2px solid var(--muted);
+      opacity: 0.7;
+    }
+
+    .legend-line {
+      width: 14px;
+      height: 0;
+      border-top: 1px dashed var(--accent);
+      opacity: 0.55;
+    }
+
+    .score-chart {
+      display: block;
+      width: 100%;
+      height: 200px;
+      overflow: visible;
+    }
+
+    .chart-dot {
+      transition: opacity 0.12s ease;
+      cursor: pointer;
+    }
+    .chart-dot:hover { opacity: 0.85; }
+
+    .chart-tooltip {
+      position: absolute;
+      background: var(--text);
+      color: #fff;
+      padding: 9px 12px 10px;
+      border-radius: 3px;
+      pointer-events: none;
+      transform: translate(-50%, calc(-100% - 12px));
+      opacity: 0;
+      transition: opacity 0.12s ease;
+      white-space: nowrap;
+      z-index: 10;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    .chart-tooltip.visible { opacity: 1; }
+    .chart-tooltip::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      margin-left: -5px;
+      border: 5px solid transparent;
+      border-top-color: var(--text);
+      border-bottom: 0;
+    }
+    .ct-num {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      color: rgba(255,255,255,0.4);
+    }
+    .ct-name {
+      font-size: 0.82rem;
+      font-weight: 500;
+      margin: 2px 0 4px;
+    }
+    .ct-score {
+      font-family: 'Block Berthold', sans-serif;
+      color: var(--accent);
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .ct-score .denom {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.35);
+      margin-left: 2px;
+      font-weight: 300;
+    }
+
+    /* ── Existing styles ──────────────────────────────────── */
+    .sv-controls {
+      max-width: 740px;
+      margin: 30px auto 0;
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sv-controls-label {
+      font-size: 0.68rem;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-right: 4px;
+    }
+
+    .sort-btn {
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 2px;
+      padding: 6px 16px;
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      color: var(--muted);
+      transition: all 0.15s ease;
+    }
+
+    .sort-btn:hover { border-color: var(--text); color: var(--text); }
+    .sort-btn.active { background: var(--text); color: #fff; border-color: var(--text); }
+
+    .seasons-list {
+      max-width: 740px;
+      margin: 20px auto 0;
+      padding: 0 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .section-label {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 1.45rem;
+      letter-spacing: 0.14em;
+      color: var(--text);
+      margin: 30px 0 10px;
+      padding-bottom: 7px;
+      border-bottom: 2.5px solid var(--text);
+    }
+
+    .section-label.dimmed {
+      color: var(--muted);
+      border-color: var(--border);
+    }
+
+    .season {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .season:hover { box-shadow: 0 3px 16px rgba(0,0,0,0.09); border-color: #ccc5b8; }
+
+    .season-header {
+      display: flex;
+      align-items: center;
+      padding: 14px 18px;
+      cursor: pointer;
+      user-select: none;
+      gap: 14px;
+    }
+
+    .accent-bar {
+      width: 5px;
+      height: 44px;
+      border-radius: 1px;
+      flex-shrink: 0;
+    }
+
+    .season-meta { flex: 1; min-width: 0; }
+
+    .season-number {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .season-title {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 1.28rem;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--text);
+    }
+
+    .season-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 4px;
+      font-weight: 300;
+    }
+
+    .season-score-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      flex-shrink: 0;
+    }
+
+    .season-score {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 2.2rem;
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    .season-score-denom {
+      font-size: 0.65rem;
+      color: var(--muted);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      margin-top: 1px;
+    }
+
+    .chevron {
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+      margin-left: 4px;
+    }
+
+    .chevron svg { display: block; }
+    .season.open .chevron { transform: rotate(180deg); }
+
+    .season-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s ease;
+    }
+
+    .season.open .season-body { grid-template-rows: 1fr; }
+    .season-body-inner { overflow: hidden; }
+
+    .season-details {
+      padding: 16px 18px 20px 37px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 32px;
+      border-top: 1px solid var(--border);
+      background: #faf7f3;
+    }
+
+    .detail-block.full { grid-column: 1 / -1; }
+
+    .detail-label {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .detail-value {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .spoiler-text {
+      background: var(--text);
+      color: var(--text);
+      border-radius: 2px;
+      padding: 1px 5px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: color 0.2s, background 0.2s;
+      user-select: none;
+    }
+
+    .spoiler-text.revealed { background: transparent; color: var(--text); }
+
+    .spoiler-hint {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-left: 6px;
+    }
+
+    .allstar-badge {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      background: #f0eaf8;
+      color: #7c5fa8;
+      padding: 2px 7px;
+      border-radius: 2px;
+      margin-left: 8px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    .season.unseen {
+      opacity: 0.36;
+      pointer-events: none;
+    }
+
+    .season.unseen .accent-bar { background: var(--border) !important; }
+
+    @media (max-width: 540px) {
+      .stats-panel,
+      .sv-controls,
+      .seasons-list { padding: 0 24px; }
+      .chart-legend { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-root"></div>
+
+  <div id="survivor">
+    <div class="sv-hero">
+      <div class="sv-hero-inner">
+        <div class="sv-eyebrow">Watch Log &amp; Rankings</div>
+        <h1>SURVIVOR LOG</h1>
+        <p class="sv-hero-sub">49 seasons · Outwit, outplay, outlast</p>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-track">
+            <div class="progress-bar-fill" id="progress-fill"></div>
+          </div>
+          <div class="progress-label" id="progress-label"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Analytics ── -->
+    <div class="stats-panel">
+      <div class="stats-eyebrow">Watch Stats</div>
+
+      <div class="stat-tiles">
+        <div class="stat-tile">
+          <div class="stat-tile-value"><span id="stat-avg">—</span><span class="suffix">/10</span></div>
+          <div class="stat-tile-label">Average</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-value"><span id="stat-high">—</span><span class="suffix">/10</span></div>
+          <div class="stat-tile-label">Highest</div>
+          <div class="stat-tile-detail" id="stat-high-name">—</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-value"><span id="stat-low">—</span><span class="suffix">/10</span></div>
+          <div class="stat-tile-label">Lowest</div>
+          <div class="stat-tile-detail" id="stat-low-name">—</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-value"><span id="stat-allstar">—</span><span class="suffix">/10</span></div>
+          <div class="stat-tile-label">Returnees</div>
+          <div class="stat-tile-detail" id="stat-allstar-detail">—</div>
+        </div>
+      </div>
+
+      <div class="score-chart-wrap" id="chart-wrap">
+        <div class="chart-header">
+          <div class="chart-title">Score by season</div>
+          <div class="chart-legend">
+            <div class="chart-legend-item"><span class="legend-dot"></span>Regular</div>
+            <div class="chart-legend-item"><span class="legend-ring"></span>Returnees</div>
+            <div class="chart-legend-item"><span class="legend-line"></span>Average</div>
+          </div>
+        </div>
+        <svg class="score-chart" id="score-chart"></svg>
+        <div class="chart-tooltip" id="chart-tooltip"></div>
+      </div>
+    </div>
+
+    <div class="sv-controls">
+      <span class="sv-controls-label">Sort</span>
+      <button class="sort-btn active" data-sort="number">Season #</button>
+      <button class="sort-btn" data-sort="score">Score</button>
+    </div>
+
+    <div class="seasons-list" id="seasons-list"></div>
+  </div>
+
+  <script src="nav.js"></script>
+  <script>
+    // ─── PASTE YOUR EXISTING `seasons` ARRAY HERE ────────────
+    const seasons = [
+      { number:1, name:"Borneo", year:2000, contestants:16, score:2, winner:"Richard Hatch", favourite:"Richard, Susan, Greg", thoughts:"Hardly any semblance of strategy, but we all have to start somewhere. Aside from novelty, the only real highlights are beef between Susan and Kelly, and Richard, who seems to be the only one to be treating this as some kind of strategic game.", color:"#c8845a" },
+      { number:2, name:"The Australian Outback", year:2001, contestants:16, score:4, winner:"Tina Wesson", favourite:"Jerri, Colby, Jeff", thoughts:"Jerri's sheer annoyingness was the only thing preventing this from being a boring Ogakor domination post-merge. Which is iconic. That said, alliances otherwise felt quite predictable, leading to a relatively stagnant late-game.", color:"#7a9e7e" },
+      { number:3, name:"Africa", year:2001, contestants:16, score:5, winner:"Ethan Zohn", favourite:"Brandon, Linda, Silas", thoughts:"The first tribe swap of the entire series makes for a really dynamic mid-game (it helps that the original Samburu are all lunatics) but ultimately the most boring characters gain a comfortable majority fairly early.", color:"#c4a35a" },
+      { number:4, name:"Marquesas", year:2002, contestants:16, score:6, winner:"Vecepia Towery", favourite:"Rob M, Sean, Kathy", thoughts:"Felt like the most fluid and dynamic game so far! The main characters were all very likeable or at least interesting throughout the entire season, whether that's Boston Rob and John nearer the start or Vecepia and Sean towards the end. I was very happy (and surprised) by the winner!", color:"#8a7fa0" },
+      { number:5, name:"Thailand", year:2002, contestants:16, score:3, winner:"Brian Heidik", favourite:"Shii Ann, Ken, Ghandia", thoughts:"Almost devoid of actual strategy and a main cast of extremely unlikeable characters. Brian the Slimeball, Ted the Pervert, Helen the Pick-Me, Clay the Redneck... GET ME OUTTA HERE. The mid-season twist was an interesting concept but led to the utter destruction of every likeable character.", color:"#7a9eb8" },
+      { number:6, name:"The Amazon", year:2003, contestants:16, score:8, winner:"Jenna Morasca", favourite:"Rob, Deena, Christy", thoughts:"Bizarre naughties misogyny aside, this felt pretty awesome. A slightly slow and infuriating pre-tribe-swap game gives way to a twisty and dynamic latter half of the season, all directed by our robbed MVP, easily my favourite character on survivor so far. The rest of the main cast is great too, even the plastics, Jenna and Heidi, who I ended up really enjoying.", color:"#6b9e6b" },
+      { number:7, name:"Pearl Islands", year:2003, contestants:16, score:7, winner:"Sandra Diaz-Twine", favourite:"Jon, Burton, Sandra", thoughts:"A really solid season - it feels like the show is really hitting its stride. The early contestants are admittedly slightly rough, but the returnee twist actually ends up dumping a bunch of dead weight and bringing the game to life. My strategic slimey gay lover favs carried the show all the way until their reward challenge hamartia... and we still end up with an iconic winner. Skinny Ryan was robbed.", color:"#c07860" },
+      { number:8, name:"All-Stars", year:2004, contestants:18, score:3, winner:"Amber Brkich", favourite:"Shii Ann, Kathy, Jerri", thoughts:"Disappointing. That's probably not the right word... this is kind of disastrous on every level. The season swings from uninteresting, to uncomfortable, to legitimately upsetting at times. From a gameplay perspective, this is of course Rob's season. But he felt like Batman without a Joker - surrounded by cowards, idiots, and yes-men with no one willing or even able to put up any fight. And he comes across needlessly cold and brutal. I usually love a villain but this just didn't feel good - not just because of Rob but also the (potentially excessive) reactions of those he wrongs. And I could care less about Amber too. The fact she was even cast is baffling. As much as I want to ignore it I also need to acknowledge that the way the show treats a genuine sexual assault, in the edit and live show, is really shameful. Sue was not given the respect let alone support she deserved.", color:"#7c5fa8", allstar:true },
+      { number:9, name:"Vanuatu", year:2004, contestants:18, score:6, winner:"Chris Daughtery", favourite:"Eliza, Ami, Twila", thoughts:"A season revolving around fabulous catty lesbians and ironically, or perhaps inevitably, they crown an aro-ace non-binary man as their winner! Another unfortunate casualty of the deep sapphic energy of Vanuatu is that all the hot guys get voted out first - but it's mostly worth it to see Eliza and Twila at each others' throats all season.", color:"#8aaa80" },
+      { number:10, name:"Palau", year:2005, contestants:20, score:6, winner:"Tom Westman", favourite:"Tom, Caryn, Coby", thoughts:"A fantastic main cast of characters, a beautiful setting, and a clever (but cruel) starting twist. But this season is let down majorly by two things. First, the Ulong of it all. The historic obliteration of the tribe episode after episode is genuinely quite entertaining at first... but it really sabotages the strategy of the mid-game. By the time the merge comes, there's not even any tribe to Pagong... just poor old Stephenie who has been through enough! Second, and I think relatedly, Koror quickly developed a popular-kid clique (Tom, Ian, Katie, Gregg, Jenn) which only solidified across so many non-elimination days for them. It's not until episode 12 that this clique finally turns on itself, leading to those slow, frustrating middle contestants. Despite all this, the perfect balance of kooky, catty, heroic, and compassionate in the casting is enough to make this one quite a joy to watch.", color:"#5a9ab0" },
+      { number:11, name:"Guatemala",   year:2005, contestants:18, score:7, winner:"Danni Boatwright", favourite:"Jamie, Brian, Rafe", thoughts:"We're hitting a good consistent stride now. Although the initial twist bringing back felt somewhat... unnecessary (I would have rather had other team captains), it ended up working quite well, with Stephenie and Bobby Jon meshing well with a new and sympathetic cast. The tribe swap is unusually impactful, making for an interesting (perhaps uncomfy, in the best way) post-merge dynamic. I will say that this season is edited to be very much a puppet-mastered affair with Stephenie at the helm - which becomes slightly frustrating to watch (like All-Stars). But like Rob, she isn't even close to being able to pull of the win despite her control over every elimination!", color:"#9e8060", allstar:true  },
+      { number:12, name: "Panama", year:2006, contestants:16, score:9, winner:"Aras Baskauskas", favourite:"Cirie, Shane, Aras", thoughts:"This feels like a big step up in many ways. The opening four-tribe twist feels well-executed, the first appearance of the (proper) hidden immunity idol makes even the boring votes exciting, and the cast is thoroughly charming.", color:"#7a9070"},
+      { number:13, name:"Cook Islands",year:2006, contestants:20, score:8, winner:"Yul Kwon", favourite:"Jonathan, Yul, Ozzy", thoughts:"A classic season (I believe) for a good reason. The race-based opening twist makes for the most diverse cast so far (I don't remember there ever being more than two minorities on the cast so this is a really very significant step) and a lot of lovely characters emerge - but I do think that the cast is maybe a little big, and I'm not a fan of the extended jury and final 3. Yul is a great mastermind of the season... but I occasioanally find his consultant-esque demeanour feels slightly AI generated. And his win is guaranteed from the episode where Jonathan flips allegiances (again), making for a relatively uninteresting strategic game.", color:"#5a9ab8" },
+      { number:14, name:"Fiji",        year:2007, contestants:19, score:8, winner:"Earl Cole", favourite:"Earl, Dreamz, Yau-Man", thoughts:"A trying pre-merge brightened only by the bullying behaviour of Rocky leads to a stunningly volatile final slew of contestants - including the best episode so far, S14E10! The deal between Dreamz and Yau-Man, while silly, leads to probably the best finale so far too. The hidden immunity idol also finally comes into its own as a properly viable twist to the format.", color:"#90a870" },
+      { number:15, name:"China",       year:2007, contestants:16, score:7, winner:"Todd Herzog", favourite:"Peih-Gee, Todd, Amanda", thoughts:"Gorgeous production design (at some point I want to write down some thoughts about the show's production and challenge design, I'm just not really sure where to put it! This was the best for production design and I think Thailand actually had the best challenge design. Anyway.) but this season has a bit of a weaker cast. Perhaps the only interesting strategic move here was the blindside on James - further cementing the genius of this version of the hidden immunity idol - whereas the rest of the votes were fairly obvious (come on, Densie). I enjoyed rooting for Peih-Gee to limp along as far as possible - and she did so well in that! Real Shii-Ann in season 8 flashbacks... my neglected Chinese queens :(((", color:"#c06870" },
+      { number:16, name:"Micronesia",  year:2008, contestants:20, score:9, winner:"Parvati Shallow", favourite:"Cirie, Eliza, Parvati", thoughts:"A brilliant season, owing to an absolutely flawless returning cast. A great enough cast that despite two of my absolute favourites (the Jonnys) quitting relatively early, there are fireworks on screen whenever we see the favourites. If anything the only issue - though I think this is actually intentional - is that the fans are totally lacklustre in comparison. Watching them, especially at the start, is genuinely painful... get back to my favourites already! With that said, I do think there always need to be some cannon fodder - so maybe this format works quite well. This season also cements Cirie's GOAT status. It kills me to see her get so close again and not win! She literally organised the entire game... from the hit on Yau-Man, to the assassination of Joel, to the blindside on Ozzy.", color:"#6888c0", allstar:true  },
+      { number:17, name:"Gabon",       year:2008, contestants:18, score:7, winner:"Bob Crowley", favourite:"Sugar, Crystal, Corinne", thoughts:"The ultimate underdog story. The edit makes us grow to care for and love the weird Fang-tribe losers episode after episode, while slowly revealing that the dominant Kota people are secretly all evil. And then, out of nowhere, the losers seize control! Compelling stuff.", color:"#a08848" },
+      { number:18, name:"Tocantins",   year:2009, contestants:16, score:6, winner:"JT Thomas", favourite:"Taj, Brendan, Coach", thoughts:"All of the ingredients are here for an excellent series. For some reason, it doesn't quite come together fully. The key issue is probably that the main characters the producers chose were just didn't mesh with me - JT's southern charm didn't quite work on me, Stephen was smart but dry, and Coach... well. My thoughts on Coach will be in his entry on my character log. Really the core of this season to me is Taj, but she unfortunately gets sidelined almost entirely after the merge. Despite all these criticisms, the underdog story, the blindside after blindside, and the intense toxicity makes this quite a fun watch.", color:"#c87850" },
+      { number:19, name:"Samoa",       year:2009, contestants:20, score:5, winner:"Natalie White", favourite:"Russell, Yasmin, Shambo", thoughts:"A slightly weird and somewhat weak season. First, there is a real lack of good characters on this season. This is really just the Russell show, and while I actually did grow to appreciate him (not hate him at least), I don't think he has the charisma to carry the entire season alone. And, yes, he does become slighly abrasive after a while. Second, I'm noticing a pretty predictable trend happening where we have a 'reverse Pagonging' as I call it. For the third time in a row, the mid-season underdogs (whom the edit has already entirely focused on) cruises forward to victory with virtually nothing threatening them. I'm not sure if this an issue with the edit, the meta, the players, or just a co-incidence, but it's getting a bit too predictable. There are a bunch of other small criticisms and strange things that happened. A bad winner choice, an episode with no (actual) tribal council, no family visit (why?), an excessively large cast, the episode of unending rain and suffering, the explicit racism (which Probst treated weirdly), two concerning medevacs...", color:"#60a890" },
+      { number:20, name:"Heroes vs. Villains", year:2010, contestants:20, score:10, winner:"Sandra Diaz-Twine", favourite:"Sandra, Parvati, Coach", thoughts:"What makes this season so good (and unique), is that it is not just excellent, but consistent. From the first moment the all-stars appear to the last second of the reunion, each and every episode is full of intrigue, hilarity, and hijinks. Pre-merge, the villains tribe shines as a battle between three giants, Rob, Coach, and Russell, all of whom became much more tolerable and indeed enjoyable when diluted by one another (especially Coach). The Heroes offer their own compelling gameplay (also executing a failed Plan Voodoo!), which even manages to make Cirie's early elimination palatable! Post-merge is the Sandra show, where she emerges as one of the most charasmatic stars of the entire series. Her win feels like a remote dream right until the moment she's sitting at final tribal council.", color:"#7c5fa8", allstar:true },
+      { number:21, name:"Nicaragua",   year:2010, contestants:20, unseen:true, color:"#78b868" },
+      { number:22, name:"Redemption Island", year:2011, contestants:0, unseen:true, color:"#b86860" },
+      { number:23, name:"South Pacific",     year:2011, contestants:0, unseen:true, color:"#5898c0" },
+      { number:24, name:"One World",         year:2012, contestants:0, unseen:true, color:"#7098b0" },
+      { number:25, name:"Philippines",       year:2012, contestants:0, unseen:true, color:"#c07848" },
+      { number:26, name:"Caramoan",          year:2013, contestants:0, unseen:true, color:"#68a888" },
+      { number:27, name:"Blood vs. Water",   year:2013, contestants:0, unseen:true, color:"#8878b8" },
+      { number:28, name:"Cagayan",           year:2014, contestants:0, unseen:true, color:"#c07060" },
+      { number:29, name:"San Juan del Sur",  year:2014, contestants:0, unseen:true, color:"#78a870" },
+      { number:30, name:"Worlds Apart",      year:2015, contestants:0, unseen:true, color:"#6898b8" },
+      { number:31, name:"Cambodia",          year:2015, contestants:0, unseen:true, color:"#7c5fa8", allstar:true },
+      { number:32, name:"Kaôh Rōng",         year:2016, contestants:0, unseen:true, color:"#58a898" },
+      { number:33, name:"Millennials vs Gen X", year:2016, contestants:0, unseen:true, color:"#9880b0" },
+      { number:34, name:"Game Changers",     year:2017, contestants:0, unseen:true, color:"#7c5fa8", allstar:true },
+      { number:35, name:"Heroes vs. Healers vs. Hustlers", year:2017, contestants:0, unseen:true, color:"#8898c0" },
+      { number:36, name:"Ghost Island",      year:2018, contestants:0, unseen:true, color:"#7890a8" },
+      { number:37, name:"David vs. Goliath", year:2018, contestants:0, unseen:true, color:"#c08858" },
+      { number:38, name:"Edge of Extinction",year:2019, contestants:0, unseen:true, color:"#90a868" },
+      { number:39, name:"Island of the Idols",year:2019,contestants:0, unseen:true, color:"#9868a0" },
+      { number:40, name:"Winners at War",    year:2020, contestants:0, unseen:true, color:"#7c5fa8", allstar:true },
+      { number:41, name:"Season 41", year:2021, contestants:0, unseen:true, color:"#c07060" },
+      { number:42, name:"Season 42", year:2022, contestants:0, unseen:true, color:"#5898b0" },
+      { number:43, name:"Season 43", year:2022, contestants:0, unseen:true, color:"#88a870" },
+      { number:44, name:"Season 44", year:2023, contestants:0, unseen:true, color:"#c08050" },
+      { number:45, name:"Season 45", year:2023, contestants:0, unseen:true, color:"#7878b8" },
+      { number:46, name:"Season 46", year:2024, contestants:0, unseen:true, color:"#60a880" },
+      { number:47, name:"Season 47", year:2024, contestants:0, unseen:true, color:"#a87060" },
+      { number:48, name:"Season 48", year:2025, contestants:0, unseen:true, color:"#7898b0" },
+      { number:49, name:"Season 49", year:2025, contestants:0, unseen:true, color:"#7898b0" }
+    ];
+    // ─────────────────────────────────────────────────────────
+
+    const watched = seasons.filter(s => !s.unseen);
+    const unseen  = seasons.filter(s =>  s.unseen);
+
+    const pct = Math.round((watched.length / seasons.length) * 100);
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-label').textContent = `${watched.length} / ${seasons.length} seasons`;
+
+    let currentSort = 'number';
+
+    // ─── Analytics ───────────────────────────────────────────
+    function computeStats() {
+      if (!watched.length) return null;
+      const sum = watched.reduce((a, s) => a + s.score, 0);
+      const avg = sum / watched.length;
+      const sorted = [...watched].sort((a, b) => b.score - a.score);
+      const highest = sorted[0];
+      const lowest  = sorted[sorted.length - 1];
+      const allstar = watched.filter(s => s.allstar);
+      const regular = watched.filter(s => !s.allstar);
+      const allstarAvg = allstar.length ? allstar.reduce((a, s) => a + s.score, 0) / allstar.length : null;
+      const regularAvg = regular.length ? regular.reduce((a, s) => a + s.score, 0) / regular.length : null;
+      return { avg, highest, lowest, allstarAvg, regularAvg, allstarCount: allstar.length };
+    }
+
+    function renderStats() {
+      const s = computeStats();
+      if (!s) return;
+      document.getElementById('stat-avg').textContent       = s.avg.toFixed(1);
+      document.getElementById('stat-high').textContent      = s.highest.score;
+      document.getElementById('stat-high-name').textContent = s.highest.name;
+      document.getElementById('stat-low').textContent       = s.lowest.score;
+      document.getElementById('stat-low-name').textContent  = s.lowest.name;
+
+      if (s.allstarAvg != null) {
+        document.getElementById('stat-allstar').textContent = s.allstarAvg.toFixed(1);
+        document.getElementById('stat-allstar-detail').textContent =
+          `${s.allstarCount} season${s.allstarCount === 1 ? '' : 's'} · regular avg ${s.regularAvg.toFixed(1)}`;
+      } else {
+        document.getElementById('stat-allstar').textContent = '—';
+        document.getElementById('stat-allstar-detail').textContent = 'No returnee seasons yet';
+      }
+    }
+
+    // ─── Chart ───────────────────────────────────────────────
+    function renderChart() {
+      const svg  = document.getElementById('score-chart');
+      const wrap = document.getElementById('chart-wrap');
+      const data = [...watched].sort((a, b) => a.number - b.number);
+      if (!data.length) return;
+
+      // Width matches the SVG's actual rendered width (wrap minus its horizontal padding)
+      const W = svg.clientWidth || (wrap.clientWidth - 16);
+      const H = 200;
+      const padL = 26, padR = 14, padT = 14, padB = 26;
+      const innerW = W - padL - padR;
+      const innerH = H - padT - padB;
+
+      const xScale = i => padL + (data.length === 1 ? innerW / 2 : (i / (data.length - 1)) * innerW);
+      const yScale = v => padT + ((10 - v) / 10) * innerH;
+
+      const stats = computeStats();
+      let svgContent = '';
+
+      // Horizontal gridlines + y-axis labels (0, 5, 10)
+      [0, 5, 10].forEach(v => {
+        const y = yScale(v);
+        const isEdge = v === 0 || v === 10;
+        svgContent += `<line x1="${padL}" x2="${W - padR}" y1="${y}" y2="${y}" stroke="var(--border)" stroke-width="1" ${isEdge ? '' : 'stroke-dasharray="2,3"'} />`;
+        svgContent += `<text x="${padL - 6}" y="${y + 3}" text-anchor="end" font-size="9" fill="var(--muted)" font-family="DM Sans, sans-serif">${v}</text>`;
+      });
+
+      // Average reference line
+      const avgY = yScale(stats.avg);
+      svgContent += `<line x1="${padL}" x2="${W - padR}" y1="${avgY}" y2="${avgY}" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3,3" opacity="0.55" />`;
+      svgContent += `<text x="${W - padR - 4}" y="${avgY - 4}" text-anchor="end" font-size="8" fill="var(--accent)" font-family="DM Sans, sans-serif" font-weight="600" letter-spacing="0.5">AVG ${stats.avg.toFixed(1)}</text>`;
+
+      // Connecting polyline (between season scores)
+      const linePoints = data.map((s, i) => `${xScale(i)},${yScale(s.score)}`).join(' ');
+      svgContent += `<polyline points="${linePoints}" fill="none" stroke="var(--muted)" stroke-width="1.3" opacity="0.4" />`;
+
+      // Dots — all-stars get an outer ring in season's colour
+      data.forEach((s, i) => {
+        const cx = xScale(i);
+        const cy = yScale(s.score);
+        const r  = 4.5;
+        if (s.allstar) {
+          svgContent += `<circle cx="${cx}" cy="${cy}" r="${r + 3}" fill="none" stroke="${s.color}" stroke-width="1.3" opacity="0.5" />`;
+        }
+        svgContent += `<circle class="chart-dot" data-idx="${i}" cx="${cx}" cy="${cy}" r="${r}" fill="${s.color}" stroke="var(--surface)" stroke-width="1.5" />`;
+      });
+
+      // Sparse x-axis labels: first, middle, last
+      const xLabelIdxs = data.length <= 2
+        ? data.map((_, i) => i)
+        : [0, Math.floor((data.length - 1) / 2), data.length - 1];
+      xLabelIdxs.forEach(idx => {
+        const s = data[idx];
+        svgContent += `<text x="${xScale(idx)}" y="${H - 8}" text-anchor="middle" font-size="9" fill="var(--muted)" font-family="DM Sans, sans-serif" letter-spacing="0.5">S${String(s.number).padStart(2, '0')}</text>`;
+      });
+
+      svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+      svg.innerHTML = svgContent;
+
+      // Hover/tap interactions
+      const tip = document.getElementById('chart-tooltip');
+      svg.querySelectorAll('.chart-dot').forEach(dot => {
+        const showFor = () => {
+          const idx = +dot.dataset.idx;
+          const s   = data[idx];
+          // Position tooltip relative to the wrap element
+          const wrapRect = wrap.getBoundingClientRect();
+          const dotRect  = dot.getBoundingClientRect();
+          const cx = dotRect.left + dotRect.width / 2 - wrapRect.left;
+          const cy = dotRect.top - wrapRect.top;
+          tip.innerHTML = `
+            <div class="ct-num">S${String(s.number).padStart(2, '0')} · ${s.year}</div>
+            <div class="ct-name">${s.name}</div>
+            <div class="ct-score">${s.score}<span class="denom">/10</span></div>
+          `;
+          tip.style.left = cx + 'px';
+          tip.style.top  = cy + 'px';
+          tip.classList.add('visible');
+          dot.setAttribute('r', '6.5');
+        };
+        const hide = () => {
+          tip.classList.remove('visible');
+          dot.setAttribute('r', '4.5');
+        };
+        dot.addEventListener('mouseenter', showFor);
+        dot.addEventListener('mouseleave', hide);
+        dot.addEventListener('click', e => { e.stopPropagation(); showFor(); });
+      });
+
+      // Tap-outside to dismiss tooltip on touch devices
+      document.addEventListener('click', () => tip.classList.remove('visible'));
+    }
+
+    // Re-render chart on resize (debounced)
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(renderChart, 120);
+    });
+
+    // ─── Season list (unchanged) ─────────────────────────────
+    function buildSeasonEl(s) {
+      const el = document.createElement('div');
+      el.className = 'season' + (s.unseen ? ' unseen' : '');
+
+      const scoreBlock = s.unseen
+        ? `<div class="season-score" style="color:var(--border)">—</div>`
+        : `<div class="season-score-wrap">
+             <div class="season-score" style="color:${s.color}">${s.score}</div>
+             <div class="season-score-denom">out of 10</div>
+           </div>`;
+
+      const badge = s.allstar ? `<span class="allstar-badge">RETURNEES</span>` : '';
+
+      el.innerHTML = `
+        <div class="season-header">
+          <div class="accent-bar" style="background:${s.color}"></div>
+          <div class="season-meta">
+            <div class="season-number">Season ${String(s.number).padStart(2,'0')} · ${s.year}</div>
+            <div class="season-title">${s.name}${badge}</div>
+            <div class="season-sub">${s.contestants} contestants</div>
+          </div>
+          ${scoreBlock}
+          ${!s.unseen ? `<div class="chevron"><svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>` : ''}
+        </div>
+        ${!s.unseen ? `
+        <div class="season-body"><div class="season-body-inner">
+          <div class="season-details">
+            <div class="detail-block">
+              <div class="detail-label">Winner</div>
+              <div class="detail-value">
+                <span class="spoiler-text">${s.winner}</span>
+                <span class="spoiler-hint">click to reveal</span>
+              </div>
+            </div>
+            <div class="detail-block">
+              <div class="detail-label">Top 3 Characters</div>
+              <div class="detail-value">${s.favourite}</div>
+            </div>
+            <div class="detail-block full">
+              <div class="detail-label">Thoughts</div>
+              <div class="detail-value">${s.thoughts}</div>
+            </div>
+          </div>
+        </div></div>` : ''}
+      `;
+
+      if (!s.unseen) {
+        el.querySelector('.season-header').addEventListener('click', () => el.classList.toggle('open'));
+        const spoiler = el.querySelector('.spoiler-text');
+        const hint    = el.querySelector('.spoiler-hint');
+        spoiler.addEventListener('click', e => {
+          e.stopPropagation();
+          spoiler.classList.toggle('revealed');
+          hint.textContent = spoiler.classList.contains('revealed') ? '' : 'click to reveal';
+        });
+      }
+      return el;
+    }
+
+    function renderList() {
+      const list = document.getElementById('seasons-list');
+      list.innerHTML = '';
+
+      const sortedWatched = [...watched].sort((a, b) =>
+        currentSort === 'score' ? b.score - a.score : a.number - b.number
+      );
+
+      const wl = document.createElement('div');
+      wl.className = 'section-label';
+      wl.textContent = 'Watched';
+      list.appendChild(wl);
+      sortedWatched.forEach(s => list.appendChild(buildSeasonEl(s)));
+
+      const ul = document.createElement('div');
+      ul.className = 'section-label dimmed';
+      ul.textContent = 'Up Next';
+      list.appendChild(ul);
+      unseen.forEach(s => list.appendChild(buildSeasonEl(s)));
+    }
+
+    document.querySelectorAll('.sort-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentSort = btn.dataset.sort;
+        renderList();
+      });
+    });
+
+    // ─── Init ────────────────────────────────────────────────
+    renderStats();
+    renderChart();
+    renderList();
+  </script>
+</body>
+</html>
