@@ -855,7 +855,7 @@ window.CastData = {
 
         {
       number: 21, name: "Nicaragua", year: 2010, color: "#b86b5a", allstar: false,
-      favourites: ["naonka-mixon", "chase-rice", "brenda-lower"],
+      favourites: ["naonka-mixon", "chase-rice", "brenda-lowe"],
       cast: [
         { id: "fabio-birza",     placement: 1,  jury: false, starting_tribe: "La Flor" },
         { id: "chase-rice",      placement: 2,  jury: false, starting_tribe: "La Flor" },
@@ -864,11 +864,11 @@ window.CastData = {
         { id: "jane-bright",     placement: 6,  jury: true,  starting_tribe: "Espada" },
         { id: "dan-lembo",       placement: 5,  jury: true,  starting_tribe: "Espada" },
         { id: "benry-henry",     placement: 7,  jury: true,  starting_tribe: "La Flor" },
-        { id: "naonka-mixon",    placement: 9,  jury: false, starting_tribe: "La Flor", note: "quit" },
-        { id: "purple-kelly",    placement: 8,  jury: false, starting_tribe: "La Flor", note: "quit" },
-        { id: "marty-piombo",    placement: 11, jury: false, starting_tribe: "Espada" },
-        { id: "alina-wilson",    placement: 12, jury: false, starting_tribe: "La Flor" },
-        { id: "brenda-lowe",     placement: 10, jury: false, starting_tribe: "La Flor" },
+        { id: "naonka-mixon",    placement: 9,  jury: true, starting_tribe: "La Flor", note: "quit" },
+        { id: "purple-kelly",    placement: 8,  jury: true, starting_tribe: "La Flor", note: "quit" },
+        { id: "marty-piombo",    placement: 11, jury: true, starting_tribe: "Espada" },
+        { id: "alina-wilson",    placement: 12, jury: true, starting_tribe: "La Flor" },
+        { id: "brenda-lowe",     placement: 10, jury: true, starting_tribe: "La Flor" },
         { id: "yve-rojas",       placement: 14, jury: false, starting_tribe: "Espada" },
         { id: "jimmy-johnson",   placement: 18, jury: false, starting_tribe: "Espada" },
         { id: "jimmy-taranto",   placement: 17, jury: false, starting_tribe: "Espada" },
