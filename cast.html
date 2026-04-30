@@ -610,7 +610,7 @@
       document.getElementById('fav-count-favourites').textContent = `(${total})`;
 
       const intro = document.getElementById('fav-intro');
-      intro.textContent = `${total} contestants picked as favourites across ${seasons.length} seasons. Click any name for their full profile.`;
+      intro.textContent = `${total} characters picked as favourites across ${seasons.length} seasons. Click any name for their full profile.`;
 
       const list = document.getElementById('fav-list');
       list.innerHTML = data.map(({ id, seasons: favSeasons }) => {
