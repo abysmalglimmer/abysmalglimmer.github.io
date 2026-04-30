@@ -346,6 +346,29 @@ window.CastData = {
     "ashley-trainer":    { name: "Ashley Trainer",    bio: "" },
     "betsy-bolan":      { name: "Betsy Bolan",      bio: "" },
     "jaison-robinson":   { name: "Jaison Robinson",   bio: "" },
+
+
+        // ── S21 Nicaragua ───────────────────────────────────────────────────
+    "fabio-birza":        { name: "Fabio Jud Birza",        bio: "" },
+    "chase-rice":         { name: "Chase Rice",         bio: "" },
+    "sash-lenahan":       { name: "Sash Lenahan",       bio: "" },
+    "holly-hoffman":      { name: "Holly Hoffman",      bio: "" },
+    "jane-bright":        { name: "Jane Bright",        bio: "" },
+    "dan-lembo":          { name: "Dan Lembo",          bio: "" },
+    "benry-henry":        { name: "Benry Henry",        bio: "" },
+    "naonka-mixon":       { name: "NaOnka Mixon",       bio: "" },
+    "purple-kelly":       { name: "Purple Kelly Shinn",        bio: "" },
+    "marty-piombo":       { name: "Marty Piombo",       bio: "" },
+    "alina-wilson":       { name: "Alina Wilson",       bio: "" },
+    "brenda-lowe":        { name: "Brenda Lowe",        bio: "" },
+    "yve-rojas":          { name: "Yve Rojas",          bio: "" },
+    "jimmy-johnson":          { name: "Jimmy Johnson",      bio: "" },
+    "jimmy-taranto":      { name: "Jimmy Tarantino",           bio: "" },
+    "kelly-bruno":        { name: "Kelly Bruno",        bio: "" },
+    "wendy-jo-desmidt-kohlhoff":    { name: "Wendy Jo DeSmidt-Kohlhoff", bio: "" },
+    "shannon-elkins":     { name: "Shannon Elkins",     bio: "" },
+    "tyrone-davis":       { name: "Tyrone Davis",       bio: "" },
+    "jill-behm":          { name: "Jill Behm",          bio: "" },
   
   },
 
@@ -827,6 +850,33 @@ window.CastData = {
         { id: "stephenie-lagrossa",placement: 19, jury: false, starting_tribe: "Heroes" },
         { id: "tom-westman",       placement: 16, jury: false, starting_tribe: "Heroes" },
         { id: "sugar-kiper",       placement: 20, jury: false, starting_tribe: "Heroes" },
+      ]
+    },
+
+        {
+      number: 21, name: "Nicaragua", year: 2010, color: "#b86b5a", allstar: false,
+      favourites: ["naonka-mixon", "chase-rice", "brenda-lower"],
+      cast: [
+        { id: "fabio-birza",     placement: 1,  jury: false, starting_tribe: "La Flor" },
+        { id: "chase-rice",      placement: 2,  jury: false, starting_tribe: "La Flor" },
+        { id: "sash-lenahan",    placement: 3,  jury: false, starting_tribe: "La Flor" },
+        { id: "holly-hoffman",   placement: 4,  jury: true,  starting_tribe: "Espada" },
+        { id: "jane-bright",     placement: 6,  jury: true,  starting_tribe: "Espada" },
+        { id: "dan-lembo",       placement: 5,  jury: true,  starting_tribe: "Espada" },
+        { id: "benry-henry",     placement: 7,  jury: true,  starting_tribe: "La Flor" },
+        { id: "naonka-mixon",    placement: 9,  jury: false, starting_tribe: "La Flor", note: "quit" },
+        { id: "purple-kelly",    placement: 8,  jury: false, starting_tribe: "La Flor", note: "quit" },
+        { id: "marty-piombo",    placement: 11, jury: false, starting_tribe: "Espada" },
+        { id: "alina-wilson",    placement: 12, jury: false, starting_tribe: "La Flor" },
+        { id: "brenda-lowe",     placement: 10, jury: false, starting_tribe: "La Flor" },
+        { id: "yve-rojas",       placement: 14, jury: false, starting_tribe: "Espada" },
+        { id: "jimmy-johnson",   placement: 18, jury: false, starting_tribe: "Espada" },
+        { id: "jimmy-taranto",   placement: 17, jury: false, starting_tribe: "Espada" },
+        { id: "kelly-bruno",     placement: 15, jury: false, starting_tribe: "La Flor" },
+        { id: "jill-behm", placement: 13, jury: false, starting_tribe: "Espada" },
+        { id: "shannon-elkins",  placement: 19, jury: false, starting_tribe: "La Flor" },
+        { id: "tyrone-davis",    placement: 16, jury: false, starting_tribe: "Espada" },
+        { id: "wendy-jo-desmidt-kohlhoff",       placement: 20, jury: false, starting_tribe: "Espada" },
       ]
     },
     
