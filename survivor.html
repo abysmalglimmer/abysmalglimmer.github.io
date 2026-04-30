@@ -8,13 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel+Decorative:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     @font-face {
-  font-family: 'Block Berthold';
-  src: url('fonts/BlockBE-Heavy.woff2') format('woff2'),
-       url('fonts/BlockBE-Heavy.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+      font-family: 'Block Berthold';
+      src: url('fonts/BlockBE-Heavy.woff2') format('woff2'),
+           url('fonts/BlockBE-Heavy.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -126,6 +126,195 @@
       font-weight: 300;
     }
 
+    /* ── Analytics block ──────────────────────────────────── */
+    .stats-panel {
+      max-width: 740px;
+      margin: 32px auto 0;
+      padding: 0 48px;
+    }
+
+    .stats-eyebrow {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .stat-tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .stat-tile {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      min-height: 92px;
+    }
+
+    .stat-tile-value {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+
+    .stat-tile-value .suffix {
+      font-size: 0.6rem;
+      color: var(--muted);
+      font-weight: 300;
+      margin-left: 4px;
+      letter-spacing: 0.06em;
+      vertical-align: middle;
+    }
+
+    .stat-tile-label {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-top: auto;
+      padding-top: 10px;
+    }
+
+    .stat-tile-detail {
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-weight: 300;
+      font-style: italic;
+      margin-top: 3px;
+    }
+
+    .score-chart-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 8px 6px;
+      position: relative;
+      margin-top: 8px;
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0 10px 8px;
+    }
+
+    .chart-title {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    .chart-legend {
+      display: flex;
+      gap: 14px;
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .chart-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .legend-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--muted);
+      opacity: 0.6;
+    }
+
+    .legend-ring {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      border: 1.2px solid var(--muted);
+      opacity: 0.7;
+    }
+
+    .legend-line {
+      width: 14px;
+      height: 0;
+      border-top: 1px dashed var(--accent);
+      opacity: 0.55;
+    }
+
+    .score-chart {
+      display: block;
+      width: 100%;
+      height: 200px;
+      overflow: visible;
+    }
+
+    .chart-dot {
+      transition: opacity 0.12s ease;
+      cursor: pointer;
+    }
+    .chart-dot:hover { opacity: 0.85; }
+
+    .chart-tooltip {
+      position: absolute;
+      background: var(--text);
+      color: #fff;
+      padding: 9px 12px 10px;
+      border-radius: 3px;
+      pointer-events: none;
+      transform: translate(-50%, calc(-100% - 12px));
+      opacity: 0;
+      transition: opacity 0.12s ease;
+      white-space: nowrap;
+      z-index: 10;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    }
+    .chart-tooltip.visible { opacity: 1; }
+    .chart-tooltip::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      margin-left: -5px;
+      border: 5px solid transparent;
+      border-top-color: var(--text);
+      border-bottom: 0;
+    }
+    .ct-num {
+      font-family: 'Block Berthold', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      color: rgba(255,255,255,0.4);
+    }
+    .ct-name {
+      font-size: 0.82rem;
+      font-weight: 500;
+      margin: 2px 0 4px;
+    }
+    .ct-score {
+      font-family: 'Block Berthold', sans-serif;
+      color: var(--accent);
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+    .ct-score .denom {
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.35);
+      margin-left: 2px;
+      font-weight: 300;
+    }
+
+    /* ── Existing styles ──────────────────────────────────── */
     .sv-controls {
       max-width: 740px;
       margin: 30px auto 0;
@@ -261,21 +450,6 @@
       margin-top: 1px;
     }
 
-    .score-pip-row {
-      display: flex;
-      gap: 2px;
-      margin-top: 5px;
-    }
-
-    .score-pip {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--border);
-    }
-
-    .score-pip.filled { background: var(--accent); }
-
     .chevron {
       width: 18px;
       height: 18px;
@@ -363,6 +537,13 @@
     }
 
     .season.unseen .accent-bar { background: var(--border) !important; }
+
+    @media (max-width: 540px) {
+      .stats-panel,
+      .sv-controls,
+      .seasons-list { padding: 0 24px; }
+      .chart-legend { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -384,6 +565,46 @@
       </div>
     </div>
 
+    <!-- ── Analytics ── -->
+    <div class="stats-panel">
+      <div class="stats-eyebrow">Watch Stats</div>
+
+      <div class="stat-tiles">
+        <div class="stat-tile">
+          <div class="stat-tile-value"><span id="stat-avg">—</span><span class="suffix">/10</span></div>
+          <div class="stat-tile-label">Average</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-value"><span id="stat-high">—</span><span class="suffix">/10</span></div>
+          <div class="stat-tile-label">Highest</div>
+          <div class="stat-tile-detail" id="stat-high-name">—</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-value"><span id="stat-low">—</span><span class="suffix">/10</span></div>
+          <div class="stat-tile-label">Lowest</div>
+          <div class="stat-tile-detail" id="stat-low-name">—</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-tile-value"><span id="stat-allstar">—</span><span class="suffix">/10</span></div>
+          <div class="stat-tile-label">Returnees</div>
+          <div class="stat-tile-detail" id="stat-allstar-detail">—</div>
+        </div>
+      </div>
+
+      <div class="score-chart-wrap" id="chart-wrap">
+        <div class="chart-header">
+          <div class="chart-title">Score by season</div>
+          <div class="chart-legend">
+            <div class="chart-legend-item"><span class="legend-dot"></span>Regular</div>
+            <div class="chart-legend-item"><span class="legend-ring"></span>Returnees</div>
+            <div class="chart-legend-item"><span class="legend-line"></span>Average</div>
+          </div>
+        </div>
+        <svg class="score-chart" id="score-chart"></svg>
+        <div class="chart-tooltip" id="chart-tooltip"></div>
+      </div>
+    </div>
+
     <div class="sv-controls">
       <span class="sv-controls-label">Sort</span>
       <button class="sort-btn active" data-sort="number">Season #</button>
@@ -395,6 +616,7 @@
 
   <script src="nav.js"></script>
   <script>
+    // ─── PASTE YOUR EXISTING `seasons` ARRAY HERE ────────────
     const seasons = [
       { number:1, name:"Borneo", year:2000, contestants:16, score:2, winner:"Richard Hatch", favourite:"Richard, Susan, Greg", thoughts:"Hardly any semblance of strategy, but we all have to start somewhere. Aside from novelty, the only real highlights are beef between Susan and Kelly, and Richard, who seems to be the only one to be treating this as some kind of strategic game.", color:"#c8845a" },
       { number:2, name:"The Australian Outback", year:2001, contestants:16, score:4, winner:"Tina Wesson", favourite:"Jerri, Colby, Jeff", thoughts:"Jerri's sheer annoyingness was the only thing preventing this from being a boring Ogakor domination post-merge. Which is iconic. That said, alliances otherwise felt quite predictable, leading to a relatively stagnant late-game.", color:"#7a9e7e" },
@@ -446,6 +668,7 @@
       { number:48, name:"Season 48", year:2025, contestants:0, unseen:true, color:"#7898b0" },
       { number:49, name:"Season 49", year:2025, contestants:0, unseen:true, color:"#7898b0" }
     ];
+    // ─────────────────────────────────────────────────────────
 
     const watched = seasons.filter(s => !s.unseen);
     const unseen  = seasons.filter(s =>  s.unseen);
@@ -456,8 +679,142 @@
 
     let currentSort = 'number';
 
+    // ─── Analytics ───────────────────────────────────────────
+    function computeStats() {
+      if (!watched.length) return null;
+      const sum = watched.reduce((a, s) => a + s.score, 0);
+      const avg = sum / watched.length;
+      const sorted = [...watched].sort((a, b) => b.score - a.score);
+      const highest = sorted[0];
+      const lowest  = sorted[sorted.length - 1];
+      const allstar = watched.filter(s => s.allstar);
+      const regular = watched.filter(s => !s.allstar);
+      const allstarAvg = allstar.length ? allstar.reduce((a, s) => a + s.score, 0) / allstar.length : null;
+      const regularAvg = regular.length ? regular.reduce((a, s) => a + s.score, 0) / regular.length : null;
+      return { avg, highest, lowest, allstarAvg, regularAvg, allstarCount: allstar.length };
+    }
 
+    function renderStats() {
+      const s = computeStats();
+      if (!s) return;
+      document.getElementById('stat-avg').textContent       = s.avg.toFixed(1);
+      document.getElementById('stat-high').textContent      = s.highest.score;
+      document.getElementById('stat-high-name').textContent = s.highest.name;
+      document.getElementById('stat-low').textContent       = s.lowest.score;
+      document.getElementById('stat-low-name').textContent  = s.lowest.name;
 
+      if (s.allstarAvg != null) {
+        document.getElementById('stat-allstar').textContent = s.allstarAvg.toFixed(1);
+        document.getElementById('stat-allstar-detail').textContent =
+          `${s.allstarCount} season${s.allstarCount === 1 ? '' : 's'} · regular avg ${s.regularAvg.toFixed(1)}`;
+      } else {
+        document.getElementById('stat-allstar').textContent = '—';
+        document.getElementById('stat-allstar-detail').textContent = 'No returnee seasons yet';
+      }
+    }
+
+    // ─── Chart ───────────────────────────────────────────────
+    function renderChart() {
+      const svg  = document.getElementById('score-chart');
+      const wrap = document.getElementById('chart-wrap');
+      const data = [...watched].sort((a, b) => a.number - b.number);
+      if (!data.length) return;
+
+      // Width matches the SVG's actual rendered width (wrap minus its horizontal padding)
+      const W = svg.clientWidth || (wrap.clientWidth - 16);
+      const H = 200;
+      const padL = 26, padR = 14, padT = 14, padB = 26;
+      const innerW = W - padL - padR;
+      const innerH = H - padT - padB;
+
+      const xScale = i => padL + (data.length === 1 ? innerW / 2 : (i / (data.length - 1)) * innerW);
+      const yScale = v => padT + ((10 - v) / 10) * innerH;
+
+      const stats = computeStats();
+      let svgContent = '';
+
+      // Horizontal gridlines + y-axis labels (0, 5, 10)
+      [0, 5, 10].forEach(v => {
+        const y = yScale(v);
+        const isEdge = v === 0 || v === 10;
+        svgContent += `<line x1="${padL}" x2="${W - padR}" y1="${y}" y2="${y}" stroke="var(--border)" stroke-width="1" ${isEdge ? '' : 'stroke-dasharray="2,3"'} />`;
+        svgContent += `<text x="${padL - 6}" y="${y + 3}" text-anchor="end" font-size="9" fill="var(--muted)" font-family="DM Sans, sans-serif">${v}</text>`;
+      });
+
+      // Average reference line
+      const avgY = yScale(stats.avg);
+      svgContent += `<line x1="${padL}" x2="${W - padR}" y1="${avgY}" y2="${avgY}" stroke="var(--accent)" stroke-width="1" stroke-dasharray="3,3" opacity="0.55" />`;
+      svgContent += `<text x="${W - padR - 4}" y="${avgY - 4}" text-anchor="end" font-size="8" fill="var(--accent)" font-family="DM Sans, sans-serif" font-weight="600" letter-spacing="0.5">AVG ${stats.avg.toFixed(1)}</text>`;
+
+      // Connecting polyline (between season scores)
+      const linePoints = data.map((s, i) => `${xScale(i)},${yScale(s.score)}`).join(' ');
+      svgContent += `<polyline points="${linePoints}" fill="none" stroke="var(--muted)" stroke-width="1.3" opacity="0.4" />`;
+
+      // Dots — all-stars get an outer ring in season's colour
+      data.forEach((s, i) => {
+        const cx = xScale(i);
+        const cy = yScale(s.score);
+        const r  = 4.5;
+        if (s.allstar) {
+          svgContent += `<circle cx="${cx}" cy="${cy}" r="${r + 3}" fill="none" stroke="${s.color}" stroke-width="1.3" opacity="0.5" />`;
+        }
+        svgContent += `<circle class="chart-dot" data-idx="${i}" cx="${cx}" cy="${cy}" r="${r}" fill="${s.color}" stroke="var(--surface)" stroke-width="1.5" />`;
+      });
+
+      // Sparse x-axis labels: first, middle, last
+      const xLabelIdxs = data.length <= 2
+        ? data.map((_, i) => i)
+        : [0, Math.floor((data.length - 1) / 2), data.length - 1];
+      xLabelIdxs.forEach(idx => {
+        const s = data[idx];
+        svgContent += `<text x="${xScale(idx)}" y="${H - 8}" text-anchor="middle" font-size="9" fill="var(--muted)" font-family="DM Sans, sans-serif" letter-spacing="0.5">S${String(s.number).padStart(2, '0')}</text>`;
+      });
+
+      svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+      svg.innerHTML = svgContent;
+
+      // Hover/tap interactions
+      const tip = document.getElementById('chart-tooltip');
+      svg.querySelectorAll('.chart-dot').forEach(dot => {
+        const showFor = () => {
+          const idx = +dot.dataset.idx;
+          const s   = data[idx];
+          // Position tooltip relative to the wrap element
+          const wrapRect = wrap.getBoundingClientRect();
+          const dotRect  = dot.getBoundingClientRect();
+          const cx = dotRect.left + dotRect.width / 2 - wrapRect.left;
+          const cy = dotRect.top - wrapRect.top;
+          tip.innerHTML = `
+            <div class="ct-num">S${String(s.number).padStart(2, '0')} · ${s.year}</div>
+            <div class="ct-name">${s.name}</div>
+            <div class="ct-score">${s.score}<span class="denom">/10</span></div>
+          `;
+          tip.style.left = cx + 'px';
+          tip.style.top  = cy + 'px';
+          tip.classList.add('visible');
+          dot.setAttribute('r', '6.5');
+        };
+        const hide = () => {
+          tip.classList.remove('visible');
+          dot.setAttribute('r', '4.5');
+        };
+        dot.addEventListener('mouseenter', showFor);
+        dot.addEventListener('mouseleave', hide);
+        dot.addEventListener('click', e => { e.stopPropagation(); showFor(); });
+      });
+
+      // Tap-outside to dismiss tooltip on touch devices
+      document.addEventListener('click', () => tip.classList.remove('visible'));
+    }
+
+    // Re-render chart on resize (debounced)
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(renderChart, 120);
+    });
+
+    // ─── Season list (unchanged) ─────────────────────────────
     function buildSeasonEl(s) {
       const el = document.createElement('div');
       el.className = 'season' + (s.unseen ? ' unseen' : '');
@@ -507,7 +864,7 @@
       if (!s.unseen) {
         el.querySelector('.season-header').addEventListener('click', () => el.classList.toggle('open'));
         const spoiler = el.querySelector('.spoiler-text');
-        const hint = el.querySelector('.spoiler-hint');
+        const hint    = el.querySelector('.spoiler-hint');
         spoiler.addEventListener('click', e => {
           e.stopPropagation();
           spoiler.classList.toggle('revealed');
@@ -547,6 +904,9 @@
       });
     });
 
+    // ─── Init ────────────────────────────────────────────────
+    renderStats();
+    renderChart();
     renderList();
   </script>
 </body>
