@@ -21,15 +21,15 @@ window.CastData = {
 
     // ── S2 The Australian Outback ───────────────────────────────────────
     "tina-wesson":        { name: "Tina Wesson",                     bio: "" },
-    "colby-donaldson":    { name: "Colby Donaldson",                 bio: "" },
+    "colby-donaldson":    { name: "Colby Donaldson",                 bio: "While he does come across as a proper hero and all-around-solid-guy in Australia, Colby is honestly somewhat useless. Decision to abandon Jerri in season 2 aside, he never seems to make actual strategic moves, and even by season 8 his challenge dominance has vanished. His status as the last Hero standing in season 20 appears to be mostly be down to his inoffensive presence and self-deprecating humility." },
     "amber-brkich":       { name: "Amber Brkich",                    bio: "Completely anonymous in the edit of Australian Outback, but somehow is brought back for All-Stars and ekes out a win based on her relationship with a certain Boston Rob." },
-    "jerri-manthey":      { name: "Jerri Manthey",                   bio: "The first 'villain'. Love her. And I love how she's just as annoying on her second go!" },
+    "jerri-manthey":      { name: "Jerri Manthey",                   bio: "The first 'villain'. Love her. And I love how she's just as annoying on her second go!\nOn Heroes vs Villains, it looks like Jerri has matured a lot. And honestly? I don't know if she has that much to offer without her crazy antics and abrasive personality. But I enjoyed her partnership with Coach, whom I actually think she kind of unfairly abandoned. Her rivalry with Colby sadly didn't get played up in this season either... I suppose they have both grown up a bit!" },
     "elisabeth-filarski": { name: "Elisabeth Filarski",              bio: "" },
     "rodger-bingham":     { name: "Rodger Bingham",                  bio: "" },
     "alicia-calaway":     { name: "Alicia Calaway",                  bio: "" },
     "keith-famie":        { name: "Keith Famie",                     bio: "" },
     "nick-brown":         { name: "Nick Brown",                      bio: "" },
-    "jeff-varner":        { name: "Jeff Varner",                     bio: "" },
+    "jeff-varner":        { name: "Jeff Varner",                     bio: "The bizarre 'most votes received previously' tiebreak mechanic resulted in him getting eliminated immediately after the merge. As a early season main character, it stings a little and I don't think he got a fair shot." },
     "michael-skupin":     { name: "Michael Skupin",                  bio: "" },
     "kimmi-kappenberg":   { name: "Kimmi Kappenberg",                bio: "Most Australian Outback drama in Kucha stemmed from the fact that she is a vegetarian. Woke messy queen!" },
     "mitchell-olson":     { name: "Mitchell Olson",                  bio: "" },
