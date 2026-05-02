@@ -369,6 +369,25 @@ window.CastData = {
     "shannon-elkins":     { name: "Shannon Elkins",     bio: "Episode 2 of Nicaragua has one of my favourite tribal councils of all time, thanks to this lunatic. Taken from us too soon." },
     "tyrone-davis":       { name: "Tyrone Davis",       bio: "" },
     "jill-behm":          { name: "Jill Behm",          bio: "" },
+
+
+        // ── S22 Redemption Island ─────────────────────────────────────────
+    "francesca-hogi":      { name: "Francesca Hogi",      bio: "" },
+    "kristina-kell":       { name: "Kristina Kell",       bio: "" },
+    "krista-klumpp":       { name: "Krista Klumpp",       bio: "" },
+    "stephanie-valencia":  { name: "Stephanie Valencia",  bio: "" },
+    "sarita-white":        { name: "Sarita White",        bio: "" },
+    "david-murphy":        { name: "David Murphy",        bio: "" },
+    "julie-wolfe":         { name: "Julie Wolfe",         bio: "" },
+    "steve-wright":        { name: "Steve Wright",        bio: "" },
+    "ralph-kiser":         { name: "Ralph Kiser",         bio: "" },
+    "grant-mattos":        { name: "Grant Mattos",        bio: "" },
+    "matt-elrod":          { name: "Matt Elrod",          bio: "" },
+    "mike-chiesl":         { name: "Mike Chiesl",         bio: "" },
+    "andrea-boehlke":      { name: "Andrea Boehlke",      bio: "" },
+    "ashley-underwood":    { name: "Ashley Underwood",    bio: "" },
+    "natalie-tenerelli":   { name: "Natalie Tenerelli",   bio: "" },
+    "phillip-sheppard":    { name: "Phillip Sheppard",    bio: "" },
   
   },
 
@@ -877,6 +896,31 @@ window.CastData = {
         { id: "shannon-elkins",  placement: 19, jury: false, starting_tribe: "La Flor" },
         { id: "tyrone-davis",    placement: 16, jury: false, starting_tribe: "Espada" },
         { id: "wendy-jo-desmidt-kohlhoff",       placement: 20, jury: false, starting_tribe: "Espada" },
+      ]
+    },
+
+        {
+      number: 22, name: "Redemption Island", year: 2011, color: "#b85c4a", allstar: true,
+      favourites: [],
+      cast: [
+        { id: "rob-mariano",        placement: 1,  jury: false, starting_tribe: "Ometepe" },
+        { id: "phillip-sheppard",   placement: 2,  jury: false, starting_tribe: "Ometepe" },
+        { id: "natalie-tenerelli",  placement: 3,  jury: false, starting_tribe: "Ometepe" },
+        { id: "ashley-underwood",   placement: 4,  jury: true,  starting_tribe: "Ometepe" },
+        { id: "andrea-boehlke",     placement: 5,  jury: true,  starting_tribe: "Ometepe", note:"voted out 16th and returned" },
+        { id: "grant-mattos",       placement: 8,  jury: true,  starting_tribe: "Ometepe" },
+        { id: "matt-elrod",         placement: 7,  jury: true,  starting_tribe: "Ometepe", note:"voted out 2nd and returned" },
+        { id: "mike-chiesl",        placement: 6,  jury: true,  starting_tribe: "Zapatera" },
+        { id: "david-murphy",       placement: 12,  jury: true,  starting_tribe: "Ometepe" },
+        { id: "steve-wright",       placement: 9, jury: false, starting_tribe: "Zapatera" },
+        { id: "ralph-kiser",        placement: 10, jury: false, starting_tribe: "Zapatera" },
+        { id: "julie-wolfe",        placement: 11, jury: false, starting_tribe: "Zapatera" },
+        { id: "sarita-white",       placement: 13, jury: false, starting_tribe: "Zapatera" },
+        { id: "stephanie-valencia", placement: 14, jury: false, starting_tribe: "Zapatera" },
+        { id: "krista-klumpp",      placement: 15, jury: false, starting_tribe: "Ometepe" },
+        { id: "francesca-hogi",     placement: 18, jury: false, starting_tribe: "Zapatera" },
+        { id: "russell-hantz",      placement: 17, jury: false, starting_tribe: "Zapatera" },
+        { id: "kristina-kell",      placement: 16, jury: false, starting_tribe: "Zapatera" },
       ]
     },
     
