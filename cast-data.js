@@ -901,7 +901,7 @@ window.CastData = {
 
         {
       number: 22, name: "Redemption Island", year: 2011, color: "#b85c4a", allstar: true,
-      favourites: [],
+      favourites: ["rob-mariano","phillip-sheppard","david-murphy"],
       cast: [
         { id: "rob-mariano",        placement: 1,  jury: false, starting_tribe: "Ometepe" },
         { id: "phillip-sheppard",   placement: 2,  jury: false, starting_tribe: "Ometepe" },
@@ -912,9 +912,9 @@ window.CastData = {
         { id: "matt-elrod",         placement: 7,  jury: true,  starting_tribe: "Ometepe", note:"voted out 2nd and returned" },
         { id: "mike-chiesl",        placement: 6,  jury: true,  starting_tribe: "Zapatera" },
         { id: "david-murphy",       placement: 12,  jury: true,  starting_tribe: "Ometepe" },
-        { id: "steve-wright",       placement: 9, jury: false, starting_tribe: "Zapatera" },
-        { id: "ralph-kiser",        placement: 10, jury: false, starting_tribe: "Zapatera" },
-        { id: "julie-wolfe",        placement: 11, jury: false, starting_tribe: "Zapatera" },
+        { id: "steve-wright",       placement: 9, jury: true, starting_tribe: "Zapatera" },
+        { id: "ralph-kiser",        placement: 10, jury: true, starting_tribe: "Zapatera" },
+        { id: "julie-wolfe",        placement: 11, jury: true, starting_tribe: "Zapatera" },
         { id: "sarita-white",       placement: 13, jury: false, starting_tribe: "Zapatera" },
         { id: "stephanie-valencia", placement: 14, jury: false, starting_tribe: "Zapatera" },
         { id: "krista-klumpp",      placement: 15, jury: false, starting_tribe: "Ometepe" },
