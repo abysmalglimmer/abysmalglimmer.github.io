@@ -382,7 +382,7 @@ window.CastData = {
     "steve-wright":        { name: "Steve Wright",        bio: "" },
     "ralph-kiser":         { name: "Ralph Kiser",         bio: "" },
     "grant-mattos":        { name: "Grant Mattos",        bio: "" },
-    "matt-elrod":          { name: "Matt Elrod",          bio: "" },
+    "matt-elrod":          { name: "Matt Elrod",          bio: "This poor, sweet, innocent child! He is literally Jesus.\n\nIt's funny, but possibly slightly revealing, that multiple of the people sent to Redemption Island with Matt appear to have their faith in (Christian) God affirmed. Like,  is it really that bad?!" },
     "mike-chiesl":         { name: "Mike Chiesl",         bio: "" },
     "andrea-boehlke":      { name: "Andrea Boehlke",      bio: "" },
     "ashley-underwood":    { name: "Ashley Underwood",    bio: "" },
