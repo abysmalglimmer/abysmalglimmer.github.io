@@ -61,7 +61,7 @@ window.CastData = {
     "paschal-english":      { name: "Paschal English",               bio: "" },
     "kathy-vavrick-obrien": { name: "Kathy Vavrick-O'Brien",        bio: "One of the earliest and smartest strategic players, despite potentially being overshadowed on each of her own seasons by Boston Rob." },
     "sean-rector":          { name: "Sean Rector",                   bio: "" },
-    "rob-mariano":          { name: "Rob Mariano",                   bio: "AKA Boston Rob. I found him a domineering and frustratingly competent puppet-master on season 8. But in Heroes vs Villains, his meeker demeaner, separation from Amber, and badly-needed nemesis make him much more fun to watch. Indeed, his origins on Marquesas demonstrate his superiority as a scheming underdog rather than a callous mob boss." },
+    "rob-mariano":          { name: "Rob Mariano",                   bio: "AKA Boston Rob. I found him a domineering and frustratingly competent puppet-master on season 8. But in Heroes vs Villains, his meeker demeanour, separation from Amber, and badly-needed nemesis make him much more fun to watch. Indeed, his origins on Marquesas demonstrate his superiority as a scheming underdog rather than a callous mob boss.\n\nUpdate post-Redemption Island. Wow, I didn't even realise how right I was." },
     "tammy-leitner":        { name: "Tammy Leitner",                 bio: "" },
     "the-general":          { name: "Robert DeCanio", bio: "AKA The General." },
     "zoe-zanidakis":        { name: "Zoe Zanidakis",                 bio: "" },
