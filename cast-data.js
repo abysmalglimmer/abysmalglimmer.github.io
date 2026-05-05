@@ -211,7 +211,7 @@ window.CastData = {
     
     // ── S13 Cook Islands ───────────────────────────────────────────────
     "yul-kwon":           { name: "Yul Kwon",             bio: "Solid strategic player and generally intelligent individual. I respect that. However, he does have the personality of an AI chatbot, sorry." },
-    "ozzy-lusth":         { name: "Ozzy Lusth",           bio: "I suppose Ozzy sort of defines the 'challenge beast' archetype of player (even though Terry lowkey did it first, though in a much less charming way).\nIt's nice to see him get dispatched fairly rapidly in Micronesia... watching challenge domination in the vein of Cook Islands would have made the challenges even more mind-numbing." },
+    "ozzy-lusth":         { name: "Ozzy Lusth",           bio: "I suppose Ozzy sort of defines the 'challenge beast' archetype of player (even though Terry lowkey did it first, though in a much less charming way).\nIt's nice to see him get dispatched fairly rapidly in Micronesia... watching challenge domination in the vein of Cook Islands would have made the challenges even more mind-numbing.\n\nPerhaps the aspect of Ozzy I like most is his social ineptitude. At the start of season 23 he immediately forms the attractive people alliance, which then rapidly disintegrates, and then he sulks for an entire episode! And his callous and unempathetic behaviour towrads Cochran is the entire reason his tribe loses majority and gets Pagonged. I think this low emotional intelligence is definitely what makes his castmates call him 'arrogant,' and is preventing him from being able to win - but I think it makes him quite relatable and human." },
     "becky-lee":          { name: "Becky Lee",             bio: "Literally an NPC for Yul to provide exposition for the audience too outside of a confessional." },
     "sundra-oakley":      { name: "Sundra Oakley",        bio: "I just finished the season and the only thing I remember about her is the final immunity challenge where she looks cunty with her sunhat standing on a pole. So I like her I think." },
     "parvati-shallow":    { name: "Parvati Shallow",      bio: "Although her shtick is being a 'flirt,' Parvati is really smart and her win is very deserved. Aside from Cirie, she was absolutely the puppet-master of Micronesia.\n\nParvati is one one of the main characters again in Heroes vs Villains, where she becomes something which is something quite unique in the edit: a 'second-in-command' in Russel's alliance who still feels like a separate narrator and force in the game. Ultimately, I don't think the players bought her separation from Russel enough to give her second win." },
@@ -313,7 +313,7 @@ window.CastData = {
     "erinn-lobdell":      { name: "Erinn Lobdell",      bio: "Emma Stone lookalike." },
     "tyson-apostol":     { name: "Tyson Apostol",      bio: "He was trying to be a bit of a funny shocking weird little guy. Unfortunately he was alongside someone who did that slightly better." },
     "debbie-beebe":      { name: "Debbie Beebe",       bio: "" },
-    "coach-wade":        { name: "Benjamin 'Coach' Wade", bio: "Where to begin...? Well, I think Coach is the actual main character of this season, for better or for worse. As much as I do think he is quite literally playing a character, it is that performance which fuels so much of the drama and fun in pre-merge Tiberu and in Forza. And, yes, he is genuinely quite an annoying presence, even to watch on TV, but he never feels mean or unfair. All of this is to say, as much as I initially despised him and wrote him off as a weirdo early out (definitely a Survivor archetype) he gradually grew on me, and I realised this season would be nothing without its Dragon Slayer. Note to producers: this does not mean I want to see him back. I think Coach (and anyone like him) needs to be a one time thing. Thank you.\n\nSo it looks like I was wrong about all of that. Coach on Heroes vs Villains is a totally different character, somehow keeping all of his most endearing parts, eliminating all his most annoying ones, and becoming a much more human presence. He works magnificently as a contrast to the alpha male energy of Russell and Rob M, and - even though I bet he's still acting - I really like that he's emotional and sensitive." },
+    "coach-wade":        { name: "Benjamin 'Coach' Wade", bio: "Where to begin...? Well, I think Coach is the actual main character of this season, for better or for worse. As much as I do think he is quite literally playing a character, it is that performance which fuels so much of the drama and fun in pre-merge Tiberu and in Forza. And, yes, he is genuinely quite an annoying presence, even to watch on TV, but he never feels mean or unfair. All of this is to say, as much as I initially despised him and wrote him off as a weirdo early out (definitely a Survivor archetype) he gradually grew on me, and I realised this season would be nothing without its Dragon Slayer. Note to producers: this does not mean I want to see him back. I think Coach (and anyone like him) needs to be a one time thing. Thank you.\n\nSo it looks like I was wrong about all of that. Coach on Heroes vs Villains is a totally different character, somehow keeping all of his most endearing parts, eliminating all his most annoying ones, and becoming a much more human presence. He works magnificently as a contrast to the alpha male energy of Russell and Rob M, and - even though I bet he's still acting - I really like that he's emotional and sensitive.\n\nIn season 23 Coach sort of becomes a bit... priestly. I'm not going to lie, when he gets religious, I do think Coach starts to give off sort of cringey youth pastor vibes. Let's try and edit around that in future, guys." },
     "sierra-reed":       { name: "Sierra Reed",        bio: "Grimes lookalike." },
     "brendan-synnott":   { name: "Brendan Synnott",    bio: "Smart, good-looking, and a really compelling foil to Coach. I wish their battle could've lasted a bit longer." },
     "jerry-sims":     { name: "Jerry Sims",      bio: "" },
@@ -388,7 +388,26 @@ window.CastData = {
     "ashley-underwood":    { name: "Ashley Underwood",    bio: "" },
     "natalie-tenerelli":   { name: "Natalie Tenerelli",   bio: "" },
     "phillip-sheppard":    { name: "Phillip Sheppard",    bio: "In episode 10, Survivor finds it necessary to discuss racism at tribal council. Of course, this was not a good idea. It's painful to have to watch Phillip, the only remaining minority, explain prejudice and microagression just to have Probst offer some condescending 'both sides' take.\n\nYes, he was a bit of an odd guy, but the open mocking and bullying Phillip endured was often uncomfortable. And the way this race thing was handled made it even worse." },
-  
+
+
+    // ── S23 South Pacific ─────────────────────────────────────────────
+    "sophie-clarke":        { name: "Sophie Clarke",        bio: "I'm quite shocked that Sophie won - just because we saw virtually nothing of her in the edit to make us like her. I actually did enjoy her a lot (perhaps I find her abrasiveness and struggle to come to terms with it relatable) and wish that, in light of her victory, we had seen a little bit more." },
+    "albert-destrade":      { name: "Albert Destrade",      bio: "" },
+    "brandon-hantz":        { name: "Brandon Hantz",        bio: "At first I was really quite wary of this mini-me Russel gimmick. But you know what? I kind of enjoyed Brandon. Of course, he's completely deranged. But his bizarre and intense desire to do good and please God make for a pretty unique Survivor character." },
+    "rick-nelson":          { name: "Rick Nelson",          bio: "" },
+    "edna-ma":              { name: "Edna Ma",              bio: "Genuine question. Why is it that the Chinese girls are always ostracised by their alliance? This is definitely a pattern at this point: Shii-Ann, Peih-Gee, and now Edna. I don't like it." },
+    "john-cochran":         { name: "John Cochran",         bio: "Cochran is definitely my favourite so far of the 'superfan' character archetype. First of all, he's genuienly quite nerdy and awkward (rather than the other members of this archetype who generally come across as marginally smarter but pretty typical male survivors), but he's also a funny guy and a thrill to watch. It's disappointing that none of Upolu (bar Edna) was willing to work with him to get out their leaders." },
+    "dawn-meehan":          { name: "Dawn Meehan",          bio: "" },
+    "whitney-duncan":       { name: "Whitney Duncan",       bio: "" },
+    "jim-rice":             { name: "Jim Rice",             bio: "" },
+    "keith-tollefson":      { name: "Keith Tollefson",      bio: "" },
+    "elyse-umemoto":        { name: "Elyse Umemoto",        bio: "" },
+    "christine-shields":    { name: "Christine Shields Markoski", bio: "" },
+    "stacey-powell":        { name: "Stacey Powell",        bio: "" },
+    "mark-caruso":          { name: "Mark 'Papa Bear' Caruso", bio: "" },
+    "mikayla-wingle":       { name: "Mikayla Wingle",       bio: "" },
+    "semhar-tadesse":       { name: "Semhar Tadesse",       bio: "" },
+    
   },
 
   seasons: [
@@ -921,6 +940,31 @@ window.CastData = {
         { id: "francesca-hogi",     placement: 18, jury: false, starting_tribe: "Zapatera" },
         { id: "russell-hantz",      placement: 17, jury: false, starting_tribe: "Zapatera" },
         { id: "kristina-kell",      placement: 16, jury: false, starting_tribe: "Zapatera" },
+      ]
+    },
+
+        {
+      number: 23, name: "South Pacific", year: 2011, color: "#c39b5f", allstar: true,
+      favourites: ["john-cochran", "coach-wade", "edna-ma"],
+      cast: [
+        { id: "sophie-clarke",     placement: 1,  jury: false, starting_tribe: "Upolu" },
+        { id: "coach-wade",        placement: 2,  jury: false, starting_tribe: "Upolu" },
+        { id: "albert-destrade",   placement: 3,  jury: false, starting_tribe: "Upolu" },
+        { id: "ozzy-lusth",        placement: 4,  jury: true,  starting_tribe: "Savaii", note:"voted out 7th & 9th and returned" },
+        { id: "rick-nelson",       placement: 5,  jury: true,  starting_tribe: "Upolu" },
+        { id: "brandon-hantz",     placement: 6,  jury: true,  starting_tribe: "Upolu" },
+        { id: "edna-ma",           placement: 7,  jury: true,  starting_tribe: "Upolu" },
+        { id: "john-cochran",      placement: 8,  jury: true,  starting_tribe: "Savaii" },
+        { id: "whitney-duncan",    placement: 9,  jury: true,  starting_tribe: "Savaii" },
+        { id: "dawn-meehan",       placement: 10, jury: true,  starting_tribe: "Savaii" },
+        { id: "jim-rice",          placement: 11, jury: false, starting_tribe: "Savaii" },
+        { id: "keith-tollefson",   placement: 12, jury: false, starting_tribe: "Savaii" },
+        { id: "elyse-umemoto",     placement: 14, jury: false, starting_tribe: "Savaii" },
+        { id: "mikayla-wingle",    placement: 13, jury: false, starting_tribe: "Upolu" },
+        { id: "stacey-powell",     placement: 15, jury: false, starting_tribe: "Upolu" },
+        { id: "christine-shields", placement: 17, jury: false, starting_tribe: "Upolu" },
+        { id: "mark-caruso",       placement: 16, jury: false, starting_tribe: "Savaii" },
+        { id: "semhar-tadesse",    placement: 18, jury: false, starting_tribe: "Savaii" },
       ]
     },
     
