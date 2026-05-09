@@ -412,7 +412,7 @@ window.CastData = {
     "kim-spradlin":        { name: "Kim Spradlin",        bio: "Her clearly overwhelming strength and charisma makes her one of the most obvious (and deserving?) winners. Perhaps it's because she couldn't be hidden in the edit in favour of a man, with an all female top 5 in this season." },
     "sabrina-thompson":   { name: "Sabrina Thompson",     bio: "" },
     "chelsea-meissner":   { name: "Chelsea Meissner",     bio: "" },
-    "christina-cha":      { name: "Christina Cha",        bio: "" },
+    "christina-cha":      { name: "Christina Cha",        bio: "Yet again, the Chinese girl is a social outcast from the main group. But this time, Christina really is a bit 呆... so I can't even blame them." },
     "alicia-rosa":        { name: "Alicia Rosa",          bio: "" },
     "kat-edorsson":       { name: "Kat Edorsson",         bio: "" },
     "tarzan-smith":       { name: "Tarzan Smith",         bio: "" },
