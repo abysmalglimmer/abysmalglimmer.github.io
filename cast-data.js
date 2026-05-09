@@ -424,7 +424,7 @@ window.CastData = {
     "monica-culpepper":   { name: "Monica Culpepper",     bio: "" },
     "matt-quinlan":       { name: "Matt Quinlan",         bio: "" },
     "bill-posley":        { name: "Bill Posley",          bio: "" },
-    "colton-cumbie":      { name: "Colton Cumbie",        bio: "" },
+    "colton-cumbie":      { name: "Colton Cumbie",        bio: "I mean, I would love to gush over how cunty and iconique he is. But like... the things he said were blatantly racist and he clearly hates poor people. Not a fan.\nIt is definitely interesting how such a feminine gay guy becomes the clear bossman of the all-male tribe - even though a lot of the guys seem to be pretty typical macho manly men. Clearly he has the gift of the gab, even if he chooses to use it for malicious, spiteful comments." },
     "nina-acosta":        { name: "Nina Acosta",          bio: "" },
     "kourtney-moon":      { name: "Kourtney Moon",        bio: "" },
     
