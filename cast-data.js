@@ -407,6 +407,26 @@ window.CastData = {
     "mark-caruso":          { name: "Mark 'Papa Bear' Caruso", bio: "" },
     "mikayla-wingle":       { name: "Mikayla Wingle",       bio: "" },
     "semhar-tadesse":       { name: "Semhar Tadesse",       bio: "" },
+
+        // ── S24 One World ──────────────────────────────────────────────────
+    "kim-spradlin":        { name: "Kim Spradlin",        bio: "Her clearly overwhelming strength and charisma makes her one of the most obvious (and deserving?) winners. Perhaps it's because she couldn't be hidden in the edit in favour of a man, with an all female top 5 in this season." },
+    "sabrina-thompson":   { name: "Sabrina Thompson",     bio: "" },
+    "chelsea-meissner":   { name: "Chelsea Meissner",     bio: "" },
+    "christina-cha":      { name: "Christina Cha",        bio: "" },
+    "alicia-rosa":        { name: "Alicia Rosa",          bio: "" },
+    "kat-edorsson":       { name: "Kat Edorsson",         bio: "" },
+    "tarzan-smith":       { name: "Tarzan Smith",         bio: "" },
+    "troyzan-robertson":  { name: "Troyzan Robertson",    bio: "" },
+    "leif-manson":        { name: "Leif Manson",          bio: "" },
+    "jay-byars":          { name: "Jay Byars",            bio: "" },
+    "michael-jefferson":  { name: "Michael Jefferson",    bio: "" },
+    "jonas-otsuji":       { name: "Jonas Otsuji",         bio: "" },
+    "monica-culpepper":   { name: "Monica Culpepper",     bio: "" },
+    "matt-quinlan":       { name: "Matt Quinlan",         bio: "" },
+    "bill-posley":        { name: "Bill Posley",          bio: "" },
+    "colton-cumbie":      { name: "Colton Cumbie",        bio: "" },
+    "nina-acosta":        { name: "Nina Acosta",          bio: "" },
+    "kourtney-moon":      { name: "Kourtney Moon",        bio: "" },
     
   },
 
@@ -965,6 +985,31 @@ window.CastData = {
         { id: "christine-shields", placement: 17, jury: false, starting_tribe: "Upolu" },
         { id: "mark-caruso",       placement: 16, jury: false, starting_tribe: "Savaii" },
         { id: "semhar-tadesse",    placement: 18, jury: false, starting_tribe: "Savaii" },
+      ]
+    },
+
+        {
+      number: 24, name: "One World", year: 2012, color: "#8fb0a2", allstar: false,
+      favourites: ["alicia-rosa", "kim-spradlin", "kat-edorsson"],
+      cast: [
+        { id: "kim-spradlin",       placement: 1,  jury: false, starting_tribe: "Salani" },
+        { id: "sabrina-thompson",   placement: 2,  jury: false, starting_tribe: "Salani" },
+        { id: "chelsea-meissner",   placement: 3,  jury: false, starting_tribe: "Salani" },
+        { id: "christina-cha",      placement: 4,  jury: true,  starting_tribe: "Salani" },
+        { id: "alicia-rosa",        placement: 5,  jury: true,  starting_tribe: "Salani" },
+        { id: "kat-edorsson",       placement: 7,  jury: true,  starting_tribe: "Salani" },
+        { id: "tarzan-smith",       placement: 6,  jury: true,  starting_tribe: "Manono" },
+        { id: "troyzan-robertson",  placement: 8,  jury: true,  starting_tribe: "Manono" },
+        { id: "leif-manson",        placement: 9,  jury: true,  starting_tribe: "Manono" },
+        { id: "jay-byars",          placement: 10, jury: true, starting_tribe: "Manono" },
+        { id: "michael-jefferson",  placement: 11, jury: true, starting_tribe: "Manono" },
+        { id: "jonas-otsuji",       placement: 12, jury: true, starting_tribe: "Manono" },
+        { id: "monica-culpepper",   placement: 14, jury: false, starting_tribe: "Salani" },
+        { id: "matt-quinlan",       placement: 16, jury: false, starting_tribe: "Manono" },
+        { id: "bill-posley",        placement: 15, jury: false, starting_tribe: "Manono" },
+        { id: "colton-cumbie",      placement: 13, jury: false, starting_tribe: "Manono", note: "medevac" },
+        { id: "nina-acosta",        placement: 17, jury: false, starting_tribe: "Salani" },
+        { id: "kourtney-moon",      placement: 18, jury: false, starting_tribe: "Salani", note: "medevac" },
       ]
     },
     
