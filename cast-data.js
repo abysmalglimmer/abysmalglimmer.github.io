@@ -431,7 +431,7 @@ window.CastData = {
 
         // ── S25 Philippines ────────────────────────────────────────────────
     "denise-stapley":      { name: "Denise Stapley",      bio: "" },
-    "lisa-whelchel":       { name: "Lisa Whelchel",       bio: "" },
+    "lisa-whelchel":       { name: "Lisa Whelchel",       bio: "One of the strongest stories ever told on Survivor! It's rare to see such character development on a reality TV show - it's amazing to see  " },
     "malcolm-freberg":     { name: "Malcolm Freberg",     bio: "" },
     "abi-maria-gomes":     { name: "Abi-Maria Gomes",     bio: "" },
     "pete-yurkowski":      { name: "Pete Yurkowski",      bio: "" },
@@ -1033,7 +1033,7 @@ window.CastData = {
 
       {
       number: 25, name: "Philippines", year: 2012, color: "#9f216d", allstar: true,
-      favourites: ["abi-maria-gomes", "lisa-welchel", "malcolm-freberg"],
+      favourites: ["abi-maria-gomes", "lisa-whelchel", "malcolm-freberg"],
       cast: [
         { id: "denise-stapley",    placement: 1,  jury: false, starting_tribe: "Matsing" },
         { id: "lisa-whelchel",     placement: 2,  jury: false, starting_tribe: "Tandang" },
