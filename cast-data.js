@@ -427,6 +427,24 @@ window.CastData = {
     "colton-cumbie":      { name: "Colton Cumbie",        bio: "I mean, I would love to gush over how cunty and iconique he is. But like... the things he said were blatantly racist and he clearly hates poor people. Not a fan.\nIt is definitely interesting how such a feminine gay guy becomes the clear bossman of the all-male tribe - even though a lot of the guys seem to be pretty typical macho manly men. Clearly he has the gift of the gab, even if he chooses to use it for malicious, spiteful comments." },
     "nina-acosta":        { name: "Nina Acosta",          bio: "" },
     "kourtney-moon":      { name: "Kourtney Moon",        bio: "" },
+
+
+        // ── S25 Philippines ────────────────────────────────────────────────
+    "denise-stapley":      { name: "Denise Stapley",      bio: "" },
+    "lisa-whelchel":       { name: "Lisa Whelchel",       bio: "" },
+    "malcolm-freberg":     { name: "Malcolm Freberg",     bio: "" },
+    "abi-maria-gomes":     { name: "Abi-Maria Gomes",     bio: "" },
+    "pete-yurkowski":      { name: "Pete Yurkowski",      bio: "" },
+    "artis-silvester":     { name: "Artis Silvester",     bio: "" },
+    "jeff-kent":           { name: "Jeff Kent",           bio: "" },
+    "rc-saint-amour":      { name: "R.C. Saint-Amour",    bio: "" },
+    "katie-hanson":        { name: "Katie Hanson",        bio: "" },
+    "dana-lambert":        { name: "Dana Lambert",        bio: "" },
+    "angie-layton":        { name: "Angie Layton",        bio: "" },
+    "roxy-morris":         { name: "Roxanne 'Roxy' Morris", bio: "" },
+    "zane-knight":         { name: "Zane Knight",         bio: "" },
+    "carter-williams":     { name: "Carter Williams",     bio: "" },
+    "sarah-dawson":        { name: "Sarah Dawson",        bio: "" },
     
   },
 
@@ -1012,6 +1030,34 @@ window.CastData = {
         { id: "kourtney-moon",      placement: 18, jury: false, starting_tribe: "Salani", note: "medevac" },
       ]
     },
+
+      {
+      number: 25, name: "Philippines", year: 2012, color: "#9f216d", allstar: true,
+      favourites: ["abi-maria-gomes", "lisa-welchel", "malcolm-freberg"],
+      cast: [
+        { id: "denise-stapley",    placement: 1,  jury: false, starting_tribe: "Matsing" },
+        { id: "lisa-whelchel",     placement: 2,  jury: false, starting_tribe: "Tandang" },
+        { id: "michael-skupin",    placement: 3,  jury: false, starting_tribe: "Kalabaw" },
+        { id: "malcolm-freberg",   placement: 4,  jury: true,  starting_tribe: "Matsing" },
+        { id: "abi-maria-gomes",   placement: 5,  jury: true,  starting_tribe: "Tandang" },
+        { id: "carter-williams",   placement: 6,  jury: true,  starting_tribe: "Kalabaw" },
+        { id: "jonathan-penner",   placement: 7,  jury: true,  starting_tribe: "Kalabaw" },
+        { id: "pete-yurkowski",    placement: 8,  jury: true,  starting_tribe: "Tandang" },
+        { id: "artis-silvester",   placement: 9,  jury: true,  starting_tribe: "Tandang" },
+        { id: "jeff-kent",         placement: 10, jury: true, starting_tribe: "Kalabaw" },
+        { id: "rc-saint-amour",    placement: 11, jury: true, starting_tribe: "Tandang" },
+        { id: "katie-hanson",      placement: 12, jury: false, starting_tribe: "Kalabaw" },
+        { id: "dana-lambert",      placement: 14, jury: false, starting_tribe: "Kalabaw", note: "quit" },
+        { id: "sarah-dawson",      placement: 13, jury: false, starting_tribe: "Kalabaw" },
+        { id: "russell-swan",      placement: 15, jury: false, starting_tribe: "Matsing"},
+        { id: "angie-layton",      placement: 16, jury: false, starting_tribe: "Matsing" },
+        { id: "roxy-morris",       placement: 17, jury: false, starting_tribe: "Matsing" },
+        { id: "zane-knight",       placement: 18, jury: false, starting_tribe: "Matsing" },
+      ]
+    },
+
+
+    
     
   ]
 };
