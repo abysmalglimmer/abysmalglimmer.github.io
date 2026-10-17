@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'>
+<meta name='theme-color' content='#0a0a0a'>
+<meta name='apple-mobile-web-app-capable' content='yes'>
+<meta name='robots' content='noindex,nofollow,noarchive'>
+<meta name='referrer' content='no-referrer'>
+<title>Southern USA 2026</title>
+<style>
+:root{
+  --bg:#efefef; --card:#fff; --ink:#0a0a0a; --mute:#6b6b6b; --soft:#e6e6e6; --line:#cfcfcf;
+  --top:#0a0a0a;
+  /* pops — one per region, plus yellow for "today" */
+  --wt:#ff5a1f; --tx:#1f5bff; --la:#00a86b; --fl:#ff2d87; --hi:#ffd60a; --rain:#1f5bff;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#000;--card:#151515;--ink:#f4f4f4;--mute:#9a9a9a;--soft:#262626;--line:#333;
+        --top:#151515;--tx:#4d7dff;--rain:#6f95ff;}
+}
+*{box-sizing:border-box;-webkit-text-size-adjust:100%}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:17px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;}
+a{color:inherit}
+summary{list-style:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+summary::-webkit-details-marker{display:none}
+
+/* ---- header ---- */
+.top{background:var(--top);color:#fff;padding:max(30px,env(safe-area-inset-top)) 16px 0}
+.top-in{max-width:720px;margin:0 auto}
+.top h1{font-size:clamp(40px,11vw,68px);line-height:.92;font-weight:900;letter-spacing:-.035em;margin:0}
+.top .who{font-size:15px;color:#b5b5b5;font-weight:700;margin:12px 0 22px}
+.stripe{display:flex;height:10px;max-width:720px;margin:0 auto}
+.stripe i{display:block;height:100%}
+
+.wrap{max-width:720px;margin:0 auto;padding:0 16px 70px}
+section{margin-top:30px}
+h2{font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;margin:0 0 12px;
+  display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+h2 small{font-size:12px;font-weight:700;letter-spacing:0;text-transform:none;color:var(--mute)}
+.card{background:var(--card);border-radius:16px;padding:18px 16px}
+
+/* ---- buttons ---- */
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:999px;
+  background:var(--ink);color:var(--bg);font-weight:800;font-size:15px;text-decoration:none;line-height:1.2}
+.btn.ghost{background:var(--soft);color:var(--ink)}
+.btn.sm{min-height:40px;padding:8px 13px;font-size:14px}
+.btn:active{transform:scale(.97)}
+
+/* ---- today ---- */
+.today{background:var(--ink);color:var(--bg);border-radius:18px;padding:20px 18px}
+.td-top{display:flex;justify-content:space-between;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.1em}
+.td-top span:first-child{background:var(--hi);color:#000;border-radius:6px;padding:3px 8px}
+.td-hl{font-size:30px;font-weight:900;line-height:1.05;letter-spacing:-.02em;margin:14px 0 6px}
+.td-drive{font-size:15px;font-weight:700;opacity:.75;margin-bottom:8px}
+.today .wxl{opacity:.9}
+.today ul li{border-color:color-mix(in srgb,var(--bg) 18%,transparent)}
+.today .btn{background:var(--hi);color:#000}
+.tn{margin-top:18px;padding-top:14px;border-top:2px solid color-mix(in srgb,var(--bg) 25%,transparent)}
+.lbl{display:block;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;opacity:.6;margin-bottom:4px}
+.tn b{font-size:19px}
+.tn .m{font-size:14px;opacity:.75;margin-top:4px}
+.tn a{text-decoration:none;border-bottom:2px solid var(--hi)}
+
+/* ---- route diagram ---- */
+.route{list-style:none;margin:0;padding:0}
+.stop{display:grid;grid-template-columns:26px 1fr auto;align-items:center;gap:12px}
+.stop i{width:20px;height:20px;border-radius:50%;justify-self:center}
+.stop b{font-size:23px;font-weight:900;letter-spacing:-.01em}
+.stop span{font-size:14px;font-weight:800;color:var(--mute);white-space:nowrap}
+.leg{display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:center}
+.leg::before{content:'';width:4px;height:30px;background:var(--ink);justify-self:center;border-radius:2px}
+.leg.fly::before{background:repeating-linear-gradient(var(--ink) 0 5px,transparent 5px 10px)}
+.leg em{font-style:normal;font-size:13px;font-weight:700;color:var(--mute)}
+
+/* ---- weather ---- */
+.wx{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;
+  margin:0 -16px;padding:2px 16px 8px;scrollbar-width:none}
+.wx::-webkit-scrollbar{display:none}
+.wxt{flex:0 0 78px;scroll-snap-align:start;background:var(--card);border-radius:14px;padding:10px 4px 9px;
+  text-align:center;border-top:5px solid var(--r);display:flex;flex-direction:column;gap:2px}
+.wxt .d{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}
+.wxt .i{font-size:26px;line-height:1.2}
+.wxt .t{font-size:23px;font-weight:900;line-height:1.05}
+.wxt .t small{font-size:13px;font-weight:700;color:var(--mute)}
+.wxt .r{font-size:12px;font-weight:900;color:var(--rain);min-height:15px}
+.wxt .p{font-size:11px;font-weight:700;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wxt.low{opacity:.55}
+.wxt.past{opacity:.35}
+.wxt.now{box-shadow:0 0 0 3px var(--hi)}
+.wxkey{font-size:12px;font-weight:600;color:var(--mute);margin-top:4px}
+.wxl{font-size:15px;font-weight:700;margin:2px 0}
+.wxl small{font-weight:600;opacity:.65}
+.wxl .rn{color:var(--rain);font-weight:900}
+.today .wxl .rn{color:var(--hi)}
+
+/* ---- days ---- */
+.day{background:var(--card);border-radius:14px;margin-bottom:8px;border-left:7px solid var(--r);overflow:hidden}
+.day>summary{display:grid;grid-template-columns:44px 1fr auto;gap:2px 12px;padding:14px 14px 14px 10px;align-items:center}
+.dn{grid-row:1/3;text-align:center}
+.dn b{display:block;font-size:30px;font-weight:900;line-height:1;letter-spacing:-.03em}
+.dn span{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--mute)}
+.hl{font-size:18px;font-weight:800;line-height:1.2}
+.dwx{font-size:15px;font-weight:800;white-space:nowrap;text-align:right}
+.dwx .rn{display:block;font-size:11px;color:var(--rain);font-weight:900}
+.sub{grid-column:2/4;font-size:13px;font-weight:700;color:var(--mute)}
+.chip{display:inline-block;font-size:10.5px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;
+  padding:3px 7px;border-radius:5px;background:var(--r);color:#fff;margin-left:7px;vertical-align:3px}
+.nowtag{font-style:normal;background:var(--hi);color:#000;border-radius:4px;padding:1px 6px;margin-right:4px;font-weight:900}
+.day.now{box-shadow:0 0 0 3px var(--hi)}
+.day.past{opacity:.4}
+.day[open] .hl{text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--r);text-underline-offset:4px}
+.body{padding:0 16px 18px 66px}
+ul.pts{margin:6px 0 0;padding:0;list-style:none}
+ul.pts li{font-size:16px;font-weight:500;padding:7px 0;border-bottom:1px solid var(--soft)}
+ul.pts li:last-child{border-bottom:0}
+
+/* ---- bookings ---- */
+.grp{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);margin:18px 0 8px}
+.grp:first-child{margin-top:0}
+.bk{background:var(--card);border-radius:14px;margin-bottom:6px}
+.bk>summary{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:13px 14px}
+.bt{font-size:16.5px;font-weight:800;line-height:1.25}
+.bt small{display:block;font-size:13px;font-weight:700;color:var(--mute);margin-top:2px}
+.bk .body{padding:0 14px 16px}
+.pill{font:inherit;border:0;border-radius:999px;padding:8px 12px;font-size:12.5px;font-weight:900;min-width:96px;
+  cursor:pointer;-webkit-tap-highlight-color:transparent}
+.pill.yes{background:var(--soft);color:var(--mute)}
+.pill.no{background:var(--hi);color:#000}
+.pill:active{transform:scale(.95)}
+dl.kv{display:grid;grid-template-columns:96px 1fr;gap:6px 12px;margin:0}
+.kv dt{font-size:11.5px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);padding-top:3px}
+.kv dd{margin:0;font-size:16px;font-weight:700;font-variant-numeric:tabular-nums;word-break:break-word}
+.kv dd small{display:block;font-size:13px;font-weight:600;color:var(--mute)}
+.kv a{text-decoration:none;border-bottom:2px solid var(--tx)}
+
+/* ---- emergencies ---- */
+.sos{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.n911{font-size:56px;font-weight:900;line-height:.9;letter-spacing:-.04em;color:var(--wt);text-decoration:none}
+.sos div{font-size:15px;font-weight:700;line-height:1.3}
+.more{margin-top:16px;border-top:2px solid var(--soft);padding-top:12px}
+.more>summary{font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.more>summary::after{content:' +'}
+.more[open]>summary::after{content:' –'}
+
+footer{margin-top:36px;font-size:13px;font-weight:600;color:var(--mute);text-align:center;line-height:1.8}
+
+@media (max-width:420px){
+  .body{padding-left:16px}
+  .day>summary{grid-template-columns:40px 1fr auto;gap:2px 10px}
+}
+</style>
+</head>
+<body>
+
+<header class='top'>
+  <div class='top-in'>
+    <h1>Southern<br>USA 2026</h1>
+    <div class='who'>Ben · Oliver · Felix &nbsp;/&nbsp; 17 Oct – 1 Nov</div>
+  </div>
+  <div class='stripe' id='stripe'></div>
+</header>
+
+<div class='wrap'>
+
+<section id='todaySec' hidden>
+  <div class='today' id='today'></div>
+</section>
+
+<section>
+  <h2>Route</h2>
+  <div class='card'>
+    <ul class='route' id='route'></ul>
+    <div class='btns'>
+      <a class='btn sm' id='fullRoute' target='_blank' rel='noopener'>Driving route ↗</a>
+      <a class='btn sm' href='https://maps.app.goo.gl/qyTJBFQn5p3g2n7M9' target='_blank' rel='noopener'>Oliver’s places ↗</a>
+      <a class='btn sm ghost' href='documents.html'>Documents</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Weather <small id='wxSrc'></small></h2>
+  <div class='wx' id='wx'></div>
+  <div class='wxkey'>°C high / low · 💧 rain chance from 20% · faded = 8+ days out, trend only</div>
+  <div class='btns' id='wxLinks'></div>
+</section>
+
+<section>
+  <h2>Day by day <small>tap a day</small></h2>
+  <div id='itin'></div>
+</section>
+
+<section>
+  <h2>Bookings</h2>
+  <div id='books'></div>
+</section>
+
+<section>
+  <h2>Emergencies</h2>
+  <div class='card'>
+    <div class='sos'><a class='n911' href='tel:911'>911</a>
+      <div>Emergency in the US.<br>Then ring the medical line.</div></div>
+    <dl class='kv'>
+      <dt>Medical</dt><dd><a href='tel:+441603605135'>+44 1603 605 135</a><small>Ring before hospital unless life-threatening</small></dd>
+      <dt>Assistance</dt><dd><a href='tel:+441603605155'>+44 1603 605 155</a><small>Lost passport or cards</small></dd>
+      <dt>Claims</dt><dd><a href='tel:+441603604910'>+44 1603 604 910</a></dd>
+      <dt>Consulate</dt><dd><a href='tel:+17136596270'>+1 713 659 6270</a><small>British Consulate, Houston</small></dd>
+    </dl>
+    <details class='more'><summary>Cover &amp; rules</summary>
+      <ul class='pts'>
+        <li>HSBC Premier Worldwide Travel (Aviva) · £50 excess</li>
+        <li>Medical £10m · cancellation £7,500 · belongings £2,500</li>
+        <li>Hire desk: buy extra liability (SLI) if only the state minimum is included. Decline PAI</li>
+        <li>Damage you cause with a car is not covered</li>
+        <li>Theft: police report at the time</li>
+        <li>Coming home early: agree it with the insurer first</li>
+      </ul>
+      <div class='btns'>
+        <a class='btn sm ghost' href='https://hsbctravel.myclaimshub.co.uk' target='_blank' rel='noopener'>Claim online ↗</a>
+        <a class='btn sm ghost' href='https://forms.hsbc.co.uk/content/dam/hsbc/gb/pdf/insurance/premier-worldwide-travel-insurance.pdf' target='_blank' rel='noopener'>Policy wording ↗</a>
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer>
+  Updated <span id='updated'></span> · dates from Oliver’s Sheet, “Southern USA 2026”<br>
+  Passports &amp; policy numbers: <a href='documents.html'>documents.html</a>
+</footer>
+
+</div>
+
+<script>
+/* ==========================================================================
+   DATA — edit this block, save, re-upload index.html.
+   Regions (r) set the colour: wt West Texas · tx Texas cities · la Louisiana · fl Florida
+   ========================================================================== */
+const UPDATED = '2026-10-17';
+
+const STOPS = [
+  {n:'El Paso',     d:'17 Oct',         r:'wt', q:'El+Paso,TX'},
+  {n:'Big Bend',    d:'18–20 Oct',      r:'wt', q:'Chisos+Basin,Big+Bend+National+Park,TX'},
+  {n:'San Antonio', d:'21–22 Oct',      r:'tx', q:'San+Antonio,TX'},
+  {n:'Houston',     d:'23 Oct',         r:'tx', q:'Houston,TX'},
+  {n:'New Orleans', d:'24–25 Oct',      r:'la', q:'New+Orleans,LA'},
+  {n:'Orlando',     d:'26 Oct – 1 Nov', r:'fl', q:'Walt+Disney+World,FL'}
+];
+const LEGS = [['4.5h drive'],['6.5h drive'],['3h20 drive'],['5.5h drive'],['1h45 flight','fly']];
+
+/* One headline, a few short points. Keep it brief. */
+const ITIN = [
+  {d:'17', dy:'Sat', r:'wt', headline:'Fly to El Paso', stay:'El Paso', more:[
+    'AA51 08:55 → Dallas → El Paso 15:34',
+    'Avis at the airport · ref 2329-1043-GB-6',
+    'Sunset at Scenic Drive, ~18:30',
+    "Dinner at L&J Cafe · Chico's Tacos after (cash)"]},
+  {d:'18', dy:'Sun', r:'wt', headline:'Drive to Big Bend', drive:'4.5h', stay:'Chisos Lodge', chip:'Supplies', more:[
+    'Leave by 10:00 · clocks go forward 1h',
+    'Prada Marfa on the way',
+    "Alpine: big meal + 3 nights' food",
+    'Up the Basin road before dark, ~19:15']},
+  {d:'19', dy:'Mon', r:'wt', headline:'Boquillas, Mexico', stay:'Chisos Lodge', chip:'Passports', more:[
+    'Crossing 09:00–16:00 · cash, US dollars',
+    'Navigate to “Boquillas Crossing Port of Entry”',
+    'No food back over the border',
+    'Hot Springs · The Window at sunset']},
+  {d:'20', dy:'Tue', r:'wt', headline:'South Rim loop', stay:'Chisos Lodge', chip:'Big hike', more:[
+    'Start ~07:15 · 12.6 mi, 6–8 hours',
+    '4 litres of water each',
+    'Starlight, Terlingua, from 17:00']},
+  {d:'21', dy:'Wed', r:'tx', headline:'Drive to San Antonio', drive:'6.5h', stay:'San Antonio', more:[
+    'US-90 via Marathon and Del Rio',
+    'Fuel up in Marathon',
+    'Seminole Canyon tour 15:00 (check first)']},
+  {d:'22', dy:'Thu', r:'tx', headline:'San Antonio', stay:'San Antonio', more:[
+    'The Alamo · Mission San José',
+    '19:30 Southerleigh at the Pearl']},
+  {d:'23', dy:'Fri', r:'tx', headline:'Drive to Houston', drive:'3h20', stay:'Houston', chip:'BBQ', more:[
+    'Burnt Bean, Seguin, by 10:00',
+    "Buc-ee's Luling",
+    '17:15 Strange Bird escape game',
+    "19:30 Ninfa's on Navigation"]},
+  {d:'24', dy:'Sat', r:'la', headline:"New Orleans · Felix's 17th", drive:'5.5h', stay:'New Orleans', chip:'Parade', more:[
+    'Leave Houston by 10:00',
+    'Krewe of Boo 18:30 · in place by 17:45',
+    '20:45 Pêche']},
+  {d:'25', dy:'Sun', r:'la', headline:'Swamp & jazz', stay:'New Orleans', more:[
+    "10:00 Arnaud's · collared shirts",
+    '14:45 swamp tour, Slidell · leave 13:15',
+    "19:00 Felix's Oyster Bar",
+    '20:45 Preservation Hall · door 20:30']},
+  {d:'26', dy:'Mon', r:'fl', headline:'Fly to Orlando', stay:'Boardwalk Inn', chip:'3 parks', more:[
+    'Avis back at MSY by 08:00',
+    'WN3147 10:30 → Orlando 13:15',
+    'Hertz · ref L685EB78478',
+    'EPCOT → Animal Kingdom → Magic Kingdom']},
+  {d:'27', dy:'Tue', r:'fl', headline:'Halloween Party', stay:'Boardwalk Inn', chip:'MNSSHP', more:[
+    'EPCOT in the morning',
+    '15:45 Liberty Tree Tavern',
+    'Party from 16:00 · fireworks 22:00']},
+  {d:'28', dy:'Wed', r:'fl', headline:'EPCOT + Hollywood Studios', stay:'Boardwalk Inn', more:[
+    'Cosmic Rewind again',
+    'Fantasmic! · get there early']},
+  {d:'29', dy:'Thu', r:'fl', headline:'Islands of Adventure', stay:'Universal', chip:'Horror Nights', more:[
+    'Move to Universal',
+    'Horror Nights at Universal Studios']},
+  {d:'30', dy:'Fri', r:'fl', headline:'Epic Universe', stay:'Universal', more:[
+    'Early Park Admission']},
+  {d:'31', dy:'Sat', r:'fl', headline:'Halloween · Felix flies home', stay:'Universal', more:[
+    'VS92 21:45 · Terminal C by 19:15']},
+  {d:'1', dy:'Sun', r:'fl', headline:'Ben & Oliver fly home', stay:'—', more:[
+    'Hertz back, Garage C, by 18:00',
+    'VS92 20:45 · clocks go back today']}
+];
+
+/* booked:true is the default for everyone; ticks on a phone are per device. */
+const GROUPS = [
+{ g:'Hotels', items:[
+  {id:'h-elp', what:'The Plaza Pioneer Park', when:'El Paso · Sat 17 Oct', booked:true,
+   kv:[['Ref','1094358953'],['Address','106 W Mills Ave']]},
+  {id:'h-chisos', what:'Chisos Mountains Lodge', when:'Big Bend · Sun 18 – Wed 21 Oct', booked:true,
+   kv:[['Ref','70P6OR'],['Phone','+1 855-765-1324'],['Check in','Basin Convenience Store']]},
+  {id:'h-sat', what:'Canopy by Hilton Riverwalk', when:'San Antonio · Wed 21 – Fri 23 Oct', booked:true,
+   kv:[['Ref','3105220205'],['Phone','+1 210-404-7516'],['In / out','15:00 / 11:00']]},
+  {id:'h-hou', what:'Embassy Suites Downtown', when:'Houston · Fri 23 Oct', booked:true,
+   kv:[['Ref','96702795'],['Phone','+1 713-739-9100'],['In / out','16:00 / 11:00']]},
+  {id:'h-nola', what:'Hotel Provincial', when:'New Orleans · Sat 24 – Mon 26 Oct', booked:true,
+   kv:[['Ref','FF839E25F5'],['Phone','+1 504-581-4995'],['In / out','15:00 / 12:00']]},
+  {id:'h-bwi', what:"Disney's BoardWalk Inn", when:'Orlando · Mon 26 – Thu 29 Oct', booked:true,
+   kv:[['Booking','26365036'],['Phone','0800 169 0730']]},
+  {id:'h-uni', what:'Universal on-site hotel', when:'Orlando · Thu 29 Oct – Sun 1 Nov', booked:false}
+]},
+{ g:'Tickets & tables', items:[
+  {id:'lj', what:'L&J Cafe', when:'El Paso · Sat 17 Oct, dinner', booked:false,
+   kv:[['Phone','+1 915-566-8418'],['Address','3622 E Missouri Ave']]},
+  {id:'alamo', what:'Alamo church', when:'Thu 22 Oct · free, timed entry', booked:false},
+  {id:'souther', what:'Southerleigh, Pearl', when:'Thu 22 Oct · 19:30', booked:true,
+   kv:[['Phone','+1 210-455-5701'],['Address','136 E Grayson St']]},
+  {id:'strange', what:'Strange Bird Immersive', when:'Houston · Fri 23 Oct · 17:15', booked:true,
+   kv:[['Booking','1560610016403278'],['Phone','+1 832-413-2853'],['Address','7026 Old Katy Rd #310']]},
+  {id:'ninfa', what:"Ninfa's on Navigation", when:'Houston · Fri 23 Oct · 19:30', booked:true,
+   kv:[['Phone','+1 713-228-1175'],['Address','2704 Navigation Blvd']]},
+  {id:'nola-dinner', what:'Pêche', when:'New Orleans · Sat 24 Oct · 20:45', booked:true,
+   kv:[['Phone','+1 504-522-1744'],['Address','800 Magazine St']]},
+  {id:'brunch', what:"Arnaud's brunch", when:'Sun 25 Oct · 10:00', booked:true,
+   kv:[['Ref','2110396644'],['Phone','+1 866-230-8895'],['Address','813 Bienville St']]},
+  {id:'swamp', what:"Dr Wagner's swamp tour", when:'Slidell · Sun 25 Oct · 14:45', booked:true,
+   kv:[['Order','CAJE012610011733'],['Phone','+1 985-641-1769'],['Address','41490 Crawford Landing Rd']]},
+  {id:'felixs', what:"Felix's Oyster Bar", when:'Sun 25 Oct · 19:00', booked:true,
+   kv:[['Phone','+1 504-522-4440'],['Address','739 Iberville St']]},
+  {id:'presv', what:'Preservation Hall', when:'Sun 25 Oct · 20:45', booked:true,
+   kv:[['Order','ORDER-001210688'],['Phone','+1 504-522-2841'],['Address','726 St Peter St']]},
+  {id:'wdwtix', what:'Disney Magic Tickets', when:'14-day · 3 people', booked:true,
+   kv:[['Ref','VZLF79272627'],['Phone','0800 169 0730']]},
+  {id:'mnsshp', what:'Halloween Party', when:'Magic Kingdom · Tue 27 Oct · from 16:00', booked:true,
+   kv:[['Ref','URVD71252525']]},
+  {id:'wdwdine', what:'Liberty Tree Tavern', when:'Tue 27 Oct · 15:45', booked:true,
+   kv:[['Ref','356239432163'],['Phone','+1 407-939-1947']]},
+  {id:'rodeo', what:'Roundup Rodeo BBQ', when:'Hollywood Studios · Wed 28 Oct', booked:false},
+  {id:'unitix', what:'Universal tickets', when:'Thu 29 – Fri 30 Oct', booked:false},
+  {id:'hhn', what:'Horror Nights', when:"Thu 29 Oct · Felix's call", booked:false}
+]}
+];
+
+/* ==========================================================================
+   WEATHER — Open-Meteo (open-meteo.com), free, no key, nothing private sent.
+   WX_SNAP is a stored forecast so the page works offline; the page fetches a
+   fresh one on load if it can. To refresh the snapshot, see CLAUDE.md § Weather.
+   ========================================================================== */
+const WX_SNAP = {"start":"2026-10-16","at":"2026-10-16T10:55","p":{"elp":{"c":[3,3,51,51,53,51,51,53,3,3,3,2,0,0,2,null],"hi":[19.0,17.8,22.9,25.5,27.0,28.0,27.4,28.0,23.6,22.1,20.4,22.5,26.2,23.8,18.7,null],"lo":[11.6,6.9,13.0,17.9,18.2,20.4,21.3,19.5,17.7,16.1,12.7,15.3,17.3,14.0,11.5,null],"pp":[0,1,1,14,33,42,42,40,14,13,20,30,21,24,20,19],"mm":[0,0,0.2,0.8,1.5,2.7,2.7,3.0,0,0,0,0,0,0,0,null],"w":[35.4,26.2,17.6,12.2,16.1,14.1,27.9,29.5,15.3,25.3,17.4,11.5,31.6,51.6,20.0,null],"uv":[6.25,6.35,6.2,6.25,6.2,4.65,4.5,6.4,6.1,6.05,5.55,5.95,5.85,5.9,5.55,null],"ss":["18:32","18:31","18:30","18:29","18:28","18:26","18:25","18:24","18:23","18:22","18:21","18:20","18:19","18:19","18:18","18:17"]},"chisos":{"c":[63,3,3,2,0,3,3,53,53,51,51,55,51,51,1,null],"hi":[12.7,7.4,15.6,19.8,20.8,21.6,21.9,24.1,21.7,22.5,19.0,13.3,19.7,23.9,18.4,null],"lo":[3.4,-0.3,6.3,11.0,12.4,13.2,14.7,15.0,14.7,14.8,13.0,11.5,11.4,14.2,13.1,null],"pp":[83,2,1,1,0,1,6,18,18,18,18,20,21,27,20,23],"mm":[17.7,0,0,0,0,0,0,2.2,3.2,0.3,0.8,12.6,0.1,0.3,0,null],"w":[53.0,39.0,12.2,10.1,9.8,11.9,11.8,12.1,7.3,11.1,16.8,9.7,9.2,35.3,14.2,null],"uv":[4.05,6.55,6.55,6.45,6.45,6.0,5.85,5.25,6.25,6.3,5.55,1.45,6.1,6.15,6.1,null],"ss":["19:21","19:20","19:19","19:18","19:17","19:16","19:15","19:14","19:13","19:12","19:11","19:11","19:10","19:09","19:08","19:07"]},"river":{"c":[63,3,3,3,0,3,3,53,55,51,51,53,3,1,1,null],"hi":[21.3,15.4,23.0,27.1,28.8,29.0,29.7,31.9,29.3,29.6,25.5,20.2,26.9,31.8,26.2,null],"lo":[13.3,9.1,13.1,17.6,18.9,20.1,21.6,22.1,21.9,21.9,20.2,18.3,17.4,21.0,20.3,null],"pp":[84,2,2,2,1,1,5,10,15,16,16,23,17,25,20,20],"mm":[12.2,0,0,0,0,0,0,2.3,5.1,1.0,0.5,8.8,0,0,0,null],"w":[53.6,41.1,11.0,15.8,14.1,18.5,19.1,10.3,12.8,9.2,23.8,11.6,11.8,29.0,17.1,null],"uv":[4.5,6.5,6.5,6.45,6.45,6.1,5.9,5.95,6.25,6.25,5.65,0.85,6.15,6.1,6.05,null],"ss":["19:20","19:19","19:18","19:17","19:16","19:15","19:14","19:13","19:12","19:11","19:10","19:09","19:09","19:08","19:07","19:06"]},"sat":{"c":[3,3,3,3,3,2,3,3,3,51,3,81,55,0,53,null],"hi":[24.3,18.3,23.7,26.6,27.1,29.4,29.9,29.7,29.6,28.9,30.3,20.6,25.0,30.5,24.4,null],"lo":[12.1,8.5,11.4,13.6,17.4,17.3,17.4,16.4,17.1,19.3,19.4,18.4,18.7,17.9,15.8,null],"pp":[12,0,0,0,4,4,2,9,13,15,13,26,24,19,29,22],"mm":[0,0,0,0,0,0,0,0,0,1.5,0,40.6,2.6,0,2.7,null],"w":[40.0,23.7,15.8,13.6,17.1,14.8,11.9,19.0,21.0,22.9,24.1,20.2,15.5,15.8,27.0,null],"uv":[6.25,6.4,6.35,6.3,4.15,6.35,5.8,5.85,5.15,3.65,4.6,0.2,4.05,5.95,5.9,null],"ss":["19:02","19:01","19:00","18:59","18:58","18:57","18:56","18:55","18:54","18:53","18:52","18:51","18:50","18:50","18:49","18:48"]},"hou":{"c":[55,3,3,3,3,1,3,3,3,3,51,80,81,3,3,null],"hi":[23.8,19.8,24.0,26.6,27.0,28.7,30.1,30.5,30.1,29.8,30.1,25.7,24.2,30.1,28.9,null],"lo":[13.3,9.7,14.2,18.0,17.8,18.1,19.1,20.3,21.3,22.1,22.3,21.2,20.8,19.7,19.8,null],"pp":[15,0,0,0,1,0,0,4,14,7,9,23,24,23,32,28],"mm":[1.5,0,0,0,0,0,0,0,0,0,1.8,11.6,22.9,0,0,null],"w":[26.5,20.8,12.6,17.9,16.2,10.9,8.8,15.8,18.6,19.4,17.4,16.5,20.9,11.3,21.9,null],"uv":[6.3,6.2,6.2,5.85,6.15,6.15,6.2,6.0,6.0,5.95,4.4,2.45,0.85,5.4,5.3,null],"ss":["18:49","18:48","18:47","18:46","18:45","18:44","18:43","18:42","18:41","18:40","18:39","18:38","18:37","18:37","18:36","18:35"]},"nola":{"c":[3,3,3,3,3,0,0,0,2,1,3,3,61,53,95,null],"hi":[30.4,21.2,21.7,22.4,24.4,26.4,26.9,27.9,27.9,27.6,29.2,29.1,25.2,30.8,31.9,null],"lo":[18.5,12.5,14.7,16.1,16.2,17.5,18.7,18.5,20.1,20.5,19.7,20.6,22.5,23.1,21.6,null],"pp":[12,0,0,0,1,0,0,0,1,3,5,12,23,10,29,23],"mm":[0,0,0,0,0,0,0,0,0,0,0,0,5.3,3.7,3.1,null],"w":[29.2,26.9,23.1,21.0,16.6,11.4,10.8,12.7,13.8,13.5,15.9,18.1,23.6,22.5,16.3,null],"uv":[6.35,6.25,6.25,6.25,6.25,6.0,5.95,5.9,5.85,5.8,5.65,4.95,0.9,3.7,4.35,null],"ss":["18:28","18:27","18:26","18:25","18:24","18:23","18:22","18:21","18:20","18:19","18:18","18:17","18:16","18:15","18:14","18:14"]},"mco":{"c":[51,53,3,3,2,0,3,1,3,1,1,3,51,3,3,null],"hi":[32.3,23.5,24.0,26.8,28.5,28.7,27.9,28.5,27.6,27.4,27.7,30.0,30.5,30.5,31.6,null],"lo":[21.6,18.0,18.9,19.2,17.9,18.1,18.0,16.8,18.4,18.8,18.0,19.3,20.9,21.8,22.0,null],"pp":[50,25,8,5,4,4,10,10,16,19,11,31,23,20,10,29],"mm":[0.4,0.7,0,0,0,0,0,0,0,0,0,0.1,0.5,0,0,null],"w":[14.3,20.2,28.0,23.4,21.5,22.1,22.5,19.6,21.8,14.4,11.1,12.5,16.6,13.3,12.5,null],"uv":[6.35,4.35,4.35,6.35,6.25,6.15,6.15,6.1,5.45,5.85,5.95,5.85,6.0,5.85,5.85,null],"ss":["18:55","18:54","18:53","18:52","18:51","18:50","18:49","18:48","18:47","18:47","18:46","18:45","18:44","18:43","18:42","18:42"]}}};
+const WX_PLACES = [            /* order matters: it is the order sent to the API */
+  {k:'elp',    s:'El Paso',     lat:31.76, lon:-106.49},
+  {k:'chisos', s:'Basin',       lat:29.27, lon:-103.30},
+  {k:'river',  s:'River',       lat:29.18, lon:-102.96},
+  {k:'sat',    s:'San Antonio', lat:29.42, lon:-98.49},
+  {k:'hou',    s:'Houston',     lat:29.76, lon:-95.37},
+  {k:'nola',   s:'New Orleans', lat:29.95, lon:-90.07},
+  {k:'mco',    s:'Orlando',     lat:28.42, lon:-81.58}
+];
+/* Where the day is spent (first is the headline) and where you sleep. */
+const WX_DAYS = {
+  '2026-10-17':{day:['elp'],            night:'elp'},
+  '2026-10-18':{day:['chisos','elp'],   night:'chisos'},
+  '2026-10-19':{day:['river','chisos'], night:'chisos'},
+  '2026-10-20':{day:['chisos','river'], night:'chisos'},
+  '2026-10-21':{day:['sat','chisos'],   night:'sat'},
+  '2026-10-22':{day:['sat'],            night:'sat'},
+  '2026-10-23':{day:['hou','sat'],      night:'hou'},
+  '2026-10-24':{day:['nola','hou'],     night:'nola'},
+  '2026-10-25':{day:['nola'],           night:'nola'},
+  '2026-10-26':{day:['mco','nola'],     night:'mco'},
+  '2026-10-27':{day:['mco'], night:'mco'}, '2026-10-28':{day:['mco'], night:'mco'},
+  '2026-10-29':{day:['mco'], night:'mco'}, '2026-10-30':{day:['mco'], night:'mco'},
+  '2026-10-31':{day:['mco'], night:'mco'}, '2026-11-01':{day:['mco'], night:null}
+};
+const WX_LINKS = [
+  ['Big Bend conditions','https://www.nps.gov/bibe/planyourvisit/conditions.htm'],
+  ['Hurricane Centre','https://www.nhc.noaa.gov/']
+];
+
+const WX = { src:'snapshot', at:null, byDate:{} };
+function wxDate(d){ return d === '1' ? '2026-11-01' : '2026-10-' + (d.length < 2 ? '0' + d : d); }
+function addDays(iso, n){ const t = new Date(iso + 'T12:00:00Z'); t.setUTCDate(t.getUTCDate() + n); return t.toISOString().slice(0,10); }
+function cToF(c){ return Math.round(c * 9/5 + 32); }
+function r0(x){ return Math.round(x); }
+function wxIngest(times, k, a){
+  times.forEach(function(t, i){
+    if(a.hi[i] == null) return;
+    (WX.byDate[t] = WX.byDate[t] || {})[k] = {c:a.c[i], hi:a.hi[i], lo:a.lo[i], pp:a.pp[i], ss:a.ss[i]};
+  });
+}
+function wxLoadSnap(){
+  const t = []; for(let i=0; i<16; i++) t.push(addDays(WX_SNAP.start, i));
+  WX_PLACES.forEach(function(p){ wxIngest(t, p.k, WX_SNAP.p[p.k]); });
+  WX.src = 'snapshot'; WX.at = WX_SNAP.at;
+}
+const WMO = {0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',61:'🌧️',63:'🌧️',65:'🌧️',
+  71:'🌨️',73:'🌨️',75:'🌨️',80:'🌦️',81:'🌧️',82:'⛈️',95:'⛈️',96:'⛈️',99:'⛈️'};
+function wmo(c){ return WMO[c] || '·'; }
+function wxConf(date){
+  const base = (WX.at || '').slice(0,10), lead = Math.round((new Date(date) - new Date(base)) / 86400000);
+  return lead < 0 ? 'past' : lead <= 3 ? 'good' : lead <= 7 ? 'fair' : 'low';
+}
+function wxGet(date, k){ return (WX.byDate[date] || {})[k]; }
+function wxMain(date){ const p = WX_DAYS[date]; return p ? wxGet(date, p.day[0]) : null; }
+function place(k){ return WX_PLACES.filter(function(p){ return p.k === k; })[0]; }
+
+function wxChip(date){
+  const x = wxMain(date);
+  if(!x) return "<span class='dwx'>—</span>";
+  return "<span class='dwx'>" + wmo(x.c) + " " + r0(x.hi) + "°" +
+    (x.pp >= 20 ? "<span class='rn'>💧" + x.pp + "%</span>" : '') + "</span>";
+}
+function wxLine(date){
+  const plan = WX_DAYS[date]; if(!plan) return '';
+  return plan.day.map(function(k){
+    const x = wxGet(date, k); if(!x) return '';
+    return "<div class='wxl'>" + wmo(x.c) + " " + place(k).s + " " + r0(x.hi) + "° / " + r0(x.lo) + "°C " +
+      "<small>(" + cToF(x.hi) + "°F)</small>" + (x.pp >= 20 ? " <span class='rn'>💧" + x.pp + "%</span>" : '') + "</div>";
+  }).join('');
+}
+function regionOf(date){ const r = ITIN.filter(function(i){ return wxDate(i.d) === date; })[0]; return r ? r.r : 'wt'; }
+
+function renderWx(){
+  const host = document.getElementById('wx');
+  document.getElementById('wxSrc').textContent = (WX.src === 'live' ? 'live · ' : 'snapshot · ') + WX.at.slice(5).replace('T',' ');
+  host.innerHTML = Object.keys(WX_DAYS).map(function(d){
+    const x = wxMain(d), c = wxConf(d), pk = WX_DAYS[d].day[0];
+    const lbl = new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB',{weekday:'short', day:'numeric', timeZone:'UTC'});
+    const cls = 'wxt ' + c + (ON_TRIP && d === TODAY ? ' now' : '') + (ON_TRIP && d < TODAY ? ' past' : '');
+    return "<div class='" + cls + "' style='--r:var(--" + regionOf(d) + ")'><span class='d'>" + lbl + "</span>" +
+      (x ? "<span class='i'>" + wmo(x.c) + "</span><span class='t'>" + r0(x.hi) + "°<small>/" + r0(x.lo) + "</small></span>" +
+           "<span class='r'>" + (x.pp >= 20 ? '💧' + x.pp + '%' : '') + "</span>"
+         : "<span class='i'>·</span><span class='t'>—</span><span class='r'></span>") +
+      "<span class='p'>" + place(pk).s + "</span></div>";
+  }).join('');
+  const now = host.querySelector('.now');
+  if(now && !host._scrolled){ host.scrollLeft = now.offsetLeft - 16; host._scrolled = true; }
+  document.getElementById('wxLinks').innerHTML = WX_LINKS.map(function(l){
+    return "<a class='btn sm ghost' target='_blank' rel='noopener' href='" + l[1] + "'>" + l[0] + " ↗</a>"; }).join('');
+}
+
+function wxLive(){
+  if(new Date() > new Date('2026-11-02T00:00:00Z') || !window.fetch) return;
+  const url = 'https://api.open-meteo.com/v1/forecast?latitude=' + WX_PLACES.map(function(p){return p.lat;}).join(',') +
+    '&longitude=' + WX_PLACES.map(function(p){return p.lon;}).join(',') +
+    '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,' +
+    'wind_speed_10m_max,uv_index_max,sunset&timezone=auto&past_days=16&forecast_days=16';
+  const ctl = window.AbortController ? new AbortController() : null;
+  const timer = setTimeout(function(){ if(ctl) ctl.abort(); }, 9000);
+  fetch(url, ctl ? {signal: ctl.signal} : {}).then(function(r){ return r.ok ? r.json() : Promise.reject(r.status); })
+  .then(function(j){
+    clearTimeout(timer);
+    (Array.isArray(j) ? j : [j]).forEach(function(loc, i){
+      const d = loc.daily;
+      wxIngest(d.time, WX_PLACES[i].k, {c:d.weather_code, hi:d.temperature_2m_max, lo:d.temperature_2m_min,
+        pp:d.precipitation_probability_max.map(function(v){ return v == null ? 0 : v; }),
+        ss:d.sunset.map(function(s){ return s ? s.slice(11,16) : ''; })});
+    });
+    const n = new Date(), p = function(v){ return (v < 10 ? '0' : '') + v; };
+    WX.src = 'live';
+    WX.at = n.getFullYear() + '-' + p(n.getMonth()+1) + '-' + p(n.getDate()) + 'T' + p(n.getHours()) + ':' + p(n.getMinutes());
+    renderItin(); renderWx(); renderToday();
+  }).catch(function(){ clearTimeout(timer); });
+}
+
+/* ==========================================================================
+   TODAY mode — by the phone's own date. Preview any day with ?today=2026-10-19
+   ========================================================================== */
+const TRIP_START = '2026-10-17', TRIP_END = '2026-11-01';
+const TODAY = (location.search.match(/today=(\d{4}-\d\d-\d\d)/) || [])[1] || (function(){
+  const n = new Date(), p = function(v){ return (v < 10 ? '0' : '') + v; };
+  return n.getFullYear() + '-' + p(n.getMonth()+1) + '-' + p(n.getDate()); })();
+const ON_TRIP = TODAY >= TRIP_START && TODAY <= TRIP_END;
+function tripDay(){ return Math.round((new Date(TODAY) - new Date(TRIP_START)) / 86400000) + 1; }
+function niceDate(iso){ return new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB',{weekday:'short', day:'numeric', month:'short', timeZone:'UTC'}); }
+
+/* Where you sleep, keyed by the 'stay' label in ITIN. */
+const STAYS = {
+  'El Paso':       {n:'The Plaza Hotel Pioneer Park', a:'106 W Mills Ave, El Paso, TX 79901', ref:'1094358953'},
+  'Chisos Lodge':  {n:'Chisos Mountains Lodge', a:'Chisos Basin, Big Bend National Park, TX', tel:'+1 855-765-1324', ref:'70P6OR',
+                    note:'Check in at the Basin Convenience Store'},
+  'San Antonio':   {n:'Canopy by Hilton Riverwalk', a:"123 N St Mary's St, San Antonio, TX 78205", tel:'+1 210-404-7516', ref:'3105220205'},
+  'Houston':       {n:'Embassy Suites Downtown', a:'1515 Dallas St, Houston, TX 77010', tel:'+1 713-739-9100', ref:'96702795'},
+  'New Orleans':   {n:'Hotel Provincial', a:'1024 Chartres St, New Orleans, LA 70116', tel:'+1 504-581-4995', ref:'FF839E25F5'},
+  'Boardwalk Inn': {n:"Disney's BoardWalk Inn", a:'2101 Epcot Resorts Blvd, Lake Buena Vista, FL 32830', ref:'26365036'},
+  'Universal':     {n:'Universal on-site hotel', a:''}
+};
+function mapsLink(q){ return 'https://www.google.com/maps/search/?api=1&query=' + enc(q); }
+function stayBlock(label){
+  const s = STAYS[label]; if(!s) return '';
+  const bits = [];
+  if(s.tel) bits.push("<a href='tel:" + s.tel.replace(/[^0-9+]/g,'') + "'>" + s.tel + "</a>");
+  if(s.ref) bits.push('ref ' + s.ref);
+  return "<div class='tn'><span class='lbl'>Tonight</span><b>" + s.n + "</b>" +
+    (s.a ? "<div class='m'><a href='" + mapsLink(s.n + ', ' + s.a) + "' target='_blank' rel='noopener'>" + s.a + " ↗</a></div>" : '') +
+    (bits.length ? "<div class='m'>" + bits.join(' · ') + "</div>" : '') +
+    (s.note ? "<div class='m'>" + s.note + "</div>" : '') + "</div>";
+}
+function renderToday(){
+  const sec = document.getElementById('todaySec');
+  const i = ITIN.findIndex(function(r){ return wxDate(r.d) === TODAY; });
+  if(!ON_TRIP || i < 0){ sec.hidden = true; return; }
+  const r = ITIN[i], nx = ITIN[i+1];
+  sec.hidden = false;
+  document.getElementById('today').innerHTML =
+    "<div class='td-top'><span>Today · day " + tripDay() + " of " + ITIN.length + "</span><span>" + niceDate(TODAY) + "</span></div>" +
+    "<div class='td-hl'>" + r.headline + "</div>" +
+    (r.drive ? "<div class='td-drive'>🚗 " + r.drive + " driving</div>" : '') +
+    wxLine(TODAY) + bullets(r.more) + dirBtns(DIR[TODAY]) + stayBlock(r.stay) +
+    (nx ? "<div class='tn'><span class='lbl'>Tomorrow</span><b>" + nx.headline + "</b>" +
+          (nx.drive ? "<div class='m'>" + nx.drive + " driving</div>" : '') + "</div>" : '');
+}
+
+/* ==========================================================================
+   DIRECTIONS — one tap to Google Maps from wherever you are.
+   [label, destination, mode]. Destinations checked to resolve correctly.
+   ========================================================================== */
+const DIR = {
+  '2026-10-17':[['Avis', 'Avis, El Paso International Airport, 6505 Convair Rd, El Paso, TX 79925'],
+                ['Hotel', 'The Plaza Hotel Pioneer Park, 106 W Mills Ave, El Paso, TX 79901'],
+                ['Scenic Drive', 'Murchison Rogers Park, 1600 Scenic Dr, El Paso, TX 79902'],
+                ['L&J Cafe', 'L & J Cafe, 3622 E Missouri Ave, El Paso, TX 79903'],
+                ["Chico's Tacos", "Chico's Tacos, 4230 Alameda Ave, El Paso, TX 79905"]],
+  '2026-10-18':[['Prada Marfa', 'Prada Marfa, Valentine, TX'],
+                ['Lowe’s Market, Alpine', 'Lowe’s Market, 104 N 2nd St, Alpine, TX 79830'],
+                ['Panther Junction fuel', 'Panther Junction Visitor Center, Big Bend National Park, TX'],
+                ['Lodge', 'Chisos Mountains Lodge, Big Bend National Park, TX']],
+  '2026-10-19':[['Boquillas Crossing', 'Boquillas Crossing Port of Entry, Big Bend National Park, TX'],
+                ['Boquillas Canyon', 'Boquillas Canyon Trailhead, Big Bend National Park, TX'],
+                ['Hot Springs', 'Hot Springs Historic District, Big Bend National Park, TX'],
+                ['Lodge', 'Chisos Mountains Lodge, Big Bend National Park, TX']],
+  '2026-10-20':[['South Rim trailhead', 'Chisos Basin Trailhead, Big Bend National Park, TX', 'walking'],
+                ['Starlight Theatre', 'Starlight Theatre, 631 Ivey Rd, Terlingua, TX 79852'],
+                ['Lodge', 'Chisos Mountains Lodge, Big Bend National Park, TX']],
+  '2026-10-21':[['Marathon', 'The French Company Grocer, 111 US-90, Marathon, TX 79842'],
+                ['Seminole Canyon', 'Seminole Canyon State Park & Historic Site, Comstock, TX'],
+                ['Hotel', "Canopy by Hilton San Antonio Riverwalk, 123 N St Mary's St, San Antonio, TX 78205"]],
+  '2026-10-22':[['The Alamo', 'The Alamo, 300 Alamo Plaza, San Antonio, TX', 'walking'],
+                ['Mission San José', 'Mission San José, San Antonio, TX'],
+                ['Southerleigh', 'Southerleigh Fine Food & Brewery, 136 E Grayson St, San Antonio, TX']],
+  '2026-10-23':[['Burnt Bean', 'Burnt Bean Co, 108 S Austin St, Seguin, TX 78155'],
+                ["Buc-ee's", "Buc-ee's, 10070 I-10, Luling, TX 78648"],
+                ['Hotel', 'Embassy Suites by Hilton Houston Downtown Convention Center, 1515 Dallas St, Houston, TX 77010'],
+                ['Strange Bird', 'Strange Bird Immersive, 7026 Old Katy Rd, Houston, TX'],
+                ["Ninfa's", "The Original Ninfa's on Navigation, 2704 Navigation Blvd, Houston, TX 77003"]],
+  '2026-10-24':[["Buc-ee's Baytown", "Buc-ee's, 4080 East Fwy, Baytown, TX 77521"],
+                ['Hotel', 'Hotel Provincial, 1024 Chartres St, New Orleans, LA 70116'],
+                ['Pêche', 'Pêche Seafood Grill, 800 Magazine St, New Orleans, LA', 'walking']],
+  '2026-10-25':[["Arnaud's", "Arnaud's, 813 Bienville St, New Orleans, LA", 'walking'],
+                ['Swamp tour', "Dr. Wagner's Honey Island Swamp Tours, 41490 Crawford Landing Rd, Slidell, LA"],
+                ["Felix's", "Felix's Restaurant & Oyster Bar, 739 Iberville St, New Orleans, LA", 'walking'],
+                ['Preservation Hall', 'Preservation Hall, 726 St Peter St, New Orleans, LA', 'walking']],
+  '2026-10-26':[['Avis return', '600 Rental Blvd, Kenner, LA 70062'],
+                ['Hertz', 'Hertz Car Rental, Orlando International Airport, 1 Airport Blvd, Orlando, FL 32812'],
+                ['BoardWalk Inn', "Disney's BoardWalk Inn, 2101 Epcot Resorts Blvd, Lake Buena Vista, FL 32830"],
+                ['Animal Kingdom', "Disney's Animal Kingdom Theme Park, Lake Buena Vista, FL"]],
+  '2026-10-27':[['EPCOT', 'Epcot International Gateway', 'walking'],
+                ['Magic Kingdom', 'Magic Kingdom Park, Lake Buena Vista, FL']],
+  '2026-10-28':[['EPCOT', 'Epcot International Gateway', 'walking'],
+                ['Hollywood Studios', "Disney's Hollywood Studios, Lake Buena Vista, FL", 'walking']],
+  '2026-10-29':[['Islands of Adventure', 'Universal Islands of Adventure, Orlando, FL'],
+                ['Universal Studios', 'Universal Studios Florida, Orlando, FL']],
+  '2026-10-30':[['Epic Universe', 'Universal Epic Universe, Orlando, FL']],
+  '2026-10-31':[['Garage C, Terminal C', 'MCO Parking Garage C, Orlando, FL']],
+  '2026-11-01':[['Hertz return, Garage C', 'MCO Parking Garage C, Orlando, FL'],
+                ['Terminal C', 'MCO Terminal C, Orlando International Airport']]
+};
+const DIR_BOOK = {
+  'h-elp':   [['Directions', 'The Plaza Hotel Pioneer Park, 106 W Mills Ave, El Paso, TX 79901']],
+  'h-chisos':[['Directions', 'Chisos Mountains Lodge, Big Bend National Park, TX']],
+  'h-sat':   [['Directions', "Canopy by Hilton San Antonio Riverwalk, 123 N St Mary's St, San Antonio, TX 78205"]],
+  'h-hou':   [['Directions', 'Embassy Suites by Hilton Houston Downtown Convention Center, 1515 Dallas St, Houston, TX 77010']],
+  'h-nola':  [['Directions', 'Hotel Provincial, 1024 Chartres St, New Orleans, LA 70116']],
+  'h-bwi':   [['Directions', "Disney's BoardWalk Inn, 2101 Epcot Resorts Blvd, Lake Buena Vista, FL 32830"]]
+};
+function enc(q){ return encodeURIComponent(q).replace(/'/g,'%27'); }
+function dirUrl(q, mode){ return 'https://www.google.com/maps/dir/?api=1&destination=' + enc(q) + '&travelmode=' + (mode || 'driving'); }
+function dirBtns(list){
+  if(!list) return '';
+  return "<div class='btns'>" + list.map(function(d){
+    return "<a class='btn sm' target='_blank' rel='noopener' href='" + dirUrl(d[1], d[2]) + "'>" +
+      (d[2] === 'walking' ? '🚶 ' : '🚗 ') + d[0] + "</a>"; }).join('') + "</div>";
+}
+
+/* ==========================================================================
+   RENDER
+   ========================================================================== */
+const ALL = GROUPS.reduce(function(a,g){ return a.concat(g.items); },[]);
+let state = {};
+function load(){
+  ALL.forEach(function(b){ state[b.id] = b.booked; });
+  try{ const s = localStorage.getItem('trip2026v2'); if(s) Object.assign(state, JSON.parse(s)); }catch(e){}
+}
+function save(){ try{ localStorage.setItem('trip2026v2', JSON.stringify(state)); }catch(e){} }
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+function toggle(ev, id){
+  ev.preventDefault(); ev.stopPropagation();
+  state[id] = !state[id]; save();
+  const el = ev.currentTarget;
+  el.className = 'pill ' + (state[id] ? 'yes' : 'no');
+  el.textContent = state[id] ? 'Booked ✓' : 'Not booked';
+}
+function bullets(list){ return "<ul class='pts'>" + list.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul>'; }
+
+function renderItin(){
+  const host = document.getElementById('itin');
+  const open = [].map.call(host.querySelectorAll('details'), function(d){ return d.open; });
+  const first = !host.children.length;
+  host.innerHTML = ITIN.map(function(r, i){
+    const date = wxDate(r.d), now = ON_TRIP && date === TODAY, past = ON_TRIP && date < TODAY;
+    const sub = [r.stay !== '—' ? r.stay : '', r.drive ? r.drive + ' drive' : ''].filter(Boolean).join(' · ');
+    return "<details class='day" + (now ? ' now' : '') + (past ? ' past' : '') + "' style='--r:var(--" + r.r + ")'" +
+      ((first ? false : open[i]) ? ' open' : '') + "><summary>" +
+      "<span class='dn'><b>" + r.d + "</b><span>" + r.dy + "</span></span>" +
+      "<span class='hl'>" + r.headline + (r.chip ? "<span class='chip'>" + r.chip + "</span>" : '') + "</span>" +
+      wxChip(date) +
+      "<span class='sub'>" + (now ? "<em class='nowtag'>TODAY</em>" : '') + sub + "</span></summary>" +
+      "<div class='body'>" + wxLine(date) + bullets(r.more) + dirBtns(DIR[date]) + "</div></details>";
+  }).join('');
+}
+
+function render(){
+  document.getElementById('updated').textContent = niceDate(UPDATED);
+
+  /* header stripe: one segment per region, sized by days */
+  const days = {}; ITIN.forEach(function(r){ days[r.r] = (days[r.r] || 0) + 1; });
+  document.getElementById('stripe').innerHTML = ['wt','tx','la','fl'].map(function(k){
+    return "<i style='flex:" + days[k] + ";background:var(--" + k + ")'></i>"; }).join('');
+
+  /* route diagram */
+  let h = '';
+  STOPS.forEach(function(s, i){
+    h += "<li class='stop'><i style='background:var(--" + s.r + ")'></i><b>" + s.n + "</b><span>" + s.d + "</span></li>";
+    if(i < LEGS.length) h += "<li class='leg" + (LEGS[i][1] ? ' fly' : '') + "'><em>" + LEGS[i][0] + "</em></li>";
+  });
+  document.getElementById('route').innerHTML = h;
+  const q = STOPS.map(function(s){ return s.q; });
+  document.getElementById('fullRoute').href = 'https://www.google.com/maps/dir/?api=1&origin=' + q[0] +
+    '&destination=' + q[q.length-2] + '&waypoints=' + q.slice(1,-2).join('%7C') + '&travelmode=driving';
+
+  renderItin();
+
+  document.getElementById('books').innerHTML = GROUPS.map(function(g){
+    return "<div class='grp'>" + g.g + "</div>" + g.items.map(function(b){
+      const on = state[b.id];
+      const kv = b.kv ? "<dl class='kv'>" + b.kv.map(function(p){
+        const v = /^\+?[0-9][0-9 ()+-]{6,}$/.test(p[1]) && p[0] === 'Phone'
+          ? "<a href='tel:" + p[1].replace(/[^0-9+]/g,'') + "'>" + p[1] + "</a>" : esc(p[1]);
+        return "<dt>" + p[0] + "</dt><dd>" + v + "</dd>";
+      }).join('') + "</dl>" : '';
+      const body = kv + dirBtns(DIR_BOOK[b.id]);
+      return "<details class='bk'><summary><span class='bt'>" + b.what + "<small>" + b.when + "</small></span>" +
+        "<button type='button' class='pill " + (on ? 'yes' : 'no') + "' onclick='toggle(event,\"" + b.id + "\")'>" +
+        (on ? 'Booked ✓' : 'Not booked') + "</button></summary>" +
+        (body ? "<div class='body'>" + body + "</div>" : '') + "</details>";
+    }).join('');
+  }).join('');
+
+  renderWx();
+  renderToday();
+}
+
+load(); wxLoadSnap(); render(); wxLive();
+</script>
+</body></html>
