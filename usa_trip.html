@@ -49,6 +49,7 @@ h2 small{font-size:12px;font-weight:700;letter-spacing:0;text-transform:none;col
 .btn.ghost{background:var(--soft);color:var(--ink)}
 .btn.sm{min-height:40px;padding:8px 13px;font-size:14px}
 .btn:active{transform:scale(.97)}
+button.btn{border:0;font-family:inherit;cursor:pointer}
 
 /* ---- today ---- */
 .today{background:var(--ink);color:var(--bg);border-radius:18px;padding:20px 18px}
@@ -152,6 +153,25 @@ footer{margin-top:36px;font-size:13px;font-weight:600;color:var(--mute);text-ali
   .body{padding-left:16px}
   .day>summary{grid-template-columns:40px 1fr auto;gap:2px 10px}
 }
+
+/* ---- shopping list ---- */
+.shop .grp{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;margin:18px 0 4px;color:var(--wt)}
+.shop .grp:first-of-type{margin-top:4px}
+.shop label{display:flex;align-items:center;gap:12px;min-height:46px;padding:6px 0;border-bottom:1px solid var(--soft);
+  font-size:17px;font-weight:500;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.shop input{width:24px;height:24px;flex:0 0 24px;accent-color:var(--ink)}
+.shop label.done span{text-decoration:line-through;color:var(--mute)}
+.shop .note{font-size:14px;color:var(--mute);margin:4px 0 0}
+.shop label span{flex:1}
+.shop label em{font-style:normal;font-size:14px;font-weight:800;color:var(--mute);white-space:nowrap}
+.shopd{padding:0}
+.shopd>summary{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px}
+.shopd>summary b{font-size:19px;font-weight:900;display:block}
+.shopd>summary small{font-size:13px;font-weight:700;color:var(--mute)}
+.shopd>summary::after{content:'+';font-size:28px;font-weight:900;line-height:1}
+.shopd[open]>summary::after{content:'–'}
+.shopd .in{padding:0 16px 18px}
+.shopd .count{font-size:13px;font-weight:900;background:var(--wt);color:#fff;border-radius:999px;padding:4px 10px;white-space:nowrap;margin-left:auto}
 </style>
 </head>
 <body>
@@ -168,6 +188,20 @@ footer{margin-top:36px;font-size:13px;font-weight:600;color:var(--mute);text-ali
 
 <section id='todaySec' hidden>
   <div class='today' id='today'></div>
+</section>
+
+<section id='shop'>
+  <h2>Alpine shop</h2>
+  <details class='card shop shopd' id='shopD'>
+    <summary><span><b>Shopping list</b><small>Lowe’s Market · 3 nights in the park</small></span><span class='count' id='shopCount'></span></summary>
+    <div class='in'>
+      <div class='note'>Last proper shop before the park. Covers breakfast Mon–Wed, dinner Sun &amp; Mon, the South Rim on Tue. Room has a fridge, microwave and coffee pot — nothing else.</div>
+      <div class='btns'><a class='btn sm' target='_blank' rel='noopener' href='https://www.google.com/maps/dir/?api=1&destination=Lowe%E2%80%99s%20Market%2C%20104%20N%202nd%20St%2C%20Alpine%2C%20TX%2079830&travelmode=driving'>🚗 Lowe’s Market</a>
+        <button class='btn sm ghost' type='button' onclick='shopReset()'>Clear ticks</button></div>
+      <div id='shopList'></div>
+      <div class='note' style='margin-top:14px'>Backup in the park: Basin store 08:00–20:00, food truck 07:00–15:00. All food stays in the room or car — bears and javelinas.</div>
+    </div>
+  </details>
 </section>
 
 <section>
@@ -531,7 +565,7 @@ function renderToday(){
     "<div class='td-top'><span>Today · day " + tripDay() + " of " + ITIN.length + "</span><span>" + niceDate(TODAY) + "</span></div>" +
     "<div class='td-hl'>" + r.headline + "</div>" +
     (r.drive ? "<div class='td-drive'>🚗 " + r.drive + " driving</div>" : '') +
-    wxLine(TODAY) + bullets(r.more) + dirBtns(DIR[TODAY]) + stayBlock(r.stay) +
+    wxLine(TODAY) + bullets(r.more) + shopBtn(TODAY) + dirBtns(DIR[TODAY]) + stayBlock(r.stay) +
     (nx ? "<div class='tn'><span class='lbl'>Tomorrow</span><b>" + nx.headline + "</b>" +
           (nx.drive ? "<div class='m'>" + nx.drive + " driving</div>" : '') + "</div>" : '');
 }
@@ -610,6 +644,53 @@ function dirBtns(list){
 /* ==========================================================================
    RENDER
    ========================================================================== */
+/* ==========================================================================
+   ALPINE SHOP — Big Bend supplies, 18 Oct. Ticks are saved on this phone.
+   ========================================================================== */
+const SHOP = [   /* [item, quantity for three] */
+  ['Before you leave Alpine', [['Cash for Boquillas, small bills','$150'],['Fill the tank',''],['Download Big Bend offline in Google Maps','']]],
+  ['Breakfast · Mon–Wed', [['Ground coffee','1 bag'],['Coffee filters, basket 8–12 cup','1 pack'],['Tea bags','1 box'],['Milk','½ gallon'],
+    ['Sugar','small bag'],['Granola or cereal','1 box'],['Instant oatmeal — for the early start','1 box'],['Yoghurts','6'],['Bananas','6'],['Muffins or pastries','6']]],
+  ['Dinner · Sun &amp; Mon', [['Rotisserie chicken — Sunday','1'],['Mac &amp; cheese or chili cups','6'],['Microwave rice','2'],['Bagged salad','2'],
+    ['Bread rolls','1 bag'],['Tortillas','1 pack'],['Grated cheese','1 bag'],['Salsa','1 jar'],['Spare microwave meal — if Starlight is full Tue','3']]],
+  ['Trail · South Rim Tue', [['Wraps','1 pack'],['Peanut butter','1 jar'],['Cheese','1 block'],['Salami','1'],['Trail mix','2 bags'],
+    ['Bars','12'],['Jerky','2 bags'],['Apples','6'],['Electrolyte sachets','9']]],
+  ['Water', [['Bottles for the South Rim — 4 L each','12 L'],['Gallon jugs, room &amp; car','3']]],
+  ['Room kit', [['Paper plates &amp; bowls',''],['Plastic cutlery &amp; cups',''],['Can opener',''],['Bottle opener',''],['Cheap knife',''],
+    ['Kitchen roll',''],['Bin bags',''],['Zip bags',''],['Foil',''],['Washing-up liquid &amp; sponge',''],['Cool bag &amp; ice — for the car','']]],
+  ['Sun, light &amp; first aid', [['Suncream SPF 50',''],['Lip balm with SPF',''],['Insect repellent',''],['Head torches','3'],['Spare batteries',''],
+    ['Plasters &amp; blister plasters',''],['Ibuprofen',''],['Antihistamine',''],['Tweezers — cactus spines',''],['Hand sanitiser &amp; wipes','']]]
+];
+let shop = {};
+try{ shop = JSON.parse(localStorage.getItem('trip2026shop') || '{}'); }catch(e){}
+function shopSave(){ try{ localStorage.setItem('trip2026shop', JSON.stringify(shop)); }catch(e){} }
+function shopCount(){
+  const all = SHOP.reduce(function(n,g){ return n + g[1].length; }, 0);
+  const keys = {}; SHOP.forEach(function(g){ g[1].forEach(function(it){ keys[g[0] + '|' + it[0]] = 1; }); });
+  const done = Object.keys(shop).filter(function(k){ return shop[k] && keys[k]; }).length;
+  document.getElementById('shopCount').textContent = done === all ? 'All done ✓' : done + ' of ' + all;
+}
+function shopTick(el){
+  const k = el.getAttribute('data-k'); shop[k] = el.checked; shopSave();
+  el.parentNode.className = el.checked ? 'done' : ''; shopCount();
+}
+function shopReset(){ shop = {}; shopSave(); renderShop(); }
+function renderShop(){
+  document.getElementById('shopList').innerHTML = SHOP.map(function(g){
+    return "<div class='grp'>" + g[0] + "</div>" + g[1].map(function(it){
+      const k = g[0] + '|' + it[0], on = !!shop[k];
+      return "<label" + (on ? " class='done'" : '') + "><input type='checkbox' data-k=\"" + k.replace(/"/g,'&quot;') + "\"" +
+        (on ? ' checked' : '') + " onchange='shopTick(this)'><span>" + it[0] + "</span>" + (it[1] ? "<em>" + it[1] + "</em>" : '') + "</label>";
+    }).join('');
+  }).join('');
+  shopCount();
+}
+/* A button to the list on the days it matters */
+const SHOP_DAYS = {'2026-10-18':1, '2026-10-19':1, '2026-10-20':1};
+function shopBtn(date){ return SHOP_DAYS[date] ? "<div class='btns'><a class='btn sm' href='#shop' onclick='shopOpen()'>🛒 Alpine shopping list</a></div>" : ''; }
+function shopOpen(){ document.getElementById('shopD').open = true; }
+if(TODAY > '2026-10-20') document.getElementById('shop').hidden = true;
+
 const ALL = GROUPS.reduce(function(a,g){ return a.concat(g.items); },[]);
 let state = {};
 function load(){
@@ -640,7 +721,7 @@ function renderItin(){
       "<span class='hl'>" + r.headline + (r.chip ? "<span class='chip'>" + r.chip + "</span>" : '') + "</span>" +
       wxChip(date) +
       "<span class='sub'>" + (now ? "<em class='nowtag'>TODAY</em>" : '') + sub + "</span></summary>" +
-      "<div class='body'>" + wxLine(date) + bullets(r.more) + dirBtns(DIR[date]) + "</div></details>";
+      "<div class='body'>" + wxLine(date) + bullets(r.more) + shopBtn(date) + dirBtns(DIR[date]) + "</div></details>";
   }).join('');
 }
 
@@ -685,6 +766,6 @@ function render(){
   renderToday();
 }
 
-load(); wxLoadSnap(); render(); wxLive();
+load(); wxLoadSnap(); render(); renderShop(); wxLive();
 </script>
 </body></html>
